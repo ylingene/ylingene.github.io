@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Bootstrap -->
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		
+
+		<title>Lingene Yang - Photography</title>
+
+		<!-- meta -->
+		<meta name="description" content="Lingene Yang's personal website. Coding, photography, filmmaking." />
+		<meta http-equiv="author" content="Lingene Yang" />
+		<meta http-equiv="pragma" content="no-cache" />
+
+		<!-- Fancybox -->
+		<link rel="stylesheet" href="css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+
+		<!-- own styles -->
+		<link href='http://fonts.googleapis.com/css?family=Duru+Sans' rel='stylesheet' type='text/css'> <!-- font from Google (Duru Sans) -->  
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> <!-- font from Google (Open+Sans) -->
+		<link rel='stylesheet' type='text/css' href='css/photography_stylesheet.css'>		
+	</head>
+
+	<body>
+
+
+		<!-- NAVIGATION BAR -->
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+
+				<a href="#" class="navbar-brand"> Lingene Yang<!--<img src="Images/lingene-logo.png" class="logo"/>--> </a>
+
+				<!-- Button for collapseable menu -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+		        	<span class="icon-bar"></span> 
+        		</button>
+
+				</div>
+
+				<!-- Collapsing nav bar -->
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="index.html">About</a></li>
+						<!-- <li><a href="#">Code</a></li> -->
+						<li class="active"><a href="#">Photography</a></li>
+						<li><a href="#">Films</a></li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- FIXED NAVIGATION BAR -->
+		<div class="navbar navbar-inverse navbar-fixed-top hidden-nav">
+			<div class="container">
+				<div class="navbar-header">
+
+				<a href="#" class="navbar-brand"> Lingene Yang<!--<img src="Images/lingene-logo.png" class="logo"/>--> </a>
+
+				<!-- Button for collapseable menu -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+		        	<span class="icon-bar"></span> 
+        		</button>
+
+				</div>
+
+				<!-- Collapsing nav bar -->
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="index.html">About</a></li>
+						<!-- <li><a href="#">Code</a></li> -->
+						<li class="active"><a href="#">Photography</a></li>
+						<li><a href="#">Films</a></li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+		
+
+
+		<!-- COVER PHOTO SECTION -->
+		<div class="container hero">
+			<div class="row hero-text">
+				<div class="hero-name col-sm-12 text-center">
+					<h1>Hello dood</h1>
+				</div>
+				<!-- <div class="hero-description col-sm-12 text-center">
+					<h3>Hello there</h3>
+				</div> -->
+			</div>
+		</div>
+
+		<!-- PHOTO GRID -->
+		<div class="portfolio-section">
+			<div class="container portfolio">
+				<div class="row">
+					<div class="col-sm-6 col-sm-offset-3 text-center">
+						<h3>Portfolio</h3>
+						<div class="sep-line"></div>
+					</div>
+
+					<div class="col-xs-12 filter"> 
+						<div id="filters" class="button-group filters-button-group">  
+							<button class="button is-checked" data-filter="*">All</button>
+							<button class="button" data-filter=".portrait">Portrait</button>
+							<button class="button" data-filter=".fashion">Fashion</button>
+							<button class="button" data-filter=".landscape, .cityscape">Landscape & Cityscape</button>
+							<button class="button" data-filter=".other">Other</button>
+						</div>
+					</div>
+
+					<div class="col-xs-12 grid">
+						<div class="grid-item grid-item-long cityscape">
+							<figure> <a class="fancybox stop" rel="group" href="portfolio/MIT-1.jpg" title="MIT"> <img class ="scale" src="portfolio/thumbnail/th_mit.jpg"/> </a> </figure>
+						</div>
+						<div class="grid-item portrait">
+							<figure> <a class="fancybox stop" rel="group" href="portfolio/Hongsen-NE.jpg"> <img class ="scale" src="portfolio/thumbnail/th_Hongsen-NE.jpg"/> </a> </figure>
+						</div>
+						<div class="grid-item portrait">
+							<figure> <a class="fancybox stop" rel="group" href="portfolio/Stephanie.jpg"> <img class ="scale" src="portfolio/thumbnail/th_Stephanie.jpg"/> </a> </figure>
+						</div>
+						<div class="grid-item grid-item-long other">
+							<figure> <a class="fancybox stop" rel="group" href="portfolio/W2hero.jpg"> <img class ="scale" src="portfolio/thumbnail/th_W2hero.jpg"/> </a> </figure>
+						</div>
+						<div class="grid-item portrait">
+							<figure> <a class="fancybox stop" rel="group" href="portfolio/Ryan-SP1.jpg"> <img class ="scale" src="portfolio/thumbnail/th_Ryan-SP1.jpg"/> </a> </figure>
+						</div>
+						<div class="grid-item portrait">
+							<figure> <a class="fancybox stop" rel="group" href="portfolio/Ryan-SP2.jpg"> <img class ="scale" src="portfolio/thumbnail/th_Ryan-SP2.jpg"/> </a> </figure>
+						</div>
+						<div class="grid-item grid-item-long landscape">
+							<figure> <a class="fancybox stop" rel="group" href="portfolio/figment.jpg"> <img class ="scale" src="portfolio/thumbnail/th_figment.jpg"/> </a> </figure>
+						</div>
+						<div class="grid-item grid-item-long portrait">
+							<figure> <a class="fancybox stop" rel="group" href="portfolio/Steven-figment.jpg"> <img class ="scale" src="portfolio/thumbnail/th_Steven-figment.jpg"/> </a> </figure>
+						</div>
+						<div class="grid-item grid-item-long portrait">
+							<figure> <a class="fancybox stop" rel="group" href="portfolio/Joy.jpg"> <img class ="scale" src="portfolio/thumbnail/th_Joy.jpg"/> </a> </figure>
+						</div>
+						<div class="grid-item grid-item-long landscape">
+							<figure> <a class="fancybox stop" rel="group" href="portfolio/NEchurch.jpg"> <img class ="scale" src="portfolio/thumbnail/th_NEchurch.jpg"/> </a> </figure>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- FOOTER -->
+		<div class="container">
+			<div class="footer">
+				<p class="copyright-text">Copyright &copy; Lingene Yang 2015</p>
+			</div>
+		</div>
+		
+		
+
+
+
+
+		<!-- JS -->
+		<script src="https://code.jquery.com/jquery-latest.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<!--[if lt IE 9]>
+      	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    	<![endif]-->
+    	<script type="text/javascript" src="js/isotope.min.js"></script>
+    	<script type="text/javascript" src="js/jquery.fancybox.pack.js?v=2.1.5"></script>
+		<script type="text/javascript" src="js/photography_script.js"></script>
+		<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+	</body>
+</html>
