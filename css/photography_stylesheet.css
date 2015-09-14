@@ -106,8 +106,10 @@ p {
 	/*background-color: rgba(0,95,127,.8);*/
 	margin: 0;
 	overflow: hidden;
-	background-color: transparent;
+	background-color: white;
 	border: none;
+	position: fixed;
+	border-bottom: 1px solid #dbdbdb;
 }
 .navbar-inverse .navbar-nav > li > a:hover, 
 .navbar-inverse .navbar-nav > li > a:focus {
@@ -127,24 +129,12 @@ p {
 }
 
 .nav a {
-	color: white !important;
+	color: #444954 !important;
 	font-weight: 700;
 }
 
 .navbar-brand {
-	color: white !important;
-	font-weight: 700;
-}
-
-.hidden-nav {
-	display: none;
-	position: fixed;
-	background-color: white;
-	border-bottom: 1px solid #dbdbdb;
-}
-.hidden-nav .nav a,
-.hidden-nav .navbar-brand {
-	color: black !important;
+	color: #444954 !important;
 	font-weight: 700;
 }
 
