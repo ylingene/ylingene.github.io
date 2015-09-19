@@ -12,9 +12,9 @@ COLOR PALEETE
 
 *******************************************/
 
-@font-face { font-family: DistProTh; src: url('fonts/DistProTh.otf'); }
-@font-face { font-family: Socialico; src: url('fonts/Socialico.otf'); }
-@font-face { font-family: Socialico Plus; src: url('fonts/Socialico Plus.otf'); }
+@font-face { font-family: 'DistProTh'; src: url('fonts/DistProTh.otf'); }
+@font-face { font-family: 'Socialico'; src: url('fonts/Socialico.otf'); }
+@font-face { font-family: 'Socialico Plus'; src: url('fonts/Socialico Plus.otf'); }
 
 /*******************************************
 									GLOBAL
@@ -51,7 +51,7 @@ h4 {
 
 p {
 	margin-bottom: 20px;
-	font-family: 'District Pro';
+	font-family: 'DistProTh';
 	font-size: 18px;
 	color: #6D797D;
 }
