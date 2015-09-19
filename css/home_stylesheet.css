@@ -165,7 +165,7 @@ a:focus {
 
 @media(min-width:768px) {
 	.hero {
-		background: url("../Images/website_hero.jpg") no-repeat;
+		background: url("../Images/website_hero-final.jpg") no-repeat;
 		-webkit-background-size: cover;
 	    -moz-background-size: cover;
 	    background-size: cover;
@@ -179,24 +179,11 @@ a:focus {
 
 .hero {
 	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.hero-text {
-	position: absolute; /*4 lines help center text*/
-  	top: 25%;
-  	left: 51%;
-  	transform: translate(-50%,-50%); 
-  	margin: auto !important;
-}
-@media(min-width:768px) {
-	.hero-text {
-		position: absolute; /*4 lines help center text*/
-	  	top: 50%;
-	  	left: 51%;
-	  	transform: translate(-50%,-50%); 
-	  	margin: auto !important;
-	}
-}
 /*.hero-list {
 	list-style-type: none;
 	padding-left: 0;
