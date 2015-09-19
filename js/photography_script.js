@@ -53,5 +53,13 @@ $(document).ready( function() {
     });
   });
   
+  $('.grid').imagesLoaded( function(){
+          $('.grid').isotope({
+          itemSelector: '.item',
+            isAnimated: true,
+            isFitWidth: true
+          });
+      });
+  
 });
 

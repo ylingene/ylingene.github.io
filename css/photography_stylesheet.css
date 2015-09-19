@@ -103,18 +103,27 @@ p {
 .navbar {
 	position: absolute;
 	z-index: 10;
-	/*background-color: rgba(0,95,127,.8);*/
 	margin: 0;
 	overflow: hidden;
 	background-color: white;
 	border: none;
 	position: fixed;
-	border-bottom: 1px solid #dbdbdb;
+	/*border-bottom: 1px solid rgba(0,0,0, .07);*/
 }
+
+.navbar-brand {
+	color: #444954 !important;
+	font-weight: 700;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+	color: #444954;
+	font-weight: 700;
+}
+
 .navbar-inverse .navbar-nav > li > a:hover, 
 .navbar-inverse .navbar-nav > li > a:focus {
 	background-color: #ee797a;
-    /*background-color: black;*/
 }
 
 .navbar li a {
@@ -122,21 +131,11 @@ p {
     -moz-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
 }
-.navbar li a:hover,
+/*.navbar li a:hover,
 .navbar li a:focus {
 	background-color: #ee797a;
-	/*background-color: black;*/
 }
-
-.nav a {
-	color: #444954 !important;
-	font-weight: 700;
-}
-
-.navbar-brand {
-	color: #444954 !important;
-	font-weight: 700;
-}
+*/
 
 /******************************************* 
 										HERO 
@@ -175,8 +174,8 @@ p {
 *******************************************/
 
 .portfolio {
-	margin-top: 10%;
-	margin-bottom: 10%;
+	margin-top: 7%;
+	margin-bottom: 5%;
 	/*max-width: 1312px;*/
 } 
 
@@ -292,11 +291,12 @@ p {
 	/*margin-top: 5%;*/
 	margin-bottom: 5%;
 	padding-top: 5%;
-	border-top: thin solid gray;
+	border-top: thin solid rgba(0,0,0,.1);
 }
 
 .copyright-text {
 	text-align: center;
 	color: #88979C;
 	font-size: 14px;
+	margin-bottom: 0;
 }

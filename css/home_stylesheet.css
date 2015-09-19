@@ -12,9 +12,9 @@ COLOR PALEETE
 
 *******************************************/
 
-@font-face { font-family: 'DistProTh'; src: url('fonts/DistProTh.otf'); }
-@font-face { font-family: 'Socialico'; src: url('fonts/Socialico.otf'); }
-@font-face { font-family: 'Socialico Plus'; src: url('fonts/Socialico Plus.otf'); }
+/*@font-face { font-family: DistProTh; src: url('../fonts/DistProTh.otf'); }*/
+@font-face { font-family: 'Socialico'; src: url('../fonts/Socialico.otf'); }
+@font-face { font-family: 'Socialico Plus'; src: url('../fonts/Socialico Plus.otf'); }
 
 /*******************************************
 									GLOBAL
@@ -24,7 +24,7 @@ html, body {
 }
 
 * {
-	font-family: 'Duru Sans', 'Open Sans', sans-serif; /* Universal font of page */
+	font-family: 'Duru Sans', sans-serif; /* Universal font of page */
 	font-weight: 400;
 	font-size: 16px;
 	border-radius: 0 !important; /* remove bootstrap borders */
@@ -39,8 +39,6 @@ h3 {
 	font-weight: 700;
 	color: #444954;
 	margin-bottom: 20px;
-	/*text-decoration: underline;*/
-	/*position: relative;*/
 }
 h4 {
 	font-size: 20px;
@@ -51,9 +49,10 @@ h4 {
 
 p {
 	margin-bottom: 20px;
-	font-family: 'DistProTh';
+	font-family: 'Lato', 'Helvetica Neue';
 	font-size: 18px;
-	color: #6D797D;
+	font-weight: 300;
+	/*color: #6D797D;*/
 }
 
 /*a {
@@ -210,8 +209,9 @@ a:focus {
 	font-size: 50px;
 }
 .hero-description p {
-	font-weight: 700;
+	font-weight: 400;
 	font-size: 24px;
+	color: #d7d7d7;
 }
 
 /******************************************* 
@@ -226,7 +226,7 @@ a:focus {
 
 .about-pic img {
 	/*margin-right: 10px;*/
-	width: 40%;
+	width: 35%;
 	/*float: right;*/
 }
 /*.about-info {
