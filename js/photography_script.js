@@ -53,13 +53,19 @@ $(document).ready( function() {
     });
   });
   
-  $('.grid').imagesLoaded( function(){
-          $('.grid').isotope({
-          itemSelector: '.item',
-            isAnimated: true,
-            isFitWidth: true
-          });
-      });
-  
+  // $('.grid').imagesLoaded( function(){
+  //         $('.grid').isotope({
+  //         itemSelector: '.item',
+  //           isAnimated: true,
+  //           isFitWidth: true
+  //         });
+  //     });
+
+  var $container = $('#grid');
+    $container.imagesLoaded( function() {
+      $container.isotope({itemSelector: '.grid-item'});
+    });
+
+
 });
 
