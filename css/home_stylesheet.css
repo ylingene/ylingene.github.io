@@ -228,6 +228,18 @@ a:focus {
 	/*border-bottom: thin double gray;*/
 }
 
+.about p a {
+	-webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+	text-decoration: none;
+	color: #344F68;
+}
+
+.about p a:hover {
+	color: #F05D5E;
+}
+
 .list-contact {
 	padding: 0px;
 }
