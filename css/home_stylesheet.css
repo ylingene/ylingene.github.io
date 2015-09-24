@@ -159,7 +159,7 @@ a {
 										HERO 
 *******************************************/
 .hero {
-	height: 50%;
+	height: 75%;
 	width: 100%;
 	background-color: #292c31;
 }
@@ -314,50 +314,68 @@ a {
 }
 
 .photography .overlay {
-	background-color: rgba(0,0,0,0);
-}
-.photography:hover .overlay {
 	background-color: rgba(0,0,0,.6);
-}
-
-.display-text {
-	/*position: absolute;*/
-	opacity: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-
-}
-
-.overlay:hover .display-text {
-	opacity: 1;
 }
 
 .overlay .mask {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100.2%;
-	width: 100%;
-	/*display: none;*/
-	background-color: rgba(0,0,0,0);
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100.2%;
+		width: 100%;
+		/*display: none;*/
+		background-color: rgba(0,0,0,.3);
+		display: block;
 
-	/*visibility: hidden;
-	opacity: 0;
-	-webkit-transition: visibility opacity 0.2s;*/
+		-webkit-transition: all .2s ease-in-out;
+	    -moz-transition: all .2s ease-in-out;
+	    transition: all .2s ease-in-out;
+		
+	}
 
-	-webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-	
-}
+@media(min-width: 768px) {
+	.photography .overlay {
+		background-color: rgba(0,0,0,0);
+	}
+	.photography:hover .overlay {
+		background-color: rgba(0,0,0,.6);
+	}
 
-.overlay:hover .mask {
-	/*visibility: visible;
-	opacity: 0;*/
-	display: block;
-	background-color: rgba(0,0,0,.6);
+	.display-text {
+		/*position: absolute;*/
+		opacity: 0;
+	    -webkit-transition: all 0.5s ease;
+	    -moz-transition: all 0.5s ease;
+	    -o-transition: all 0.5s ease;
+	    transition: all 0.5s ease;
+
+	}
+
+	.overlay:hover .display-text {
+		opacity: 1;
+	}
+
+	.overlay .mask {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100.2%;
+		width: 100%;
+		/*display: none;*/
+		background-color: rgba(0,0,0,0);
+
+		-webkit-transition: all .2s ease-in-out;
+	    -moz-transition: all .2s ease-in-out;
+	    transition: all .2s ease-in-out;
+		
+	}
+
+	.overlay:hover .mask {
+		/*visibility: visible;
+		opacity: 0;*/
+		display: block;
+		background-color: rgba(0,0,0,.6);
+	}
 }
 
 

@@ -179,10 +179,14 @@ p {
 *******************************************/
 
 .portfolio {
-	margin-top: 7%;
+	margin-top: 10%;
 	margin-bottom: 5%;
 	/*max-width: 1312px;*/
-} 
+}
+
+@media(min-width: 992px) {
+	.portfolio {margin-top: 7%;} 
+}
 
 /* Scale thumbnail images between 768px */	
 .scale {
