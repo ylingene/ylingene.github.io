@@ -159,7 +159,7 @@ a {
 										HERO 
 *******************************************/
 .hero {
-	height: 75%;
+	height: 100%;
 	width: 100%;
 	background-color: #292c31;
 }
@@ -209,17 +209,26 @@ a {
 /******************************************* 
 							ABOUT ME SECTION 
 *******************************************/
+
 .about {
-	/*width: 100%;
-	background-color: white;*/
-	margin-top: 10%;
-	margin-bottom: 10%;
+	/*background-color: white;*/
+	margin-top: 20%;
+	margin-bottom: 15%;
+}
+
+@media(min-width: 768px) {
+	.about {
+		margin-top: 10%;
+		margin-bottom: 10%;
+	}
 }
 
 .about-pic img {
-	/*margin-right: 10px;*/
-	width: 40%;
-	/*float: right;*/
+	width: 60%;
+}
+
+@media(min-width: 768px) {
+	.about-pic img {width: 50%;}
 }
 
 .about p a {
@@ -229,9 +238,21 @@ a {
 	text-decoration: none;
 	color: #344F68;
 }
-
 .about p a:hover {
 	color: #F05D5E;
+}
+
+.hide-mobile {
+	display: none;
+	font-family: 'Lato', 'Helvetica Neue';
+	font-weight: 300;
+}
+
+@media(min-width: 768px) {
+	.hide-mobile {
+		display: inline-block;
+		font-size: 18px;
+	}
 }
 
 .list-contact {
@@ -273,14 +294,22 @@ a {
 							MY WORKS SECTION 
 *******************************************/
 .myworks-section {
-	padding-top: 5%;
-	padding-bottom: 5%;
+	padding-top: 15%;
+	/*padding-bottom: 10%;*/
 	/*background-color: #A8B4C2;*/
 	/*background-color: #344F68;*/
 	background-color: #303030;
 	overflow: hidden;
 	position: relative;
 }
+
+@media(min-width: 768px) {
+	.myworks-section {
+		padding-top: 5%;
+		padding-bottom: 5%;
+	}
+}
+
 .myworks-section .tiles .overlay img {
 	max-width: 100%;
 	opacity: 1;

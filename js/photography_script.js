@@ -1,6 +1,6 @@
 $(document).ready( function() {
 
-
+  // show nav bar at a certain breakpoint depending on the window size (corresponds to the hero-div size)
   $(window).scroll(function(){                          
       if ($(window).width() <= 768) {
           if ($(this).scrollTop() >= $(window).height() * .75) {
@@ -78,12 +78,11 @@ $(document).ready( function() {
   //     });
 
   var $container = $('#grid');
-    $container.imagesLoaded( function() {
+  $container.imagesLoaded( function() {
       $container.isotope({itemSelector: '.grid-item'});
+  });
 
-    });
-
-  $('.fadein').fadeIn(1000);
+  // $('.fadein').fadeIn(1000);
 
 });
 
