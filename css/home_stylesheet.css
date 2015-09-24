@@ -35,13 +35,13 @@ html, body {
 }
 
 h3 {
-	font-size: 28px;
+	font-size: 24px;
 	font-weight: 700;
 	color: #444954;
 	margin-bottom: 20px;
 }
 h4 {
-	font-size: 20px;
+	font-size: 18px;
 	color: #444954;
 	margin-bottom: 20px;
 	font-weight: 700;
@@ -50,28 +50,27 @@ h4 {
 p {
 	margin-bottom: 20px;
 	font-family: 'Lato', 'Helvetica Neue';
-	font-size: 18px;
 	font-weight: 300;
+	font-size: 16px;
 	/*color: #6D797D;*/
 }
 
-/*a {
-	-webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
+a {
+	font-size: 16px;
+	text-decoration: none;
 }
 
-a:hover,
-a:focus {
-    text-decoration: none;
-    color: white;
-}*/
+@media(min-width: 768px) {
+	p {font-size: 18px;}
+	h3 {font-size: 28px;}
+	h4 {font-size: 20px;}
+}
 
 .container {
 	padding: 0;
 }
 
-.col-sm-4, .col-xs-12, .col-md-4, .col-md-8, .col-sm-6, .col-md-6 {
+.col-sm-4, .col-xs-12, .col-md-4, .col-md-8, .col-sm-6, .col-md-6, .col-xs-8, .col-xs-offset-2 {
 	padding: 0;
 }
 
@@ -93,7 +92,7 @@ a:focus {
 		width: 656px;
 	}
 }*/
-@media(min-width: 984px) {
+/*@media(min-width: 984px) {
 	.portfolio-section .container {
 		width: 984px;
 	}
@@ -102,7 +101,7 @@ a:focus {
 	.portfolio-section .container {
 		width: 1312px;
 	}
-}
+}*/
 
 /******************************************* 
 							  NAVIGATION BAR 
@@ -189,22 +188,23 @@ a:focus {
 	justify-content: center;
 }
 
-/*.hero-list {
-	list-style-type: none;
-	padding-left: 0;
-}
-.hero-list li {
-	font-size: 24px;
-	display: inline;
-}*/
 .hero-description h1 {
-	font-size: 50px;
+	font-size: 30px;
 }
 .hero-description p {
 	font-weight: 400;
-	font-size: 24px;
+	font-size: 20px;
 	color: #d7d7d7;
 }
+@media(min-width: 768px) {
+	.hero-description h1 {
+		font-size: 50px;
+	}
+	.hero-description p {
+		font-size: 24px;
+	}
+}
+
 
 /******************************************* 
 							ABOUT ME SECTION 
@@ -218,14 +218,8 @@ a:focus {
 
 .about-pic img {
 	/*margin-right: 10px;*/
-	width: 35%;
+	width: 40%;
 	/*float: right;*/
-}
-/*.about-info {
-  	color: #6D797D;
-}*/
-.about-header {
-	/*border-bottom: thin double gray;*/
 }
 
 .about p a {
