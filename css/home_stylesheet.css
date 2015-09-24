@@ -64,10 +64,7 @@ a {
 	p {font-size: 18px;}
 	h3 {font-size: 28px;}
 	h4 {font-size: 20px;}
-}
-
-.container {
-	padding: 0;
+	.container {padding: 0;}
 }
 
 .col-sm-4, .col-xs-12, .col-md-4, .col-md-8, .col-sm-6, .col-md-6, .col-xs-8, .col-xs-offset-2 {
@@ -183,8 +180,11 @@ a {
 
 .hero {
 	color: white;
+	display: -webkit-flex;
 	display: flex;
+	-webkit-align-items: center;
 	align-items: center;
+	-webkit-justify-content: center;
 	justify-content: center;
 }
 
@@ -298,10 +298,6 @@ a {
     top: 45%;
     left: 0;
     width: 100%;
-
-    /*visibility: hidden;
-	opacity: 0;
-	-webkit-transition: visibility opacity 0.2s;*/
 }
 
 .overlay {

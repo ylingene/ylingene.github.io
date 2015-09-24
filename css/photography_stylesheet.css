@@ -200,6 +200,10 @@ p {
 	margin-bottom: .5%;
 }
 
+.fadein {
+	display: none;
+}
+
 /* ---- button ---- */
 
 .button {
@@ -262,7 +266,6 @@ p {
 .grid {
 	/*background: #DDD;*/
 	/*max-width: 1312px;*/
-
 }
 
 /* clear fix */

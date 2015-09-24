@@ -64,8 +64,10 @@ $(document).ready( function() {
   var $container = $('#grid');
     $container.imagesLoaded( function() {
       $container.isotope({itemSelector: '.grid-item'});
+
     });
 
+  $('.fadein').fadeIn(1000);
 
 });
 
