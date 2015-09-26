@@ -46,6 +46,16 @@ $(document).ready( function() {
     }
   });
 
+  if($(window).width() <= 768) {
+    $('.grid').isotope({
+    layoutMode: 'fitRows',
+    itemSelector: '.grid-item',
+    fitRows: {
+      gutter: 0
+    }
+  });
+  }
+
 // init Isotope
   var $grid = $('.grid').isotope({
     itemSelector: '.element-item',
@@ -83,6 +93,31 @@ $(document).ready( function() {
   });
 
   // $('.fadein').fadeIn(1000);
+
+
+  // Execute again while using filters for gallery
+  $('#filters button').click(function(ev){
+    ev.preventDefault();
+    var selector = $(this).attr('data-filter');
+    $('#grid').isotope({
+      filter: selector
+      },function() {
+        $('#grid').fancybox({
+          delegate: '.isotope-item:not(.isotope-hidden) a.image-link',
+          type: 'image',
+          image: {
+            titleSrc: 'alt',
+            verticalFit: true
+          },
+          gallery:{
+            enabled:true
+          }
+        });        
+      });
+    $('#filters > button').removeClass('is-checked'); 
+    $(this).addClass('is-checked'); 
+    return false;
+  });
 
 });
 
