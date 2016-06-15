@@ -283,12 +283,14 @@ p {
 	float: left;
 	/*height: 465px;
 	width: 318px;*/
+	/* THUMBNAIL WIDTH LIMITED IN <img> tag in HTML */
 	margin-bottom: 10px;
 }
 
 .grid-item-long { 
 	/*height: 465px;
 	width: 646px; */
+	/* THUMBNAIL WIDTH LIMITED IN <img> tag in HTML */
 }
 
 .row {
