@@ -55,19 +55,19 @@ $(document).ready( function() {
   });
   }
 
-// var $grid = $('.grid').imagesLoaded( function() {
-//   // init Isotope after all images have loaded
-//   $grid.isotope({
-//     itemSelector: '.element-item',
-//     layoutMode: 'fitRows'
-//   });
-// });
-
-// init Isotope
-  var $grid = $('.grid').isotope({
+var $grid = $('.grid').imagesLoaded( function() {
+  // init Isotope after all images have loaded
+  $grid.isotope({
     itemSelector: '.element-item',
     layoutMode: 'fitRows'
   });
+});
+
+// init Isotope
+  // var $grid = $('.grid').isotope({
+  //   itemSelector: '.element-item',
+  //   layoutMode: 'fitRows'
+  // });
   // filter functions
   var filterFns = {}
   // bind filter button click
@@ -95,8 +95,8 @@ $(document).ready( function() {
   //     });
 
   // reveal all items after init
-  var $items = $grid.find('.grid-item');
-  $grid.addClass('is-showing-items').isotope( 'revealItemElements', $items );
+  // var $items = $grid.find('.grid-item');
+  // $grid.addClass('is-showing-items').isotope( 'revealItemElements', $items );
 
   // var $container = $grid.find('#stuff');
   // console.log(container);
