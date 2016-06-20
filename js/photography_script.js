@@ -26,18 +26,17 @@ $(document).ready( function() {
 
   /* Fancybox initiation */
   $(".fancybox").fancybox();
-  $(".fancybox")
-    .attr('rel', 'gallery')
-    .fancybox({
-        beforeShow: function () {
-            /* Disable right click */
-            $.fancybox.wrap.bind("contextmenu", function (e) {
-              return false; 
-            });
-        }
-    });
+  $(".fancybox").attr('rel', 'gallery').fancybox({
+      beforeShow: function () {
+          /* Disable right click */
+          $.fancybox.wrap.bind("contextmenu", function (e) {
+            return false; 
+          });
+      }
+  });
 
   /* Isotope fitrows and filter */
+
   $('.grid').isotope({
   	layoutMode: 'fitRows',
     itemSelector: '.grid-item',
@@ -56,11 +55,19 @@ $(document).ready( function() {
   });
   }
 
-// init Isotope
-  var $grid = $('.grid').isotope({
+var $grid = $('.grid').imagesLoaded( function() {
+  // init Isotope after all images have loaded
+  $grid.isotope({
     itemSelector: '.element-item',
     layoutMode: 'fitRows'
   });
+});
+
+// init Isotope
+  // var $grid = $('.grid').isotope({
+  //   itemSelector: '.element-item',
+  //   layoutMode: 'fitRows'
+  // });
   // filter functions
   var filterFns = {}
   // bind filter button click
@@ -87,33 +94,33 @@ $(document).ready( function() {
   //         });
   //     });
 
-  var $container = $('#grid');
-  $container.imagesLoaded( function() {
-      $container.isotope({itemSelector: '.grid-item'});
-  });
+  // reveal all items after init
+  var $items = $grid.find('.grid-item');
+  $grid.addClass('is-showing-items').isotope( 'revealItemElements', $items );
+
+  // var $container = $grid.find('#stuff');
+  // console.log(container);
+  // $container.imagesLoaded( function() {
+  //     $container.isotope({itemSelector: '.grid-item'});
+  // });
 
   // $('.fadein').fadeIn(1000);
 
 
-  // Execute again while using filters for gallery
-  $('#filters button').click(function(ev){
-    ev.preventDefault();
-    var selector = $(this).attr('data-filter');
-    $('#grid').isotope({
-      filter: selector
-      },function() {
-        $('#grid').fancybox({
-          delegate: '.isotope-item:not(.isotope-hidden) a.image-link',
-          type: 'image',
-          image: {
-            titleSrc: 'alt',
-            verticalFit: true
-          },
-          gallery:{
-            enabled:true
-          }
-        });        
-      });
+  $('#filters button').click(function(){
+  var selector = $(this).attr('data-filter');
+
+    // add photos of filter type to data-fancybox-group (slideshow only shows photos selected by the filter type)
+    if(selector == "*") {
+      $(".fancybox").attr("data-fancybox-group", "gallery");
+    } 
+    else { 
+      $(selector).find(".fancybox").attr("data-fancybox-group", selector);
+    }
+
+    // filter thumbnails based on selector (filter)
+    $grid.isotope({ filter: selector });
+
     $('#filters > button').removeClass('is-checked'); 
     $(this).addClass('is-checked'); 
     return false;
