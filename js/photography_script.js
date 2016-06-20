@@ -55,19 +55,19 @@ $(document).ready( function() {
   });
   }
 
-var $grid = $('.grid').imagesLoaded( function() {
-  // init Isotope after all images have loaded
-  $grid.isotope({
+// var $grid = $('.grid').imagesLoaded( function() {
+//   // init Isotope after all images have loaded
+//   $grid.isotope({
+//     itemSelector: '.element-item',
+//     layoutMode: 'fitRows'
+//   });
+// });
+
+// init Isotope
+  var $grid = $('.grid').isotope({
     itemSelector: '.element-item',
     layoutMode: 'fitRows'
   });
-});
-
-// init Isotope
-  // var $grid = $('.grid').isotope({
-  //   itemSelector: '.element-item',
-  //   layoutMode: 'fitRows'
-  // });
   // filter functions
   var filterFns = {}
   // bind filter button click
