@@ -7,15 +7,15 @@ var $grid = $('.grid').isotope({
   }
 });
 
-if($(window).width() <= 768) {
-  $grid.isotope({
-    layoutMode: 'fitRows',
-    itemSelector: '.grid-item',
-    fitRows: {
-      gutter: 0
-    }
-  });
-}
+// if($(window).width() <= 768) {
+//   $grid.isotope({
+//     layoutMode: 'fitRows',
+//     itemSelector: '.grid-item',
+//     fitRows: {
+//       gutter: 0
+//     }
+//   });
+// }
 
 $grid.imagesLoaded().progress( function() {
   $grid.isotope('layout');
@@ -94,45 +94,6 @@ $(document).ready( function() {
           $('.hidden-nav').stop().fadeOut(275);
       }
   });
-
-
-  // $grid = $('.grid').imagesLoaded( function() {
-  //   // init Isotope after all images have loaded
-  //   $grid.isotope({
-  //     itemSelector: '.element-item',
-  //     layoutMode: 'fitRows'
-  //   });
-  // });
-
-// init Isotope
-  // var $grid = $('.grid').isotope({
-  //   itemSelector: '.element-item',
-  //   layoutMode: 'fitRows'
-  // });
   
-  
-  // $('.grid').imagesLoaded( function(){
-  //         $('.grid').isotope({
-  //         itemSelector: '.item',
-  //           isAnimated: true,
-  //           isFitWidth: true
-  //         });
-  //     });
-
-  // reveal all items after init
-  // var $items = $grid.find('.grid-item');
-  // $grid.addClass('is-showing-items').isotope( 'revealItemElements', $items );
-
-  // var $container = $grid.find('#stuff');
-  // console.log(container);
-  // $container.imagesLoaded( function() {
-  //     $container.isotope({itemSelector: '.grid-item'});
-  // });
-
-  // $('.fadein').fadeIn(1000);
-
-
-  
-
 });
 
