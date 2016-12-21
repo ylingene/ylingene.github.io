@@ -195,8 +195,10 @@ p {
 }
 @media(min-width: 650px) {
 	.scale {
-		max-width: none;
-		max-height: none;
+		/*max-width: none;
+		max-height: none;*/
+        height: 465px;
+        max-width: 100%;
 	}
 }
 
