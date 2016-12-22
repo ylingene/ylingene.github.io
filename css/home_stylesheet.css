@@ -210,6 +210,10 @@ a {
 							ABOUT ME SECTION 
 *******************************************/
 
+.pinterest {
+	color: #bd081c;
+}
+
 .about {
 	/*background-color: white;*/
 	margin-top: 20%;
@@ -274,6 +278,11 @@ a {
 .list-contact a:hover,
 .list-contact a:focus {
 	color: #F05D5E;
+}
+
+.list-contact .pinterest:hover,
+.list-contact .pinterest:focus {
+	color: #bd081c;
 }
 
 .socialico {
