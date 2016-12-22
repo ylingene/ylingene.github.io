@@ -131,7 +131,6 @@ p {
 }
 
 .navbar {
-	/*position: absolute;*/
 	z-index: 10;
 	margin: 0;
 	overflow: hidden;
