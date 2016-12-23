@@ -91,7 +91,7 @@ function photoswipe() {
 
     // initilize index of each picture and build items array
     $('.ps-click').each(function(index) {
-        $(this).attr('data-ps-pic-index', index + 1);
+        $(this).attr('data-ps-pic-index', index);
 
         var width = PIC_SHORT_LENGTH;
         var height = PIC_LONG_LENGTH;
@@ -121,10 +121,6 @@ function photoswipe() {
 var photoGallery = photoswipe();
 $('.ps-click').click(function(e) {
     e.preventDefault();
-    console.log($(this).attr('data-ps-pic-index'));
-    photoGallery($(this).attr('data-ps-pic-index'));
-});
-
-$(document).ready(function() {
-
+    // console.log(parseInt($(this).attr('data-ps-pic-index'), 10));
+    photoGallery(parseInt($(this).attr('data-ps-pic-index'), 10));
 });
