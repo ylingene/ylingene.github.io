@@ -7,16 +7,6 @@ var $grid = $('.grid').isotope({
   }
 });
 
-// if($(window).width() <= 768) {
-//   $grid.isotope({
-//     layoutMode: 'fitRows',
-//     itemSelector: '.grid-item',
-//     fitRows: {
-//       gutter: 0
-//     }
-//   });
-// }
-
 $grid.imagesLoaded().progress( function() {
   $grid.isotope('layout');
 });
@@ -39,7 +29,7 @@ $('.button-group').each( function( i, buttonGroup ) {
   });
 });
 $('#filters button').click(function(){
-var selector = $(this).attr('data-filter');
+  var selector = $(this).attr('data-filter');
 
   // add photos of filter type to data-fancybox-group (slideshow only shows photos selected by the filter type)
   if(selector == "*") {
@@ -68,3 +58,73 @@ $(".fancybox").attr('rel', 'gallery').fancybox({
     }
 });
 
+/* --------------- photoswipe --------------- */
+jQuery.fn.getParent = function(num) {
+    var last = this[0];
+    for (var i = 0; i < num; i++) {
+        last = last.parentNode;
+    }
+    return jQuery(last);
+};
+  
+
+var PIC_LONG_LENGTH = 1600;
+var PIC_SHORT_LENGTH = 1067;
+
+// closures!
+function photoswipe() {
+    var items = [];
+    var $pswpElement = $('.pswp')[0];
+    var options = {
+        index: 1, // start on first slide
+        history: false,
+        showAnimationDuration: 0//,
+        // getThumbBoundsFn: function(index) {
+        //     // See Options -> getThumbBoundsFn section of documentation for more info
+        //     var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+        //         pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+        //         rect = thumbnail.getBoundingClientRect(); 
+
+        //     return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
+        // }
+    };
+
+    // initilize index of each picture and build items array
+    $('.ps-click').each(function(index) {
+        $(this).attr('data-ps-pic-index', index + 1);
+
+        var width = PIC_SHORT_LENGTH;
+        var height = PIC_LONG_LENGTH;
+        if($(this).getParent(2).hasClass('grid-item-long')) {
+            width = PIC_LONG_LENGTH;
+            height = PIC_SHORT_LENGTH;
+        }
+
+        var item = {
+            src: $(this).attr('href'),
+            msrc: $(this).children('img').attr('src'),
+            w: width,
+            h: height
+        };
+
+        items.push(item);
+    });
+
+    // return function to take in index and call Photoswipe object
+    return function(index) {
+        options.index = index;
+        var gallery = new PhotoSwipe($pswpElement, PhotoSwipeUI_Default, items, options);
+        gallery.init();
+    }
+};
+
+var photoGallery = photoswipe();
+$('.ps-click').click(function(e) {
+    e.preventDefault();
+    console.log($(this).attr('data-ps-pic-index'));
+    photoGallery($(this).attr('data-ps-pic-index'));
+});
+
+$(document).ready(function() {
+
+});
