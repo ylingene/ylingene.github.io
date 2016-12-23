@@ -1,50 +1,50 @@
 /* Isotope fitrows and filter */
 var $grid = $('.grid').isotope({
-  layoutMode: 'fitRows',
-  itemSelector: '.grid-item',
-  fitRows: {
-    gutter: 10
-  }
+    layoutMode: 'fitRows',
+    itemSelector: '.grid-item',
+    fitRows: {
+        gutter: 10
+    }
 });
 
 $grid.imagesLoaded().progress( function() {
-  $grid.isotope('layout');
+    $grid.isotope('layout');
 });
 
 // filter functions
 var filterFns = {}
 // bind filter button click
 $('.filters-button-group').on( 'click', 'button', function() {
-  var filterValue = $( this ).attr('data-filter');
-  // use filterFn if matches value
-  filterValue = filterFns[ filterValue ] || filterValue;
-  $grid.isotope({ filter: filterValue });
+    var filterValue = $( this ).attr('data-filter');
+    // use filterFn if matches value
+    filterValue = filterFns[ filterValue ] || filterValue;
+    $grid.isotope({ filter: filterValue });
 });
 // change is-checked class on buttons
 $('.button-group').each( function( i, buttonGroup ) {
-  var $buttonGroup = $( buttonGroup );
-  $buttonGroup.on( 'click', 'button', function() {
-    $buttonGroup.find('.is-checked').removeClass('is-checked');
-    $( this ).addClass('is-checked');
-  });
+    var $buttonGroup = $( buttonGroup );
+    $buttonGroup.on( 'click', 'button', function() {
+        $buttonGroup.find('.is-checked').removeClass('is-checked');
+        $( this ).addClass('is-checked');
+    });
 });
 $('#filters button').click(function(){
-  var selector = $(this).attr('data-filter');
+    var selector = $(this).attr('data-filter');
 
-  // add photos of filter type to data-fancybox-group (slideshow only shows photos selected by the filter type)
-  if(selector == "*") {
-    $(".fancybox").attr("data-fancybox-group", "gallery");
-  } 
-  else { 
-    $(selector).find(".fancybox").attr("data-fancybox-group", selector);
-  }
+    // add photos of filter type to data-fancybox-group (slideshow only shows photos selected by the filter type)
+    if(selector == "*") {
+        $(".fancybox").attr("data-fancybox-group", "gallery");
+    } 
+    else { 
+        $(selector).find(".fancybox").attr("data-fancybox-group", selector);
+    }
 
-  // filter thumbnails based on selector (filter)
-  $grid.isotope({ filter: selector });
+    // filter thumbnails based on selector (filter)
+    $grid.isotope({ filter: selector });
 
-  $('#filters > button').removeClass('is-checked'); 
-  $(this).addClass('is-checked'); 
-  return false;
+    $('#filters > button').removeClass('is-checked'); 
+    $(this).addClass('is-checked'); 
+    return false;
 });
 
 /* Fancybox initiation */
@@ -75,10 +75,21 @@ var PIC_SHORT_LENGTH = 1067;
 function photoswipe() {
     var items = [];
     var $pswpElement = $('.pswp')[0];
+    var CustomUI = PhotoSwipeUI_Default; // removed share features in default
     var options = {
-        index: 1, // start on first slide
+        index: 0, // start on first slide
         history: false,
-        showAnimationDuration: 0//,
+        mainClass: 'pswp--minimal--dark',
+        barsSize: {top:0,bottom:0},
+        captionEl: false,
+        fullscreenEl: false,
+        shareEl: false,
+        // bgOpacity: 0.85,
+        tapToClose: true,
+        tapToToggleControls: false,
+        showHideOpacity: true,
+        getThumbBoundsFn: false,
+        // showAnimationDuration: 0//,
         // getThumbBoundsFn: function(index) {
         //     // See Options -> getThumbBoundsFn section of documentation for more info
         //     var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
@@ -113,7 +124,7 @@ function photoswipe() {
     // return function to take in index and call Photoswipe object
     return function(index) {
         options.index = index;
-        var gallery = new PhotoSwipe($pswpElement, PhotoSwipeUI_Default, items, options);
+        var gallery = new PhotoSwipe($pswpElement, CustomUI, items, options);
         gallery.init();
     }
 };
