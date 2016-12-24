@@ -141,3 +141,8 @@ $('.ps-click').click(function(e) {
     e.preventDefault();
     photoGallery(parseInt($(this).attr('data-ps-pic-index'), 10));
 });
+
+// prevent right click on items
+$('.pswp .pswp__item').bind('contextmenu', function(e) {
+    return false;
+}); 
