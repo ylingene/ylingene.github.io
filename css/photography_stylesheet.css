@@ -96,7 +96,6 @@ p {
 }
 @media(min-width: 992px) {
 	.portfolio-section .container {
-		/*width: 984px;*/
         width: 870px;
 	}
 }
@@ -162,38 +161,6 @@ p {
 	background-color: #ee797a;
 }
 */
-
-/******************************************* 
-										HERO 
-*******************************************/
-
-@media(min-width:768px) {
-	.hero {
-		background: url("../Images/RW_hero4.jpg") no-repeat;
-		-webkit-background-size: cover;
-	    -moz-background-size: cover;
-	    background-size: cover;
-	    -o-background-size: cover;
-		/*background-size: 100% 100%;*/
-		background-position: center center;
-		height: 100%;
-		width: 100%;
-	}
-}
-
-.hero {
-	color: white;
-}
-.hero-text {
-	position: absolute; /*4 lines help center text*/
-  	top: 50%;
-  	left: 50%;
-  	transform: translate(-50%,-50%); 
-}
-/*.hero-name {
-	text-align: right;
-}*/
-
 
 /******************************************* 
 								  PORTFOILIO 
