@@ -12,7 +12,7 @@ COLOR PALEETE
 
 *******************************************/
 
-/*@font-face { font-family: DistProTh; src: url('fonts/DistProTh.otf'); }*/
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700|Work+Sans');
 @font-face { font-family: Socialico; src: url('fonts/Socialico.otf'); }
 @font-face { font-family: Socialico Plus; src: url('fonts/Socialico Plus.otf'); }
 
@@ -27,7 +27,7 @@ html, body {
 }
 
 * {
-	font-family: 'Duru Sans', 'Open Sans', sans-serif; /* Universal font of page */
+	font-family: 'Raleway', sans-serif; /* Universal font of page */
 	font-weight: 400;
 	font-size: 16px;
 	border-radius: 0 !important; /* remove bootstrap borders */
@@ -139,6 +139,7 @@ p {
 .navbar-brand {
 	color: #444954 !important;
 	font-weight: 700;
+    font-size: 20px;
 }
 
 .navbar-inverse .navbar-nav > li > a {

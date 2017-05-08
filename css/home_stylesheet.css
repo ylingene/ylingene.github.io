@@ -12,7 +12,7 @@ COLOR PALEETE
 
 *******************************************/
 
-/*@font-face { font-family: DistProTh; src: url('../fonts/DistProTh.otf'); }*/
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700|Work+Sans');
 @font-face { font-family: 'Socialico'; src: url('../fonts/Socialico.otf'); }
 @font-face { font-family: 'Socialico Plus'; src: url('../fonts/Socialico Plus.otf'); }
 
@@ -24,9 +24,9 @@ html, body {
 }
 
 * {
-	font-family: 'Duru Sans', sans-serif; /* Universal font of page */
+	font-family: 'Work Sans', sans-serif; /* Universal font of page */
 	font-weight: 400;
-	font-size: 16px;
+	/*font-size: 16px;*/
 	border-radius: 0 !important; /* remove bootstrap borders */
 
 	-webkit-box-sizing: border-box; /* Isotope */
@@ -35,11 +35,13 @@ html, body {
 }
 
 h3 {
+	font-family: 'Raleway', sans-serif;
 	font-size: 24px;
 	font-weight: 700;
 	color: #444954;
 	margin-bottom: 20px;
 }
+
 h4 {
 	font-size: 18px;
 	color: #444954;
@@ -49,20 +51,21 @@ h4 {
 
 p {
 	margin-bottom: 20px;
-	font-family: 'Lato', 'Helvetica Neue';
+	/*font-family: 'Lato', 'Helvetica Neue';*/
+	font-family: 'Work Sans', sans-serif;
 	font-weight: 300;
 	font-size: 16px;
 	/*color: #6D797D;*/
 }
 
 a {
-	font-size: 16px;
+	/*font-size: 16px;*/
 	text-decoration: none;
 }
 
 @media(min-width: 768px) {
 	p {font-size: 18px;}
-	h3 {font-size: 28px;}
+	h3 {font-size: 32px;}
 	h4 {font-size: 20px;}
 	.container {padding: 0;}
 }
@@ -129,7 +132,6 @@ a {
 .navbar-inverse .navbar-nav > li > a:hover, 
 .navbar-inverse .navbar-nav > li > a:focus {
 	background-color: #3e434a;
-    /*background-color: black;*/
 }
 
 .navbar li a {
@@ -138,14 +140,19 @@ a {
     transition: all .5s ease-in-out;
 }
 
-.nav a {
-	color: white !important;
+.nav a, .navbar-brand {
+	font-family: 'Raleway', sans-serif;
 	font-weight: 700;
+	font-size: 16px;
+	color: white !important;
 }
 
+/*.nav a {
+	font-weight: 400;
+}*/
+
 .navbar-brand {
-	color: white !important;
-	font-weight: 700;
+	font-size: 20px;
 }
 
 .hidden-nav {
