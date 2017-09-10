@@ -1,3 +1,5 @@
+// For portfolio pictures, uses Isotope and PhotoSwipe
+
 /* Isotope fitrows and filter */
 var $grid = $('.grid').isotope({
     layoutMode: 'fitRows',
@@ -13,6 +15,7 @@ $grid.imagesLoaded().progress( function() {
 
 // filter functions
 var filterFns = {}
+
 // bind filter button click
 $('.filters-button-group').on( 'click', 'button', function() {
     var filterValue = $( this ).attr('data-filter');
@@ -20,6 +23,7 @@ $('.filters-button-group').on( 'click', 'button', function() {
     filterValue = filterFns[ filterValue ] || filterValue;
     $grid.isotope({ filter: filterValue });
 });
+
 // change is-checked class on buttons
 $('.button-group').each( function( i, buttonGroup ) {
     var $buttonGroup = $( buttonGroup );
@@ -28,6 +32,7 @@ $('.button-group').each( function( i, buttonGroup ) {
         $( this ).addClass('is-checked');
     });
 });
+
 $('#filters button').click(function(){
     var selector = $(this).attr('data-filter');
     if($(this).hasClass('is-checked')) { return false; }
@@ -119,7 +124,9 @@ function photoswipe(selector) {
     }
 };
 
+// initalize photo gallery to all photos
 var photoGallery = photoswipe('.grid-item');
+
 $('.ps-click').click(function(e) {
     e.preventDefault();
     photoGallery(parseInt($(this).attr('data-ps-pic-index'), 10));
@@ -128,4 +135,4 @@ $('.ps-click').click(function(e) {
 // prevent right click on items
 $('.pswp .pswp__item').bind('contextmenu', function(e) {
     return false;
-}); 
+});

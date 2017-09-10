@@ -12,12 +12,16 @@
 		<!-- Bootstrap -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+		<!-- photoswipe -->
+		<link rel="stylesheet" href="photoswipe/photoswipe.css"> 
+		<link rel="stylesheet" href="photoswipe/default-skin/default-skin.css"> 
+
 		<!-- own styles -->
-		<link rel='stylesheet' type='text/css' href='css/home_stylesheet.css'>
+		<link rel='stylesheet' type='text/css' href='css/isotope.css'>
+		<link rel='stylesheet' type='text/css' href='css/index.css'>
 	</head>
 
 	<body>
-
 
 		<!-- NAVIGATION BAR -->
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -82,39 +86,108 @@
 			</div>
 		</section>
 
-		<!-- MY WORKS SECTION -->
-		<section class="myworks-section">
+		<!-- RECENT WORK SECTION -->
+		<section class="ps recentwork-section">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6 col-sm-offset-3 col-xs-12 text-center">
-						<h3>Portfolio</h3>
+						<h3>Recent Work</h3>
 						<div class="sep-line"></div>
+					</div>
+
+					<div class="col-xs-12 grid ps-gallery">
+						<!-- row -->
+						<div class="grid-item">
+							<figure> <a class="ps-click" href="portfolio/images/cat_lev.jpg"> <img class="scale" src="portfolio/thumbnail/cat_lev_th.jpg"/> </a> </figure>
+						</div>
+						<div class="grid-item">
+							<figure> <a class="ps-click" href="portfolio/images/sahana_bridge.jpg"> <img class="scale" src="portfolio/thumbnail/sahana_bridge_th.jpg"/> </a> </figure>
+						</div>
+						<div class="grid-item grid-item-long">
+							<figure> <a class="ps-click" href="portfolio/images/capetown.jpg"> <img class="scale" src="portfolio/thumbnail/capetown_th.jpg"/> </a> </figure>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-6 col-sm-offset-3 col-xs-12 text-center">
+						<a href="photography.html"><button class="button">View Portfolio</button></a>
 					</div>
 				</div>
 			</div>
 
-			<div class="tiles"> 
-				<div class="photography text-center col-md-6">
-					<a class="overlay animate" href="photography.html"> 
-						<img src="Images/myworks_photography.jpg"/>
-						<div class="mask"></div>
-						<span class="display-text"><h4 class="th_header">Photography</h4></span>
-					</a>
-				</div>
-				<div class="films text-center col-md-6">
-					<a class="overlay" href="https://youtu.be/NT9BjAohaV4" target="_blank"> 
-						<img src="Images/myworks_films2.jpg"/> 
-						<div class="mask"></div>
-						<span class="display-text"><h4 class="th_header">Films</h4></span>
-					</a>
-				</div>
+			<!-- Root element of PhotoSwipe. Must have class pswp. -->
+			<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+			    <!-- Background of PhotoSwipe. 
+			         It's a separate element as animating opacity is faster than rgba(). -->
+			    <div class="pswp__bg"></div>
+
+			    <!-- Slides wrapper with overflow:hidden. -->
+			    <div class="pswp__scroll-wrap">
+
+			        <!-- Container that holds slides. 
+			            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+			            Don't modify these 3 pswp__item elements, data is added later on. -->
+			        <div class="pswp__container">
+			            <div class="pswp__item"></div>
+			            <div class="pswp__item"></div>
+			            <div class="pswp__item"></div>
+			        </div>
+
+			        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+			        <div class="pswp__ui pswp__ui--hidden">
+
+			            <div class="pswp__top-bar">
+
+			                <!--  Controls are self-explanatory. Order can be changed. -->
+
+			                <div class="pswp__counter"></div>
+
+			                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+			                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+			                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+			                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+			                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+			                <!-- element will get class pswp__preloader-active when preloader is running -->
+			                <div class="pswp__preloader">
+			                    <div class="pswp__preloader__icn">
+			                      <div class="pswp__preloader__cut">
+			                        <div class="pswp__preloader__donut"></div>
+			                      </div>
+			                    </div>
+			                </div>
+			            </div>
+
+			            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+			                <div class="pswp__share-tooltip"></div> 
+			            </div>
+
+			            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+			            </button>
+
+			            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+			            </button>
+
+			            <div class="pswp__caption">
+			                <div class="pswp__caption__center"></div>
+			            </div>
+
+			        </div>
+
+			    </div>
+
 			</div>
 		</section>
 
 		<!-- FOOTER -->
 		<footer class="container">
 			<div class="footer">
-				<p class="copyright-text">Copyright &copy; Lingene Yang 2017. Photos by Lingene Yang and Hongsen Yang.</p>
+				<p class="copyright-text">Copyright &copy; Lingene Yang 2017. Photos by Lingene Yang.</p>
 			</div>
 		</footer>
 
@@ -128,6 +201,13 @@
       	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     	<![endif]-->
     	<script type="text/javascript" src="js/isotope.min.js"></script>
-		<script type="text/javascript" src="js/home_script.js"></script>
+    	<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+
+    	<!-- photoswipe js -->
+    	<script src="photoswipe/photoswipe.min.js"></script>
+    	<script src="photoswipe/photoswipe-ui-default.min.js"></script>
+
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/portfolio.js"></script>
 	</body>
 </html>

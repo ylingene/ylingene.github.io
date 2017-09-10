@@ -1,0 +1,60 @@
+/* ISOTOPE CSS */
+
+/* Scale thumbnail images less than 768px screen width */  
+.scale {
+    max-width: 100%;
+    max-height: 100%;
+}    
+
+@media(min-width: 768px) {
+    .scale {
+        max-width: none;
+        max-height: none;
+        height: 329px;
+        width: 230px;
+    }
+    .grid-item-long .scale {
+        width: 470px;
+    }
+}
+
+@media(min-width: 992px) {
+    .scale {
+        height: 410px;
+        width: 280px;
+    }
+    .grid-item-long .scale {
+        width: 570px;
+    }
+}
+
+@media(min-width: 1332px) {
+    .scale {
+        height: 465px;
+        width: 318px;
+    }
+    .grid-item-long .scale {
+        width: 646px;
+    }
+}
+
+/* clear fix */
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.grid-item {
+    /* THUMBNAIL WIDTH LIMITED IN <img> tag in HTML */
+    float: left;
+    margin-bottom: 10px;
+}
+
+.grid-item-long { 
+    /* THUMBNAIL WIDTH LIMITED IN <img> tag in HTML */
+}
+
+.row {
+    overflow: hidden;
+}
