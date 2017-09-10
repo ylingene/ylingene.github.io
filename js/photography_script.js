@@ -34,12 +34,13 @@ $('#filters button').click(function(){
 
     // add photos of filter type to data-fancybox-group (slideshow only shows photos selected by the filter type)
     if(selector == "*") {
-        // $(".fancybox").attr("data-fancybox-group", "gallery");
         photoGallery = photoswipe('.grid-item');
     } 
     else if(selector === '.portrait') { 
-        // $(selector).find(".fancybox").attr("data-fancybox-group", selector);
         photoGallery = photoswipe('.portrait');
+    }
+    else if(selector === '.levitation') { 
+        photoGallery = photoswipe('.levitation');
     }
     else {
         photoGallery = photoswipe('.landscape');
@@ -53,26 +54,8 @@ $('#filters button').click(function(){
     return false;
 });
 
-/* Fancybox initiation */
-// $(".fancybox").fancybox();
-// $(".fancybox").attr('rel', 'gallery').fancybox({
-//     beforeShow: function () {
-//         // Disable right click 
-//         $.fancybox.wrap.bind("contextmenu", function (e) {
-//           return false; 
-//         });
-//     }
-// });
 
 /* --------------- photoswipe --------------- */
-// jQuery.fn.getParent = function(num) {
-//     var last = this[0];
-//     for (var i = 0; i < num; i++) {
-//         last = last.parentNode;
-//     }
-//     return jQuery(last);
-// };
-  
 
 var PIC_LONG_LENGTH = 1600;
 var PIC_SHORT_LENGTH = 1067;

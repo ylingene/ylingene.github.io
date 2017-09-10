@@ -54,7 +54,8 @@ h4 {
 
 p {
 	margin-bottom: 20px;
-	font-family: 'Lato', 'Helvetica Neue';
+	/*font-family: 'Lato', 'Helvetica Neue';*/
+    font-family: 'Work Sans', sans-serif;
 	font-size: 18px;
 	font-weight: 300;
 	color: #6D797D;
