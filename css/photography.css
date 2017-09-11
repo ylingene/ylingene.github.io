@@ -123,6 +123,12 @@ p {
     background-color: black;
 }
 
+@media(min-width: 768px) {
+    .navbar .container {
+        padding: 0;
+    }
+}
+
 
 /******************************************* 
                               NAVIGATION BAR 
@@ -161,6 +167,15 @@ p {
     -webkit-transition: all .5s ease-in-out;
        -moz-transition: all .5s ease-in-out;
             transition: all .5s ease-in-out;
+}
+
+.navbar-brand {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#brand-icon {
+    width: 30px;
 }
 
 
