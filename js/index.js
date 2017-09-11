@@ -19,7 +19,8 @@ function initFlickityorIsotope(isFlickity) {
             // options
             cellAlign: 'center',
             imagesLoaded: true,
-            prevNextButtons: false
+            prevNextButtons: true,
+            pageDots: false
         });
         isFlickity = true;
     }
