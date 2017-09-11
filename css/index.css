@@ -88,7 +88,7 @@ a {
 }
 
 .button {
-    font-size: 16px;
+    font-size: 18px;
     color: #F6F7EB;
     background-color: transparent;
     border-style: none;
@@ -106,6 +106,13 @@ a {
 .button:focus {
     border-color: #F05D5E;
     color: #F05D5E;
+}
+
+@media(max-width: 767px) {
+    .button {
+        font-size: 16px;
+        margin-top: 20px;
+    }
 }
 
 /******************************************* 
@@ -302,7 +309,7 @@ a {
 *******************************************/
 .recentwork-section {
     padding-top: 50px;
-    padding-bottom: 25px;
+    padding-bottom: 50px;
     /*background-color: #303030;*/
     background-color: #292c31;
 }
@@ -377,6 +384,17 @@ a {
         margin-left: 0px;
         margin-right: 0px;
     }
+
+    /* Carousel */
+    .carousel-cell {
+        width: 77%;
+        margin-right: 10px;
+    }
+}
+
+.flickity-slider {
+  display: flex;
+  align-items: center;
 }
 
 
