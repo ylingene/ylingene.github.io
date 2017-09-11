@@ -17,10 +17,9 @@ function initFlickityorIsotope(isFlickity) {
         $('.grid').isotope('destroy');
         $('.carousel').flickity({
             // options
-            cellAlign: 'center',
+            // cellAlign: 'center',
             imagesLoaded: true,
-            prevNextButtons: true,
-            pageDots: false
+            prevNextButtons: true
         });
         isFlickity = true;
     }

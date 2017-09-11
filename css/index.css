@@ -315,7 +315,6 @@ a {
 .recentwork-section {
     padding-top: 50px;
     padding-bottom: 50px;
-    /*background-color: #303030;*/
     background-color: #292c31;
 }
 
@@ -393,26 +392,33 @@ a {
     /* Carousel */
     .carousel-cell {
         width: 100%;
-        margin-right: 10px;
     }
 
     /* make it work with carousel */
     .scale {
         width: 77%;
-        height: 77%;
         display: block;
         margin: auto;
     }
 }
 
 .flickity-slider {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .flickity-prev-next-button {
-  width: 30px;
-  height: 30px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+}
+
+/* arrow color */
+.flickity-prev-next-button .arrow {
+  fill: #F6F7EB;
+}
+.flickity-prev-next-button.no-svg {
+  color: #F6F7EB;
 }
 
 
