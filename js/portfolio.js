@@ -9,9 +9,12 @@ var $grid = $('.grid').isotope({
     }
 });
 
-$grid.imagesLoaded().progress( function() {
-    $grid.isotope('layout');
-});
+// if condition for home page small screen carousel
+if (!$('.grid').hasClass('carousel') || ($('.grid').hasClass('carousel') && $(window).width() >= 768)) {
+    $grid.imagesLoaded().progress( function() {
+        $grid.isotope('layout');
+    });
+}
 
 // filter functions
 var filterFns = {}
