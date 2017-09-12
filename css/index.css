@@ -392,6 +392,10 @@ a {
     /* Carousel */
     .carousel-cell {
         width: 100%;
+        /*height: 480px;*/
+        /*height: calc(77%);*/
+        display: flex;
+        align-items: center;
     }
 
     /* make it work with carousel */
@@ -402,14 +406,20 @@ a {
     }
 }
 
+/* fall back if .carousel-cell align doesn't work */
 .flickity-slider {
     display: flex;
     align-items: center;
 }
 
+/* previous next button style */
 .flickity-prev-next-button {
     width: 30px;
     height: 30px;
+    background: transparent;
+}
+
+.flickity-prev-next-button:hover {
     background: transparent;
 }
 

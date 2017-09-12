@@ -17,7 +17,7 @@ function initFlickityorIsotope(isFlickity) {
         $('.grid').isotope('destroy');
         $('.carousel').flickity({
             // options
-            cellAlign: 'center',
+            // cellAlign: 'center',
             imagesLoaded: true,
             prevNextButtons: true
         });
@@ -39,6 +39,16 @@ function initFlickityorIsotope(isFlickity) {
 
 isFlickity = initFlickityorIsotope(isFlickity);
 
+function setCarouselHeight() {
+    var width_percentage = .77;
+    var THUMBNAIL_RATIO = 1.465;
+    var height = $(window).width() * width_percentage * THUMBNAIL_RATIO + 5; // extra 5 px to compensate for decimals
+    $('.carousel-cell').css('height', height);
+}
+setCarouselHeight();
+
+// on resize do stuff
 $(window).resize(function() {
     isFlickity = initFlickityorIsotope(isFlickity);
+    setCarouselHeight();
 });
