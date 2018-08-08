@@ -246,7 +246,7 @@ a {
 }
 
 @media(min-width: 768px) {
-    .about-pic img {width: 50%;}
+    .about-pic img {width: 38%;}
 }
 
 .about p a {
@@ -381,6 +381,21 @@ a {
     }
     .grid-item-long .scale {
         width: 646px;
+    }
+}
+@media(min-width:1570px) {
+    .recentwork-section .container {
+        width: 1540px;
+    }
+    .recentwork-section .container .grid {
+        width: 1570px;
+    }
+    .scale {
+        height: 548px;
+        width: 375px;
+    }
+    .grid-item-long .scale {
+        width: 760px;
     }
 }
 

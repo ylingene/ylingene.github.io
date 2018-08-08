@@ -1,10 +1,11 @@
 /* ISOTOPE CSS */
 
-/* Scale thumbnail images less than 768px screen width */  
+/* Scale thumbnail images less than 768px screen width */
+
 .scale {
     max-width: 100%;
     max-height: 100%;
-}    
+}
 
 @media(min-width: 768px) {
     .scale {
@@ -38,6 +39,16 @@
     }
 }
 
+@media(min-width:1570px) {
+    .scale {
+        height: 548px;
+        width: 375px;
+    }
+    .grid-item-long .scale {
+        width: 760px;
+    }
+}
+
 /* clear fix */
 .grid:after {
     content: '';
@@ -51,7 +62,7 @@
     margin-bottom: 10px;
 }
 
-.grid-item-long { 
+.grid-item-long {
     /* THUMBNAIL WIDTH LIMITED IN <img> tag in HTML */
 }
 
