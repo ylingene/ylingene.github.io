@@ -1,0 +1,41 @@
+@import "../../styles/colors";
+
+%_border {
+    height: 50px;
+    top: 4px;
+    position: relative;
+    background-color: #77C6FF;
+    width: 4px;
+    margin-right: 2px;
+}
+
+.borderBlue {
+    @extend %_border;
+
+    background-color: $light-blue;
+}
+
+.borderGreen {
+    @extend %_border;
+
+    background-color: $light-green;
+}
+
+.borderRed {
+    @extend %_border;
+
+    background-color: $light-red;
+}
+
+.description {
+    max-width: 600px;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.title {
+    display: flex;
+    margin-bottom: 15px
+}

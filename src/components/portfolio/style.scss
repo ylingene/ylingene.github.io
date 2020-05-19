@@ -1,0 +1,59 @@
+@import "../../styles/colors";
+@import "../../styles/image";
+// @import '../../styles/variables';
+
+/** 
+ *  This aspect ratio allows for 4 portrait or 2 landscape orientation
+ *  images each with 10px margin-right
+*/
+$thumbnail-aspectRatio-portrait: 465 / 318 * 100%; // ~146.23%
+$thumbnail-aspectRatio-landscape: 465 / 646 * 100%; // ~71.98%
+$thumbnail-spacing: 10px;
+
+.filter {
+    border: none;
+    border-bottom: 2px solid rgba($blue, 0);
+    margin-right: 10px;
+    padding: 0;
+    text-transform: capitalize;
+    // transition: border-color $transition-time-fast linear;
+
+    &:hover {
+        color: $blue;
+    }
+}
+
+.filterActive {
+    border-color: $blue;
+}
+
+.filters {
+    margin-bottom: 10px;
+}
+
+.imagesContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.landscape {
+    @extend %thumbnail;
+
+    padding-top: $thumbnail-aspectRatio-landscape;
+}
+
+.landscapeWrapper {
+    margin: 0 $thumbnail-spacing $thumbnail-spacing 0;
+    width: calc(50% - #{$thumbnail-spacing});
+}
+
+.portrait {
+    @extend %thumbnail;
+
+    padding-top: $thumbnail-aspectRatio-portrait;
+}
+
+.portraitWrapper {
+    margin: 0 $thumbnail-spacing $thumbnail-spacing 0;
+    width: calc(25% - #{$thumbnail-spacing});
+}

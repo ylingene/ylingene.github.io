@@ -54,11 +54,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    const relativeFilePath = createFilePath({
+      node,
+      getNode,
+      trailingSlash: false,
+    })
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value: `/collections${relativeFilePath}`,
     })
   }
 }

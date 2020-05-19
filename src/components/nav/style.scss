@@ -1,0 +1,98 @@
+@import "../../styles/colors";
+@import '../../styles/variables';
+
+%_link {
+    border-bottom: 2px solid rgba($blue, 0);
+    padding: 1px 0;
+    transition: color $transition-time linear, border-color $transition-time-fast linear;
+}
+
+.logo {
+    display: block;
+    width: 30px;
+}
+
+.navigation {
+    display: flex;
+    font-family: Inter;
+    font-weight: 700;
+}
+
+// hypens are converted to camelCase when imported as CSS module
+// https://github.com/gatsbyjs/gatsby/issues/10852
+.navigation-link {
+    @extend %_link;
+
+    margin-left: 6px;
+    margin-right: 6px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.navigation-subNav {
+    margin-left: 6px;
+    margin-right: 6px;
+    padding: 1px 0;
+    position: relative;
+
+    &:hover .navigation-subNavTitle {
+        border-color: rgba($blue, 0);
+    }
+
+    &:hover .navigation-subNavLinks {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+.navigation-subNavCard {
+    background-color: $white;
+    border-radius: 4px;
+    box-shadow: 0 2px 20px 0 rgba($black, .1);
+    padding: 12px 6px;
+    text-align: center;
+    width: 125px;
+}
+
+.navigation-subNavLink {
+    @extend %_link;
+
+    display: inline-block;
+    margin-bottom: 6px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.navigation-subNavLinks {
+    left: 50%;
+    opacity: 0;
+    padding-top: 6px;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    transform: translateX(-50%);
+    transition: opacity $transition-time linear;
+    z-index: 1;
+}
+
+.navigation-subNavTitle {
+    @extend %_link;
+}
+
+.wrapper {
+    align-items: center;
+    display: flex;
+    height: 66px;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+
+// @bottom for CSS specificity (tiering)
+.active {
+    border-color: $blue;
+}

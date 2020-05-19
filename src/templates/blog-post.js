@@ -1,53 +1,54 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
+// import Bio from "../components/bio"
+import Container from "../components/container/container"
+import Gallery from "../components/gallery/gallery"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import { COLLECTIONS_PATH } from "../utils/defs"
 
-const BlogPostTemplate = ({ data, pageContext, location }) => {
+import style from "./style.scss"
+
+const BlogPostTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata.title
+  const images = post.frontmatter.photos.childrenYaml
+  // const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Container>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article>
-        <header>
+      <div className={style.headerSection}>
+        <header className={style.header}>
+          <h3>{post.frontmatter.location}</h3>
           <h1
             style={{
-              marginTop: rhythm(1),
               marginBottom: 0,
             }}
           >
             {post.frontmatter.title}
           </h1>
-          <p
+          <small
             style={{
-              ...scale(-1 / 5),
               display: `block`,
-              marginBottom: rhythm(1),
             }}
           >
             {post.frontmatter.date}
-          </p>
+          </small>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
+        <Link to={COLLECTIONS_PATH}>back to collections</Link>
+      </div>
+      <article>
+        <section
+          className={style.content}
+          dangerouslySetInnerHTML={{ __html: post.html }}
         />
-        <footer>
-          <Bio />
-        </footer>
       </article>
-
+      <Gallery fluidImages={images} />
+      <hr />
       <nav>
         <ul
           style={{
@@ -74,28 +75,41 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </li>
         </ul>
       </nav>
-    </Layout>
+    </Container>
   )
 }
 
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      excerpt(pruneLength: 160)
-      html
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
-        description
-      }
-    }
-  }
-`
+         query BlogPostBySlug($slug: String!) {
+           site {
+             siteMetadata {
+               title
+             }
+           }
+           markdownRemark(fields: { slug: { eq: $slug } }) {
+             id
+             excerpt(pruneLength: 160)
+             html
+             frontmatter {
+               title
+               date(formatString: "MMMM YYYY")
+               description
+               location
+               photos {
+                 childrenYaml {
+                   image {
+                     id
+                     childImageSharp {
+                       fluid(maxWidth: 1400) {
+                         ...GatsbyImageSharpFluid
+                       }
+                     }
+                   }
+                 }
+               }
+             }
+           }
+         }
+       `

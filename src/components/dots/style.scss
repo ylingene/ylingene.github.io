@@ -1,0 +1,49 @@
+@import "../../styles/colors";
+
+$small-height: 10px;
+$large-height: 12px;
+
+%_dot {
+    height: $small-height;
+    width: $small-height;
+    border-radius: 50%;
+}
+
+.blueDot {
+    @extend %_dot;
+
+    background-color: $light-blue;
+}
+
+.redDot {
+    @extend %_dot;
+
+    background-color: $light-red;
+}
+
+.greenDot {
+    @extend %_dot;
+
+    background-color: $light-green;
+}
+
+.largeDot {
+    height: $large-height;
+    width: $large-height;
+}
+
+.dotWrapper {
+    align-items: center;
+    display: flex;
+    height: $large-height;
+    justify-content: center;
+    width: $large-height;
+}
+
+.navigationDots {
+    display: flex;
+
+    &>* {
+        margin: 0 2px;
+    }
+}

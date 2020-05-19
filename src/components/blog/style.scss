@@ -1,0 +1,33 @@
+@import "../../styles/colors";
+@import "../../styles/image";
+
+.header {
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2em;
+    width: 50%;
+}
+
+.hero {
+    @extend %thumbnail;
+
+    padding-top: 9 / 16 * 100%; // ~56.25%;
+}
+
+.heroWrapper {
+    width: 100%;
+}
+
+.post {
+    display: flex;
+    margin-bottom: 30px;
+    width: 100%;
+    transition: none;
+
+    &:hover {
+        color: $white;
+        text-decoration: underline;
+    }
+}

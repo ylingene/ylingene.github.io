@@ -1,5 +1,16 @@
 // custom typefaces
-import "typeface-montserrat"
-import "typeface-merriweather"
+import "typeface-inter"
+import "typeface-roboto"
 
 import "prismjs/themes/prism.css"
+
+import "./src/styles/global.scss"
+
+import React from "react"
+import Layout from "./src/components/layout/layout"
+
+// Wraps every page in a component
+// all props avaiable to a page will be available to Layout (incl. location prop)
+export const wrapPageElement = ({ element, props }) => {
+  return <Layout {...props}>{element}</Layout>
+}
