@@ -1,5 +1,6 @@
 import classNames from "classnames/bind"
 import React from "react"
+import PropTypes from "prop-types"
 
 import { ACCENT_BLUE, ACCENT_GREEN, ACCENT_RED } from "../../utils/defs"
 
@@ -15,7 +16,7 @@ const getBorderClasses = (accentColor) => (
     })
 )
 
-const Header = ({ accentColor, title, sectionTitle, description = "" }) => (
+const Header = ({ accentColor, title, sectionTitle, description }) => (
   <header className={style.header}>
     <div className={style.title}>
       <div className={getBorderClasses(accentColor)}></div>
@@ -27,5 +28,16 @@ const Header = ({ accentColor, title, sectionTitle, description = "" }) => (
     {!!description && <div className={style.description}>{description}</div>}
   </header>
 )
+
+Header.defaultProps = {
+  description: ``,
+}
+
+Header.propTypes = {
+  accentColor: PropTypes.oneOf([ACCENT_BLUE, ACCENT_GREEN, ACCENT_RED]).isRequired,
+  title: PropTypes.string.isRequired,
+  sectionTitle: PropTypes.string.isRequired,
+  description: PropTypes.string,
+}
 
 export default Header

@@ -2,8 +2,9 @@
 title: Springtime
 location: Japan
 date: "2018-05-10T22:40:32.169Z"
-hero: ../../images/photography/arashiyama.jpg
 backgroundColor: "#3D8741"
+hero: ../../images/photography/arashiyama.jpg
+heroAlt: Arashiyama
 photos: ../../galleries/japan-2018.yaml
 ---
 

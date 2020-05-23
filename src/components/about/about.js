@@ -1,9 +1,11 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
+import PropTypes from "prop-types"
 
 import Container from "../container/container"
 import { BlueDot, GreenDot, RedDot } from "../dots/dots"
+import SEO from "../seo"
 import SocialLinks from "../social/social"
 import { 
   COLLECTIONS_PATH,
@@ -13,11 +15,18 @@ import {
 
 import style from "./style.scss"
 
-const PictureBlock = ({ author, image }) => (
+const Picture = ({ author, image }) => (
   <div className={style.square}>
     <Image fixed={image} alt={author.name} className={style.profilePicture} />
   </div>
 )
+
+Picture.propTypes = {
+  author: PropTypes.shape({
+    name: PropTypes.string,
+  }).isRequired,
+  image: PropTypes.object.isRequired,
+}
 
 const AboutMe = () => (
   <div className={style.aboutMe}>
@@ -39,7 +48,7 @@ const AboutMe = () => (
       other art mediums.
     </p>
     <p>
-      Feel free to contact and connect with me at: <br />
+      Connect with me at:{" "}
       <a href="mailto:ylingene@gmail.com">ylingene@gmail.com</a>
     </p>
     <SocialLinks />
@@ -92,9 +101,10 @@ const About = () => {
     const { author } = data.site.siteMetadata
     return (
       <Container className={style.wrapper}>
+        <SEO />
         <div className={style.column}>
           <div className={style.pictureWrapper}>
-            <PictureBlock author={author} image={image} />
+            <Picture author={author} image={image} />
           </div>
         </div>
         <div className={style.column}>

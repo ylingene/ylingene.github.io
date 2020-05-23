@@ -4,5 +4,9 @@ $light-green: #69E56F;
 $light-blue: #77C6FF;
 $light-red: #FF9BA7;
 
-$black: black;
+$black: #03030c;
 $white: white;
+
+:export {
+    black: $black;
+}

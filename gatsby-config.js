@@ -3,13 +3,9 @@ module.exports = {
     title: `Lingene Yang`,
     author: {
       name: `Lingene Yang`,
-      summary: `Stuff and photography.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    description: `Portfolio of Lingene Yang. Software engineer and artist.`,
+    siteUrl: `https://wwww.lingeneyang.com/`,
   },
   plugins: [
     {

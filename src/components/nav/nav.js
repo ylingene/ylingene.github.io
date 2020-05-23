@@ -16,7 +16,6 @@ import style from "./style.scss"
 
 const cx = classNames.bind(style)
 
-
 // used for highlighting a link if the current page is grouped with that link
 // (e.g. gallery and collections are a part of Photography)
 const highlightLink = (location, isPageFunc, extraClasses) => {

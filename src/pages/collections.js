@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import PropTypes from "prop-types"
 
 import { ACCENT_RED } from "../utils/defs"
 import Blog from "../components/blog/blog"
@@ -21,6 +22,14 @@ const Collections = ({ data }) => {
   )
 }
 
+Collections.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      nodes: PropTypes.arrayOf(PropTypes.object),
+    }),
+  }).isRequired,
+}
+
 export default Collections
 
 export const pageQuery = graphql`
@@ -29,24 +38,23 @@ export const pageQuery = graphql`
              sort: { fields: [frontmatter___date], order: DESC }
            ) {
              nodes {
-                excerpt
-                fields {
-                  slug
-                }
-                frontmatter {
-                  date(formatString: "YYYY")
-                  title
-                  description
-                  location
-                  backgroundColor
-                  hero {
-                    childImageSharp {
-                      fluid(maxWidth: 1400) {
-                        ...GatsbyImageSharpFluid
-                      }
-                    }
-                  }
-                }
+               excerpt
+               fields {
+                 slug
+               }
+               frontmatter {
+                 date(formatString: "YYYY")
+                 title
+                 description
+                 location
+                 backgroundColor
+                 hero {
+                   childImageSharp {
+                     ...ImageFragment
+                   }
+                 }
+                 heroAlt
+               }
              }
            }
          }

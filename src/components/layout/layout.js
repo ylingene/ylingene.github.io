@@ -1,13 +1,12 @@
 import React from "react"
-// import { Link } from "gatsby"
+import PropTypes from "prop-types"
 
 import Footer from "../footer/footer"
 import Nav from "../nav/nav"
 
 import style from "./style.scss"
 
-const Layout = ({ data, location, title, children }) => {
-  // const rootPath = `${__PATH_PREFIX__}/`
+const Layout = ({ location, children }) => {
   return (
     <div className={style.mainWrapper}>
       <Nav />
@@ -15,6 +14,13 @@ const Layout = ({ data, location, title, children }) => {
       <Footer location={location} />
     </div>
   )
+}
+
+Layout.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+  }).isRequired,
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout

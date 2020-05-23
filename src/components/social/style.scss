@@ -33,6 +33,6 @@ $socialSmall: 22px;
     display: flex;
 
     &>* {
-        padding-right: 10px;
+        padding-right: $space-small;
     }
 }

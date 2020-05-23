@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
+import PropTypes from "prop-types"
 
-// import Bio from "../bio"
-// import SEO from "../seo"
+import SEO from "../seo"
 import Container from "../container/container"
 import Header from "../header/header"
 
@@ -17,8 +17,9 @@ const BlogPost = ({ frontmatter, fields, excerpt }) => {
         {!!frontmatter.hero && (
           <div className={style.heroWrapper}>
             <Image
-              fluid={frontmatter.hero.childImageSharp.fluid}
+              alt={frontmatter.heroAlt}
               className={style.hero}
+              fluid={frontmatter.hero.childImageSharp.fluid}
             />
           </div>
         )}
@@ -27,7 +28,7 @@ const BlogPost = ({ frontmatter, fields, excerpt }) => {
           <h2>{frontmatter.title}</h2>
           <small>{frontmatter.date}</small>
         </header>
-        {frontmatter.description && (
+        {/*frontmatter.description && (
           <section>
             <p
               dangerouslySetInnerHTML={{
@@ -35,27 +36,48 @@ const BlogPost = ({ frontmatter, fields, excerpt }) => {
               }}
             />
           </section>
-        )}
+            )*/}
       </Link>
     </article>
   )
 }
 
+BlogPost.defaultProps = {
+  excerpt: ``,
+}
+
+BlogPost.propTypes = {
+  frontmatter: PropTypes.shape({
+    date: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    location: PropTypes.string,
+    backgroundColor: PropTypes.string,
+    hero: PropTypes.object,
+    heroAlt: PropTypes.string,
+  }).isRequired,
+  fields: PropTypes.shape({
+    slug: PropTypes.string,
+  }).isRequired,
+  excerpt: PropTypes.string,
+}
+
 const Blog = ({ headerData, posts }) => {
     return (
       <Container>
+        <SEO title={headerData.sectionTitle} description={headerData.description} />
         <Header {...headerData} />
         {posts.map(BlogPost)}
-      </Container> 
+      </Container>
     )
 }
 
-export default Blog
+Blog.propTypes = {
+  headerData: PropTypes.shape({
+    sectionTitle: PropTypes.string.isRequired,
+    description: PropTypes.string,
+  }).isRequired,
+  posts: PropTypes.array.isRequired,
+}
 
-/*
-    <Container>
-      <SEO title="All posts" />
-      <Bio />
-      {posts...}
-    </Container>
-*/
+export default Blog

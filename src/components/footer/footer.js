@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 import Container from "../container/container"
 import NavigationDots from "../dots/dots"
@@ -19,5 +20,11 @@ const Footer = ({ location }) => (
         </Container>
     </footer>
 )
+
+Footer.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+  }).isRequired,
+}
 
 export default Footer

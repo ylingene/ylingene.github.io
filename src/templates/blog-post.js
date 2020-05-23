@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import PropTypes from "prop-types"
 
-// import Bio from "../components/bio"
 import Container from "../components/container/container"
 import Gallery from "../components/gallery/gallery"
 import SEO from "../components/seo"
@@ -12,7 +12,6 @@ import style from "./style.scss"
 const BlogPostTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark
   const images = post.frontmatter.photos.childrenYaml
-  // const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
 
   return (
@@ -21,44 +20,23 @@ const BlogPostTemplate = ({ data, pageContext }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <div className={style.headerSection}>
-        <header className={style.header}>
-          <h3>{post.frontmatter.location}</h3>
-          <h1
-            style={{
-              marginBottom: 0,
-            }}
-          >
-            {post.frontmatter.title}
-          </h1>
-          <small
-            style={{
-              display: `block`,
-            }}
-          >
-            {post.frontmatter.date}
-          </small>
-        </header>
+      <header className={style.header}>
+        <h3>{post.frontmatter.location}</h3>
+        <h1>{post.frontmatter.title}</h1>
+        <small>{post.frontmatter.date}</small>
+      </header>
+      <div className={style.contentSection}>
+        <article>
+          <section
+            className={style.content}
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
+        </article>
         <Link to={COLLECTIONS_PATH}>back to collections</Link>
       </div>
-      <article>
-        <section
-          className={style.content}
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
-      </article>
       <Gallery fluidImages={images} />
-      <hr />
       <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
+        <ul className={style.blogNavigation}>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
@@ -79,15 +57,28 @@ const BlogPostTemplate = ({ data, pageContext }) => {
   )
 }
 
+BlogPostTemplate.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      id: PropTypes.string,
+      excerpt: PropTypes.string,
+      html: PropTypes.string,
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string,
+        date: PropTypes.string,
+        description: PropTypes.string,
+        location: PropTypes.string,
+        photos: PropTypes.object,
+      }),
+    }),
+  }).isRequired,
+  pageContext: PropTypes.object.isRequired,
+}
+
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
          query BlogPostBySlug($slug: String!) {
-           site {
-             siteMetadata {
-               title
-             }
-           }
            markdownRemark(fields: { slug: { eq: $slug } }) {
              id
              excerpt(pruneLength: 160)
@@ -99,14 +90,7 @@ export const pageQuery = graphql`
                location
                photos {
                  childrenYaml {
-                   image {
-                     id
-                     childImageSharp {
-                       fluid(maxWidth: 1400) {
-                         ...GatsbyImageSharpFluid
-                       }
-                     }
-                   }
+                   ...GalleryImageFragment
                  }
                }
              }

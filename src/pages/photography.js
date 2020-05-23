@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import PropTypes from "prop-types"
 
 import { ACCENT_BLUE } from "../utils/defs"
 import Portfolio from "../components/portfolio/portfolio"
@@ -7,6 +8,7 @@ import Portfolio from "../components/portfolio/portfolio"
 const Photography = ({ data }) => {
   return (
     <Portfolio
+      description="Currated photography portfolio from over the years."
       headerData={{
         accentColor: ACCENT_BLUE,
         title: "Gallery",
@@ -16,6 +18,18 @@ const Photography = ({ data }) => {
       fluidImages={data.allFile.nodes[0].childrenYaml}
     />
   )
+}
+
+Photography.propTypes = {
+  data: PropTypes.shape({
+    allFile: PropTypes.shape({
+      nodes: PropTypes.arrayOf(
+        PropTypes.shape({
+          childrenYaml: PropTypes.array,
+        })
+      ),
+    }),
+  }).isRequired,
 }
 
 export default Photography
@@ -30,18 +44,7 @@ export const pageQuery = graphql`
            ) {
              nodes {
                childrenYaml {
-                 alt
-                 orientation
-                 thumbnailPosition
-                 type
-                 image {
-                   id
-                   childImageSharp {
-                     fluid(maxWidth: 1400) {
-                       ...GatsbyImageSharpFluid
-                     }
-                   }
-                 }
+                 ...GalleryImageFragment
                }
              }
            }

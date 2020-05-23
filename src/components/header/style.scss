@@ -1,12 +1,12 @@
 @import "../../styles/colors";
+@import "../../styles/variables";
 
 %_border {
     height: 50px;
-    top: 4px;
-    position: relative;
-    background-color: #77C6FF;
-    width: 4px;
     margin-right: 2px;
+    position: relative;
+    top: 4px;
+    width: 4px;
 }
 
 .borderBlue {
@@ -32,10 +32,10 @@
 }
 
 .header {
-    margin-bottom: 30px;
+    margin-bottom: $space-med;
 }
 
 .title {
     display: flex;
-    margin-bottom: 15px
+    margin-bottom: $space;
 }

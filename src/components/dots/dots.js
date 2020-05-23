@@ -1,5 +1,6 @@
 import classNames from "classnames/bind"
 import React from "react"
+import PropTypes from "prop-types"
 
 import {
     COLLECTIONS,
@@ -56,7 +57,6 @@ export const RedDot = ({ className, isLarge = false }) => (
 
 const Dots = ({ location }) => {
   const currentPage = getPage(location)
-  console.log('dots page: ', currentPage)
   return (
     <div className={style.navigationDots}>
       <div className={style.dotWrapper}>
@@ -70,6 +70,12 @@ const Dots = ({ location }) => {
       </div>
     </div>
   )
+}
+
+Dots.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+  }).isRequired,
 }
 
 export default Dots

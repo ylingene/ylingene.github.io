@@ -1,12 +1,13 @@
 @import "../../styles/colors";
 @import "../../styles/image";
+@import "../../styles/variables";
 
 .header {
     color: $white;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 2em;
+    padding: $space-med;
     width: 50%;
 }
 
@@ -22,7 +23,7 @@
 
 .post {
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: $space;
     width: 100%;
     transition: none;
 

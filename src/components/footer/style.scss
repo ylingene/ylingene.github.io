@@ -1,10 +1,14 @@
-.copyright {}
+@import '../../styles/variables';
+
+.copyright {
+    font-size: 14px;
+}
 
 .footer {
     align-items: center;
     display: flex;
     justify-content: space-between;
-    margin-top: 40px;
+    margin-top: $space-med;
     width: 100%;
 }
 
@@ -12,5 +16,5 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    padding: 40px 0;
+    padding: $space-med 0 $space-large 0;
 }

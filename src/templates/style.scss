@@ -1,21 +1,29 @@
-@import "../styles/image";
+@import "../styles/variables";
+
+.blogNavigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    margin: ($space - 5) 0 0 0; // adjusting for 5px gallery margin
+    padding: 0;
+}
 
 .content {
     max-width: 800px;
+
+    &>p {
+        margin: 0;
+    }
 }
 
-.header {}
-
-.headerSection {
-    align-items: center;
+.contentSection {
+    align-items: flex-end;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: $space-med;
 }
 
-.hero {
-    @extend %thumbnail;
-
-    padding-top: 9 / 16 * 100%; // ~56.25%;
-    margin-bottom: 30px;
+.header {
+    margin-bottom: $space;
 }

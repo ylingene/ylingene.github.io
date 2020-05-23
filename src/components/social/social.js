@@ -4,13 +4,11 @@ import {
   GITHUB_URL,
   INSTAGRAM_URL,
   LINKEDIN_URL,
-  PINTEREST_URL,
 } from "../../utils/defs"
 
 import GithubIcon from "../../../content/assets/social/github.svg"
 import InstagramIcon from "../../../content/assets/social/instagram.svg"
 import LinkedinIcon from "../../../content/assets/social/linkedin.svg"
-import PinterestIcon from "../../../content/assets/social/pinterest.svg"
 
 import style from "./style.scss"
 
@@ -29,19 +27,13 @@ const Linkedin = () => (
     <LinkedinIcon className={style.socialIconSmall} />
   </a>
 )
-const Pinterest = () => (
-  <a href={PINTEREST_URL} target="_blank" rel="noopener noreferrer">
-    <PinterestIcon className={style.socialIconSmall} />
-  </a>
-)
 
 const SocialLinks = () => (
-    <div className={style.socialLinks}>
-        <Instagram />
-        <Pinterest />
-        <Linkedin />
-        <Github />
-    </div>
+  <div className={style.socialLinks}>
+    <Linkedin />
+    <Github />
+    <Instagram />
+  </div>
 )
 
 export default SocialLinks

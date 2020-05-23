@@ -1,44 +1,30 @@
 # title: description used as documentation for each image
 # alt: alt text for each image
 # image: relative path to image location
-# orientation: landscape | portrait (horizontal vs. vertical images) 
-# thumbnailPosition: center | top | right | bottom | left (default should be center)
 # type: portrait | landscape | environment. Used for filtering
 ## Note: cannot have duplicate images the image id remains the same and is used as the key for React arrays
 - title: arashiyama
   alt: Arashiyama
   image: ../images/photography/arashiyama.jpg
-  orientation: landscape
-  thumbnailPosition: center
   type: environment
 - title: daigoji
   alt: Daigoji Temple
   image: ../images/photography/daigoji.jpg
-  orientation: landscape
-  thumbnailPosition: center
   type: landscape
 - title: sahana on bridge
   alt: Sahana
   image: ../images/photography/sahana_bridge.jpg
-  orientation: portrait
-  thumbnailPosition: center
   type: portrait
 - title: Jess Land's End
   alt: Land's End
   image: ../images/photography/jess_landsend.jpg
-  orientation: landscape
-  thumbnailPosition: center
   type: portrait
 - title: Jess in Weiser Umich
   alt: Jess
   image: ../images/photography/jess_weiser.jpg
-  orientation: portrait
-  thumbnailPosition: center
   type: portrait
 - title: Kristine at pier
   alt: Kristine
   image: ../images/photography/kristine.jpg
-  orientation: portrait
-  thumbnailPosition: bottom
   type: portrait
   
