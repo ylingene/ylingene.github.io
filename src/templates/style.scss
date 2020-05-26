@@ -12,8 +12,12 @@
 .content {
     max-width: 800px;
 
-    &>p {
-        margin: 0;
+    &>p:first-child {
+        margin-top: 0;
+    }
+
+    &>p:last-child {
+        margin-bottom: 0;
     }
 }
 
@@ -25,5 +29,5 @@
 }
 
 .header {
-    margin-bottom: $space;
+    margin-bottom: 24px;
 }

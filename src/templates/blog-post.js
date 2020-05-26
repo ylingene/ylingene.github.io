@@ -11,7 +11,7 @@ import style from "./style.scss"
 
 const BlogPostTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark
-  const images = post.frontmatter.photos.childrenYaml
+  const images = post.frontmatter.photos ? post.frontmatter.photos.childrenYaml : []
   const { previous, next } = pageContext
 
   return (
@@ -68,7 +68,9 @@ BlogPostTemplate.propTypes = {
         date: PropTypes.string,
         description: PropTypes.string,
         location: PropTypes.string,
-        photos: PropTypes.object,
+        photos: PropTypes.shape({
+          childrenYaml: PropTypes.array,
+        }),
       }),
     }),
   }).isRequired,

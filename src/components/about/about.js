@@ -34,17 +34,15 @@ const AboutMe = () => (
       <h1>Lingene</h1>
       <div className={style.headerLine} />
     </header>
+    <p>I'm an engineer and artist.</p>
     <p>
-      I am currently a software engineer at Affirm and based in San Francisco. I
-      graduated with a B.S.E. in Computer Science and Engineering (CSE) from the
-      University of Michigan in 2018.
+      I graduated with a B.S.E. in Computer Science and Engineering (CSE) from
+      the University of Michigan in 2018, and I'm currently a software engineer
+      at Affirm in San Francisco, CA.
     </p>
     <p>
-      I am passionate about art and design, and I am always taking inspiration
-      from them and incorporating it into my work.
-    </p>
-    <p>
-      I enjoy spending taking photos in both digital and film and exploring
+      As an artist, I'm drawn to environments and nature. I capture them
+      primarily through photographs, but I also enjoy exploring them through
       other art mediums.
     </p>
     <p>
@@ -54,6 +52,8 @@ const AboutMe = () => (
     <SocialLinks />
   </div>
 )
+
+// (what about them: space, peaceful, story)
 
 const Works = () => (
   <div>

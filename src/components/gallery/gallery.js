@@ -1,12 +1,12 @@
 import Image from "gatsby-image"
 import getJustifiedLayout from "justified-layout"
-import React, { useState, useMemo } from "react"
+import React, { useMemo } from "react"
 import PropTypes from "prop-types"
+import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox"
 import useResizeObserver from "use-resize-observer"
 
-import Lightbox from "../lightbox/lightbox"
-
 import style from "./style.scss"
+import colors from "../../styles/_colors.scss"
 
 const GALLERY_CONFIG = {
       boxSpacing: 5,
@@ -14,6 +14,29 @@ const GALLERY_CONFIG = {
       targetRowHeight: 400,
       targetRowHeightTolerance: .25,
     }
+
+const LIGHTBOX_OPTIONS = {
+  settings: {
+    disablePanzoom: true,
+    lightboxTransitionSpeed: 0.1,
+    overlayColor: colors.black,
+    slideTransitionSpeed: 0.1,
+  },
+  buttons: {
+    showAutoplayButton: false,
+    showDownloadButton: false,
+    showFullscreenButton: false,
+  },
+  caption: {
+    showCaption: false,
+  },
+  progressBar: {
+    showProgressBar: false,
+  },
+  thumbnails: {
+    showThumbnails: false,
+  },
+}
 
 const Widow = ({ containerWidth, widowBoxes, boxSpacing }) => {
     const height = widowBoxes[0].height
@@ -38,8 +61,6 @@ Widow.propTypes = {
 
 const Gallery = ({ fluidImages }) => {
     const { ref: containerRef, width } = useResizeObserver()
-    const [isModalOpen, setIsModalOpen] = useState(false)
-    const [modalCurrentImage, setModalCurrentImage] = useState(0)
 
     const galleryLayout = useMemo(() => {
         const aspectRatios = fluidImages.map(({ image }) => image.childImageSharp.fluid.aspectRatio)
@@ -50,68 +71,40 @@ const Gallery = ({ fluidImages }) => {
         return width ? getJustifiedLayout(aspectRatios, updatedConfig) : null
     }, [fluidImages, width])
 
-    const modalImagesSrc = useMemo(
-      () =>
-        fluidImages.map(({ image }) => ({
-          src: image.childImageSharp.fluid.src
-        })),
-      [fluidImages]
-    )
-
-    const openModal = (index) => {
-        setIsModalOpen(true)
-        setModalCurrentImage(index)
-    }
-
     return (
-      <div ref={containerRef} className={style.galleryContainer}>
-        {galleryLayout &&
-          fluidImages.map(({ alt, image }, i) => {
-            return (
-              <div
-                key={image.id}
-                style={{
-                  cursor: "pointer",
-                  height: galleryLayout.boxes[i].height,
-                  width: galleryLayout.boxes[i].width,
-                  marginBottom: GALLERY_CONFIG.boxSpacing,
-                }}
-              >
-                <a
-                  tabIndex="0"
-                  href={image.childImageSharp.fluid.src}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    openModal(i)
-                  }}
-                  onKeyDown={(e) => {
-                    e.preventDefault()
-                    openModal(i)
-                  }}
-                >
-                  <Image fluid={image.childImageSharp.fluid} alt={alt} />
-                </a>
-              </div>
-            )
-          })}
-        {galleryLayout &&
-          galleryLayout.widowCount > 0 &&
-          galleryLayout.widowCount < fluidImages.length && (
-            <Widow
-              containerWidth={width}
-              widowBoxes={galleryLayout.boxes.slice(
-                galleryLayout.boxes.length - galleryLayout.widowCount
+      <SimpleReactLightbox>
+        <SRLWrapper options={LIGHTBOX_OPTIONS}>
+          <div ref={containerRef} className={style.galleryContainer}>
+            {galleryLayout &&
+              fluidImages.map(({ alt, image }, i) => {
+                return (
+                  <div
+                    key={image.id}
+                    style={{
+                      cursor: "pointer",
+                      height: galleryLayout.boxes[i].height,
+                      width: galleryLayout.boxes[i].width,
+                      marginBottom: GALLERY_CONFIG.boxSpacing,
+                    }}
+                  >
+                    <Image fluid={image.childImageSharp.fluid} alt={alt} />
+                  </div>
+                )
+              })}
+            {galleryLayout &&
+              galleryLayout.widowCount > 0 &&
+              galleryLayout.widowCount < fluidImages.length && (
+                <Widow
+                  containerWidth={width}
+                  widowBoxes={galleryLayout.boxes.slice(
+                    galleryLayout.boxes.length - galleryLayout.widowCount
+                  )}
+                  boxSpacing={GALLERY_CONFIG.boxSpacing}
+                />
               )}
-              boxSpacing={GALLERY_CONFIG.boxSpacing}
-            />
-          )}
-        <Lightbox
-          isModalOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          views={modalImagesSrc}
-          currentIndex={modalCurrentImage}
-        />
-      </div>
+          </div>
+        </SRLWrapper>
+      </SimpleReactLightbox>
     )
 }
 
