@@ -2,8 +2,6 @@
 import "typeface-inter"
 import "typeface-roboto"
 
-import "prismjs/themes/prism.css"
-
 import "./src/styles/global.scss"
 
 import React from "react"
