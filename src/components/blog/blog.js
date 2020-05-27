@@ -28,15 +28,6 @@ const BlogPost = ({ frontmatter, fields, excerpt }) => {
           <h2>{frontmatter.title}</h2>
           <small>{frontmatter.date}</small>
         </header>
-        {/*frontmatter.description && (
-          <section>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: frontmatter.description || excerpt,
-              }}
-            />
-          </section>
-            )*/}
       </Link>
     </article>
   )

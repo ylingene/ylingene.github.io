@@ -14,7 +14,7 @@ const Photography = ({ data }) => {
         title: "Gallery",
         sectionTitle: "Photography",
       }}
-      filters={['portrait', 'landscape', 'environment']}
+      filters={['environment', 'portrait', 'landscape']}
       fluidImages={data.allFile.nodes[0].childrenYaml}
     />
   )
