@@ -6,7 +6,7 @@ import Container from "../container/container"
 import Logo from "../../../content/assets/logo.svg"
 import { 
   COLLECTIONS_PATH,
-  ILLUSTRATIONS_PATH,
+  // ILLUSTRATIONS_PATH,
   PHOTOGRAPHY_PATH,
 } from "../../utils/defs"
 import { isCollectionsPage, isPhotographyPage } from "../../utils/utils"
@@ -81,6 +81,7 @@ const Nav = () => {
               </div>
             </div>
           </span>
+          {/*
           <Link
             className={style.navigationLink}
             activeClassName={style.active}
@@ -88,6 +89,7 @@ const Nav = () => {
           >
             Illustrations
           </Link>
+          */}
         </nav>
       </Container>
     )

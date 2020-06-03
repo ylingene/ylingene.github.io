@@ -4,12 +4,12 @@ import Image from "gatsby-image"
 import PropTypes from "prop-types"
 
 import Container from "../container/container"
-import { BlueDot, GreenDot, RedDot } from "../dots/dots"
+import { BlueDot, /*GreenDot,*/ RedDot } from "../dots/dots"
 import SEO from "../seo"
 import SocialLinks from "../social/social"
 import { 
   COLLECTIONS_PATH,
-  ILLUSTRATIONS_PATH,
+  // ILLUSTRATIONS_PATH,
   PHOTOGRAPHY_PATH,
 } from "../../utils/defs"
 
@@ -36,9 +36,9 @@ const AboutMe = () => (
     </header>
     <p>I'm an engineer and artist.</p>
     <p>
-      I graduated with a B.S.E. in Computer Science and Engineering (CSE) from
-      the University of Michigan in 2018, and I'm currently a software engineer
-      at Affirm in San Francisco, CA.
+      I graduated with a B.S.E. in Computer Science and Engineering from the
+      University of Michigan in 2018, and I'm currently a software engineer at
+      Affirm in San Francisco, CA.
     </p>
     <p>
       As an artist, I'm drawn to environments and nature. I capture them
@@ -69,10 +69,12 @@ const Works = () => (
         Photo Collections
         <RedDot className={style.dot} />
       </Link>
+      {/*
       <Link className={style.link} to={ILLUSTRATIONS_PATH}>
         Illustrations
         <GreenDot className={style.dot} />
       </Link>
+      */}
     </div>
   </div>
 )

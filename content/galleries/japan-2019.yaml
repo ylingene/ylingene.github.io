@@ -8,20 +8,26 @@
   alt: Tokyo Tower
 - image: ../images/photography/japan-2019/blossoms2.jpg
   alt: street with cherry blossoms
+- image: ../images/photography/japan-2019/japan-23.jpg
+  alt: Mt. Fuji
+- image: ../images/photography/japan-2019/jpf2-1.jpg
+  alt: Mt. Fuji
+- image: ../images/photography/japan-2019/jpf2-10.jpg
+  alt: Mt. Fuji from Enoshima
 - image: ../images/photography/japan-2019/japan-1.jpg
   alt: Yakushima
 - image: ../images/photography/japan-2019/japan-2.jpg
-  alt: Yakushima
+  alt: Shiratani Unsuikyo
 - image: ../images/photography/japan-2019/japan-3.jpg
-  alt: Yakushima
+  alt: Shiratani Unsuikyo
 - image: ../images/photography/japan-2019/japan-4.jpg
-  alt: Yakushima
+  alt: Shiratani Unsuikyo
 - image: ../images/photography/japan-2019/japan-5.jpg
-  alt: Yakushima
+  alt: Shiratani Unsuikyo
 - image: ../images/photography/japan-2019/japan-6.jpg
-  alt: Yakushima
+  alt: Shiratani Unsuikyo
 - image: ../images/photography/japan-2019/japan-7.jpg
-  alt: Yakushima
+  alt: Shiratani Unsuikyo
 - image: ../images/photography/japan-2019/japan-8.jpg
   alt: Yakushima
 - image: ../images/photography/japan-2019/japan-9.jpg
@@ -32,9 +38,9 @@
   alt: Yakushima
 - image: ../images/photography/japan-2019/japan-12.jpg
   alt: Yakushima
-- image: ../images/photography/japan-2019/japan-13.jpg
-  alt: Yakushima
 - image: ../images/photography/japan-2019/japan-14.jpg
+  alt: Yakushima
+- image: ../images/photography/japan-2019/japan-13.jpg
   alt: Yakushima
 - image: ../images/photography/japan-2019/japan-15.jpg
   alt: Yakushima
@@ -43,46 +49,76 @@
 - image: ../images/photography/japan-2019/japan-17.jpg
   alt: Kyoto
 - image: ../images/photography/japan-2019/japan-18.jpg
-  alt: Tokyo
+  alt: Sumida Park, Tokyo
 - image: ../images/photography/japan-2019/japan-19.jpg
-  alt: Tokyo
+  alt: Ikebukuro, Tokyo
 - image: ../images/photography/japan-2019/japan-20.jpg
-  alt: Tokyo
+  alt: Akihabara train crossing
 - image: ../images/photography/japan-2019/japan-21.jpg
-  alt: Tokyo
+  alt: Nihonbashi, Tokyo
 - image: ../images/photography/japan-2019/japan-22.jpg
-  alt: Tokyo
-- image: ../images/photography/japan-2019/japan-23.jpg
-  alt: Mt. Fuji
+  alt: Sakura Dori street, Tokyo
 - image: ../images/photography/japan-2019/japan-24.jpg
-  alt: Tokyo
-- image: ../images/photography/japan-2019/japan-25.jpg
-  alt: Tokyo
-- image: ../images/photography/japan-2019/japan-26.jpg
-  alt: Tokyo
-- image: ../images/photography/japan-2019/japan-27.jpg
-  alt: Tokyo
-- image: ../images/photography/japan-2019/japan-28.jpg
-  alt: Tokyo
+  alt: Meguro River
 - image: ../images/photography/japan-2019/japan-29.jpg
-  alt: Tokyo
+  alt: Meguro River
+- image: ../images/photography/japan-2019/japan-28.jpg
+  alt: Meguro River
+- image: ../images/photography/japan-2019/jpf2-2.jpg
+  alt: Meguro River
+- image: ../images/photography/japan-2019/japan-27.jpg
+  alt: Meguro River
+- image: ../images/photography/japan-2019/japan-26.jpg
+  alt: Meguro River
+- image: ../images/photography/japan-2019/japan-25.jpg
+  alt: Meguro River
+- image: ../images/photography/japan-2019/jpf2-3.jpg
+  alt: Meguro River
+- image: ../images/photography/japan-2019/jpf2-4.jpg
+  alt: Meguro River
+- image: ../images/photography/japan-2019/jpf2-5.jpg
+  alt: Meguro River
 - image: ../images/photography/japan-2019/japan-30.jpg
-  alt: Tokyo
+  alt: Meguro River
 - image: ../images/photography/japan-2019/japan-31.jpg
-  alt: Tokyo
+  alt: Meguro River
 - image: ../images/photography/japan-2019/japan-32.jpg
-  alt: Tokyo
+  alt: Meguro River
 - image: ../images/photography/japan-2019/japan-33.jpg
-  alt: Tokyo
+  alt: Aoyama Cemetery
+- image: ../images/photography/japan-2019/jpf2-6.jpg
+  alt: Aoyama Cemetery
+- image: ../images/photography/japan-2019/jpf2-7.jpg
+  alt: Aoyama Cemetery
 - image: ../images/photography/japan-2019/japan-34.jpg
-  alt: Tokyo
+  alt: imperial palace
+- image: ../images/photography/japan-2019/jpf2-8.jpg
+  alt: cherry blossoms
+- image: ../images/photography/japan-2019/jpf2-9.jpg
+  alt: cherry blossoms
 - image: ../images/photography/japan-2019/japan-35.jpg
-  alt: Tokyo
-- image: ../images/photography/japan-2019/japan-36.jpg
-  alt: Saitama
+  alt: restaurant
+- image: ../images/photography/japan-2019/jpf2-11.jpg
+  alt: park
+- image: ../images/photography/japan-2019/jpf2-12.jpg
+  alt: park
+- image: ../images/photography/japan-2019/jpf2-13.jpg
+  alt: Gongendo Tsutsumi, Saitama
+- image: ../images/photography/japan-2019/jpf2-14.jpg
+  alt: Gongendo Tsutsumi, Saitama
 - image: ../images/photography/japan-2019/japan-37.jpg
-  alt: Saitama
+  alt: Gongendo Tsutsumi, Saitama
+- image: ../images/photography/japan-2019/japan-36.jpg
+  alt: rapeseed flowers
 - image: ../images/photography/japan-2019/japan-38.jpg
-  alt: Saitama
+  alt: cherry blossoms
+- image: ../images/photography/japan-2019/jpf2-15.jpg
+  alt: Yamadera Temple, Yamagata
+- image: ../images/photography/japan-2019/jpf2-16.jpg
+  alt: Yamagata
+- image: ../images/photography/japan-2019/jpf2-17.jpg
+  alt: Otaru
+- image: ../images/photography/japan-2019/jpf2-18.jpg
+  alt: Moerenuma Park, Sapporo
 - image: ../images/photography/japan-2019/japan-39.jpg
   alt: Sapporo

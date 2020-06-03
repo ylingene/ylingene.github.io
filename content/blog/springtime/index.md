@@ -12,5 +12,5 @@ photos: ../../galleries/japan-2018.yaml
 This was my first time traveling to Japan. It was a 10 day trip split between Tokyo, Kyoto, Osaka, and Nara.
 
 Even though I had just missed the cherry blossom season by a few weeks, the foliage in the places I visited were just
-as pretty. Highlights of this trip were waking up early to explore at sunrise and having a kawadoko dinner over the 
+as beautiful. Highlights of this trip were waking up early to explore at sunrise and having a kawadoko dinner over the 
 Kibune-gawa river near Kyoto.

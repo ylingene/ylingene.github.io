@@ -1,20 +1,31 @@
-# title: description used as documentation for each image
-# alt: alt text for each image
 # image: relative path to image location
+# alt: alt text for each image
 # type: portrait | landscape | environment. Used for filtering
 ## Note: cannot have duplicate images the image id remains the same and is used as the key for React arrays
 - image: ../images/photography/japan-2019/kamakura.jpg
   alt: Kamakura
   type: environment
+- image: ../images/photography/japan-2019/japan-23.jpg
+  alt: Mt. Fuji
+  type: landscape
 - image: ../images/photography/japan-2018/arashiyama.jpg
   alt: Arashiyama
   type: environment
+- image: ../images/photography/japan-2018/jpf2-4.jpg
+  alt: Philosopher's Path
+  type: environment
+- image: ../images/photography/japan-2019/jpf2-13.jpg
+  alt: Gongendo Tsutsumi, Saitama
+  type: environment
+- image: ../images/photography/japan-2019/jpf2-6.jpg
+  alt: Aoyama Cemetery
+  type: environment
 - image: ../images/photography/japan-2019/saitama.jpg
-  alt: Saitama
+  alt: Saitama middle school
   type: environment
 - image: ../images/photography/japan-2019/tokyotower.jpg
   alt: Tokyo Tower
-  type: environment
+  type: landscape
 - image: ../images/photography/cat_lev.jpg
   alt: Cat
   type: portrait
@@ -24,18 +35,12 @@
 - image: ../images/photography/jess_landsend.jpg
   alt: Land's End
   type: portrait
-- image: ../images/photography/jess_weiser.jpg
-  alt: Jess
-  type: portrait
 - image: ../images/photography/capetown.jpg
   alt: Cape Town
   type: landscape
 - image: ../images/photography/capetown_twilight.jpg
   alt: Cape Town
   type: landscape
-- image: ../images/photography/sahana_bridge.jpg
-  alt: Sahana
-  type: portrait
 - image: ../images/photography/zunerah_fog.jpg
   alt: Zunerah
   type: portrait
@@ -45,11 +50,17 @@
 - image: ../images/photography/shanghai_tower.jpg
   alt: Shanghai Tower
   type: landscape
+- image: ../images/photography/sahana_bridge.jpg
+  alt: Sahana
+  type: portrait
 - image: ../images/photography/sahana_guthrie.jpg
   alt: Sahana
   type: portrait
 - image: ../images/photography/jasmine.jpg
   alt: Jasmine
+  type: portrait
+- image: ../images/photography/jess_weiser.jpg
+  alt: Jess
   type: portrait
 - image: ../images/photography/courtney_lev.jpg
   alt: Courtney

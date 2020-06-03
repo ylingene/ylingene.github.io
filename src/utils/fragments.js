@@ -2,7 +2,7 @@ import { graphql } from "gatsby"
 
 export const imageFragment = graphql`
          fragment ImageFragment on ImageSharp {
-           fluid(maxWidth: 1400) {
+           fluid(maxWidth: 1600) {
              ...GatsbyImageSharpFluid
            }
          }
