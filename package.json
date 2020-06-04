@@ -33,12 +33,14 @@
     "use-resize-observer": "^6.1.0-alpha.3"
   },
   "devDependencies": {
+    "gh-pages": "^3.0.0",
     "prettier": "^2.0.2"
   },
   "license": "MIT",
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
+    "deploy": "gatsby build && gh-pages -d public -b master",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
