@@ -1,0 +1,51 @@
+{
+  "name": "lingene",
+  "private": true,
+  "description": "Personal website and portfolio for Lingene Yang",
+  "version": "0.1.0",
+  "author": "Lingene Yang <ylingene@gmail.com>",
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "gatsby": "^2.20.12",
+    "gatsby-image": "^2.3.1",
+    "gatsby-plugin-manifest": "^2.3.3",
+    "gatsby-plugin-offline": "^3.1.2",
+    "gatsby-plugin-react-helmet": "^3.2.1",
+    "gatsby-plugin-react-svg": "^3.0.0",
+    "gatsby-plugin-sass": "^2.2.1",
+    "gatsby-plugin-sharp": "^2.5.4",
+    "gatsby-remark-copy-linked-files": "^2.2.1",
+    "gatsby-remark-images": "^3.2.2",
+    "gatsby-remark-smartypants": "^2.2.1",
+    "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-transformer-remark": "^2.7.1",
+    "gatsby-transformer-sharp": "^2.4.4",
+    "gatsby-transformer-yaml": "^2.4.1",
+    "justified-layout": "^4.0.0",
+    "node-sass": "^4.13.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^5.2.1",
+    "react-typography": "^0.16.19",
+    "simple-react-lightbox": "^3.1.0",
+    "typeface-inter": "^3.12.0",
+    "typeface-roboto": "^0.0.75",
+    "use-resize-observer": "^6.1.0-alpha.3"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.0.0",
+    "prettier": "^2.0.2"
+  },
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "deploy": "gatsby build && gh-pages -d public -b master -r https://github.com/ylingene/ylingene.github.io.git",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  }
+}

@@ -1,0 +1,20 @@
+@import '../../styles/variables';
+
+.copyright {
+    font-size: 14px;
+}
+
+.footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: $space-med;
+    width: 100%;
+}
+
+.wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: $space-med 0 $space-large 0;
+}
