@@ -85,7 +85,7 @@ const About = () => {
         profilePicture: file(absolutePath: { regex: "/lingene.jpg/" }) {
           childImageSharp {
             fixed(width: 300) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp_noBase64
             }
           }
         }
