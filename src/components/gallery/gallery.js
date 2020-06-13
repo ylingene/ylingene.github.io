@@ -77,7 +77,6 @@ const Gallery = ({ fluidImages }) => {
           <div ref={containerRef} className={style.galleryContainer}>
             {galleryLayout &&
               fluidImages.map(({ alt, image }, i) => {
-                console.log(image.childImageSharp.fluid.src)
                 return (
                   <div
                     key={image.id}
@@ -88,12 +87,7 @@ const Gallery = ({ fluidImages }) => {
                       marginBottom: GALLERY_CONFIG.boxSpacing,
                     }}
                   >
-                    <a
-                      href={image.childImageSharp.fluid.src}
-                      dataAttribute="SRL"
-                    >
-                      <Image fluid={image.childImageSharp.fluid} alt={alt} />
-                    </a>
+                    <Image fluid={image.childImageSharp.fluid} alt={alt} />
                   </div>
                 )
               })}
