@@ -34,7 +34,7 @@ const AboutMe = () => (
       <h1>Lingene</h1>
       <div className={style.headerLine} />
     </header>
-    <p>I'm an engineer and artist.</p>
+    <p>I'm an engineer and an artist.</p>
     <p>
       I graduated with a B.S.E. in Computer Science and Engineering from the
       University of Michigan in 2018, and I'm currently a software engineer at
