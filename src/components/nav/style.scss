@@ -23,17 +23,16 @@
 .navigation-link {
     @extend %_link;
 
-    margin-left: 6px;
-    margin-right: 6px;
-
     &:last-child {
         margin-right: 0;
     }
 }
 
+.navigation-link-wrapper {
+    padding: 0 6px;
+}
+
 .navigation-subNav {
-    margin-left: 6px;
-    margin-right: 6px;
     padding: 1px 0;
     position: relative;
 
@@ -51,9 +50,7 @@
     background-color: $white;
     border-radius: 4px;
     box-shadow: 0 2px 20px 0 rgba($black, .1);
-    padding: 12px 6px;
-    text-align: center;
-    width: 128px;
+    padding: 6px;
 }
 
 .navigation-subNavLink {
@@ -68,13 +65,10 @@
 }
 
 .navigation-subNavLinks {
-    left: 50%;
     opacity: 0;
     padding-top: 6px;
     pointer-events: none;
     position: absolute;
-    top: 100%;
-    transform: translateX(-50%);
     transition: opacity $transition-time linear;
     z-index: 1;
 }

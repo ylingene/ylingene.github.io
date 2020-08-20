@@ -34,6 +34,10 @@ export const isCollectionsPage = (location) => {
     return page === COLLECTIONS
 }
 
+export const isPhotographyGalleryPage = (location) => {
+  const page = getPage(location)
+  return page === PHOTOGRAPHY
+}
 
 export const isPhotographyPage = (location) => {
     const page = getPage(location)

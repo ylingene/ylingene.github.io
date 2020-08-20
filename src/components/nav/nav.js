@@ -9,7 +9,7 @@ import {
   // ILLUSTRATIONS_PATH,
   PHOTOGRAPHY_PATH,
 } from "../../utils/defs"
-import { isCollectionsPage, isPhotographyPage } from "../../utils/utils"
+import { isCollectionsPage, isPhotographyGalleryPage, isPhotographyPage } from "../../utils/utils"
 
 import style from "./style.scss"
 
@@ -37,31 +37,40 @@ const Nav = () => {
           <Logo className={style.logo} alt="logo" />
         </Link>
         <nav className={style.navigation}>
-          <Link
-            className={style.navigationLink}
-            activeClassName={style.active}
-            to="/"
-          >
-            About
-          </Link>
-          <span className={style.navigationSubNav}>
+          <div className={style.navigationLinkWrapper}>
             <Link
-              className={style.navigationSubNavTitle}
+              className={style.navigationLink}
               activeClassName={style.active}
-              getProps={({ location }) =>
-                highlightLink(location, isPhotographyPage, {
-                  navigationSubNavTitle: true,
-                })
-              }
-              to={PHOTOGRAPHY_PATH}
+              to="/"
             >
-              Photography
+              About
             </Link>
+          </div>
+          <span className={style.navigationSubNav}>
+            <div className={style.navigationLinkWrapper}>
+              <Link
+                className={style.navigationSubNavTitle}
+                activeClassName={style.active}
+                getProps={({ location }) =>
+                  highlightLink(location, isPhotographyPage, {
+                    navigationSubNavTitle: true,
+                  })
+                }
+                to={PHOTOGRAPHY_PATH}
+              >
+                Photography
+              </Link>
+            </div>
             <div className={style.navigationSubNavLinks}>
               <div className={style.navigationSubNavCard}>
                 <Link
                   className={style.navigationSubNavLink}
                   activeClassName={style.active}
+                  getProps={({ location }) =>
+                    highlightLink(location, isPhotographyGalleryPage, {
+                      navigationSubNavLink: true,
+                    })
+                  }
                   to={PHOTOGRAPHY_PATH}
                 >
                   Gallery
