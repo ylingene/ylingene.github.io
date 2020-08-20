@@ -18,11 +18,14 @@ const GALLERY_CONFIG = {
 const LIGHTBOX_OPTIONS = {
   settings: {
     disablePanzoom: true,
+    hideControlsAfter: 2000,
     lightboxTransitionSpeed: 0.1,
-    overlayColor: colors.black,
+    overlayColor: colors.white_faded,
     slideTransitionSpeed: 0.1,
   },
   buttons: {
+    backgroundColor: "rgba(0,0,0,0)",
+    iconColor: colors.black,
     showAutoplayButton: false,
     showDownloadButton: false,
     showFullscreenButton: false,
