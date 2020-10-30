@@ -37,8 +37,8 @@ const AboutMe = () => (
     <p>I'm an engineer and an artist.</p>
     <p>
       I graduated with a B.S.E. in Computer Science and Engineering from the
-      University of Michigan in 2018, and I'm currently a software engineer at
-      Affirm in San Francisco, CA.
+      University of Michigan in 2018, and I'm currently a senior software engineer
+      at Affirm in San Francisco, CA.
     </p>
     <p>
       As an artist, I'm drawn to environments and nature. I capture them
