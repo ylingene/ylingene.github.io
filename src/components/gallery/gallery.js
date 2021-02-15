@@ -19,9 +19,10 @@ const LIGHTBOX_OPTIONS = {
   settings: {
     disablePanzoom: true,
     hideControlsAfter: 2000,
-    lightboxTransitionSpeed: 0.1,
+    lightboxTransitionSpeed: 0.2,
     overlayColor: colors.white_faded,
-    slideTransitionSpeed: 0.1,
+    slideTransitionSpeed: 0.2,
+    slideTransitionTimingFunction: "easeIn",
   },
   buttons: {
     backgroundColor: "rgba(0,0,0,0)",
