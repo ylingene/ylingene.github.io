@@ -4,9 +4,20 @@ import PropTypes from "prop-types"
 
 import { ACCENT_BLUE, ACCENT_GREEN, ACCENT_RED } from "../../utils/defs"
 
-import style from "./style.scss"
+import {
+  borderBlue,
+  borderGreen,
+  borderRed,
+  description as descriptionStyle,
+  header as headerStyle,
+  title as titleStyle,
+} from "./style.scss"
 
-const cx = classNames.bind(style)
+const cx = classNames.bind({
+  borderBlue,
+  borderGreen,
+  borderRed,
+})
 
 const getBorderClasses = (accentColor) => (
     cx({
@@ -17,15 +28,15 @@ const getBorderClasses = (accentColor) => (
 )
 
 const Header = ({ accentColor, title, sectionTitle, description }) => (
-  <header className={style.header}>
-    <div className={style.title}>
+  <header className={headerStyle}>
+    <div className={titleStyle}>
       <div className={getBorderClasses(accentColor)}></div>
       <div>
         <h3>{title}</h3>
         <h1>{sectionTitle}</h1>
       </div>
     </div>
-    {!!description && <div className={style.description}>{description}</div>}
+    {!!description && <div className={descriptionStyle}>{description}</div>}
   </header>
 )
 

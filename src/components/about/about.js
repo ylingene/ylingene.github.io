@@ -13,11 +13,24 @@ import {
   PHOTOGRAPHY_PATH,
 } from "../../utils/defs"
 
-import style from "./style.scss"
+import { 
+  aboutMe,
+  aboutWrapper,
+  column,
+  dot,
+  header,
+  headerLine,
+  link,
+  links,
+  pictureWrapper,
+  profilePicture,
+  square,
+  wrapper,
+} from "./style.scss"
 
 const Picture = ({ author, image }) => (
-  <div className={style.square}>
-    <Image fixed={image} alt={author.name} className={style.profilePicture} />
+  <div className={square}>
+    <Image fixed={image} alt={author.name} className={profilePicture} />
   </div>
 )
 
@@ -29,10 +42,10 @@ Picture.propTypes = {
 }
 
 const AboutMe = () => (
-  <div className={style.aboutMe}>
-    <header className={style.header}>
+  <div className={aboutMe}>
+    <header className={header}>
       <h1>Lingene</h1>
-      <div className={style.headerLine} />
+      <div className={headerLine} />
     </header>
     <p>I'm an engineer and an artist.</p>
     <p>
@@ -57,22 +70,22 @@ const AboutMe = () => (
 
 const Works = () => (
   <div>
-    <header className={style.header}>
+    <header className={header}>
       <h2>Check out my work</h2>
     </header>
-    <div className={style.links}>
-      <Link className={style.link} to={PHOTOGRAPHY_PATH}>
+    <div className={links}>
+      <Link className={link} to={PHOTOGRAPHY_PATH}>
         Photo Gallery
-        <BlueDot className={style.dot} />
+        <BlueDot className={dot} />
       </Link>
-      <Link className={style.link} to={COLLECTIONS_PATH}>
+      <Link className={link} to={COLLECTIONS_PATH}>
         Photo Collections
-        <RedDot className={style.dot} />
+        <RedDot className={dot} />
       </Link>
       {/*
-      <Link className={style.link} to={ILLUSTRATIONS_PATH}>
+      <Link className={link} to={ILLUSTRATIONS_PATH}>
         Illustrations
-        <GreenDot className={style.dot} />
+        <GreenDot className={dot} />
       </Link>
       */}
     </div>
@@ -102,15 +115,15 @@ const About = () => {
     const image = data.profilePicture.childImageSharp.fixed
     const { author } = data.site.siteMetadata
     return (
-      <Container className={style.wrapper}>
+      <Container className={wrapper}>
         <SEO />
-        <div className={style.column}>
-          <div className={style.pictureWrapper}>
+        <div className={column}>
+          <div className={pictureWrapper}>
             <Picture author={author} image={image} />
           </div>
         </div>
-        <div className={style.column}>
-          <div className={style.aboutWrapper}>
+        <div className={column}>
+          <div className={aboutWrapper}>
             <AboutMe />
             <Works />
           </div>

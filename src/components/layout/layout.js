@@ -4,13 +4,16 @@ import PropTypes from "prop-types"
 import Footer from "../footer/footer"
 import Nav from "../nav/nav"
 
-import style from "./style.scss"
+import {
+  mainContent,
+  mainWrapper,
+} from "./style.scss"
 
 const Layout = ({ location, children }) => {
   return (
-    <div className={style.mainWrapper}>
+    <div className={mainWrapper}>
       <Nav />
-      <main className={style.mainContent}>{children}</main>
+      <main className={mainContent}>{children}</main>
       <Footer location={location} />
     </div>
   )

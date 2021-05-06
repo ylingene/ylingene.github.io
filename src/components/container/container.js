@@ -1,12 +1,11 @@
+import classNames from "classnames/bind"
 import React from "react"
 import PropTypes from "prop-types"
 
-import { combineClassNames } from "../../utils/utils"
-
-import style from "./style.scss"
+import { container } from "./style.scss"
 
 const Container = ({ children, className }) => (
-    <div className={combineClassNames([style.container, className])}>{children}</div>
+    <div className={classNames(container, className)}>{children}</div>
 )
 
 Container.defaultProps = {

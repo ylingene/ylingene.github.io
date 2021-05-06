@@ -5,8 +5,7 @@ import PropTypes from "prop-types"
 import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox"
 import useResizeObserver from "use-resize-observer"
 
-import style from "./style.scss"
-import colors from "../../styles/_colors.scss"
+import { black, galleryContainer, white_faded } from "./style.scss"
 
 const GALLERY_CONFIG = {
       boxSpacing: 5,
@@ -20,13 +19,13 @@ const LIGHTBOX_OPTIONS = {
     disablePanzoom: true,
     hideControlsAfter: 2000,
     lightboxTransitionSpeed: 0.2,
-    overlayColor: colors.white_faded,
+    overlayColor: white_faded,
     slideTransitionSpeed: 0.2,
     slideTransitionTimingFunction: "easeIn",
   },
   buttons: {
     backgroundColor: "rgba(0,0,0,0)",
-    iconColor: colors.black,
+    iconColor: black,
     showAutoplayButton: false,
     showDownloadButton: false,
     showFullscreenButton: false,
@@ -78,7 +77,7 @@ const Gallery = ({ fluidImages }) => {
     return (
       <SimpleReactLightbox>
         <SRLWrapper options={LIGHTBOX_OPTIONS}>
-          <div ref={containerRef} className={style.galleryContainer}>
+          <div ref={containerRef} className={galleryContainer}>
             {galleryLayout &&
               fluidImages.map(({ alt, image }, i) => {
                 return (

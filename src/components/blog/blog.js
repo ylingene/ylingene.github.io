@@ -7,23 +7,28 @@ import SEO from "../seo"
 import Container from "../container/container"
 import Header from "../header/header"
 
-import style from "./style.scss"
+import {
+  header,
+  hero,
+  heroWrapper,
+  post,
+} from "./style.scss"
 
 const BlogPost = ({ frontmatter, fields, excerpt }) => {
   const backgroundColor = frontmatter.backgroundColor ? {backgroundColor: frontmatter.backgroundColor} : {}
   return (
     <article key={fields.slug} style={backgroundColor}>
-      <Link to={fields.slug} className={style.post}>
+      <Link to={fields.slug} className={post}>
         {!!frontmatter.hero && (
-          <div className={style.heroWrapper}>
+          <div className={heroWrapper}>
             <Image
               alt={frontmatter.heroAlt}
-              className={style.hero}
+              className={hero}
               fluid={frontmatter.hero.childImageSharp.fluid}
             />
           </div>
         )}
-        <header className={style.header}>
+        <header className={header}>
           <small>{frontmatter.location}</small>
           <h2>{frontmatter.title}</h2>
           <small>{frontmatter.date}</small>

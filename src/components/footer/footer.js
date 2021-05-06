@@ -5,15 +5,15 @@ import Container from "../container/container"
 import NavigationDots from "../dots/dots"
 import { Instagram } from "../social/social"
 
-import style from "./style.scss"
+import { copyright, footer, wrapper } from "./style.scss"
 
 const Footer = ({ location }) => (
     <footer>
-        <Container className={style.wrapper}>
+        <Container className={wrapper}>
             <NavigationDots location={location} />
-            <div className={style.footer}>
+            <div className={footer}>
                 <Instagram />
-                <div className={style.copyright}>
+                <div className={copyright}>
                     © Lingene Yang {new Date().getFullYear()}
                 </div>
             </div>

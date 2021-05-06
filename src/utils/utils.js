@@ -11,8 +11,6 @@ import {
 const getCurrentBasePath = (location) =>
          location.pathname.match(/\w+/) && location.pathname.match(/\w+/)[0]
 
-export const combineClassNames = (classNamesList) => classNamesList.join(' ')
-
 export const getPage = (location) => {
     const basePath = getCurrentBasePath(location)
     switch (basePath) {
@@ -28,6 +26,8 @@ export const getPage = (location) => {
           return ERROR
     }
 }
+
+export const isActiveLocation = (page, currentPage) => page === currentPage
 
 export const isCollectionsPage = (location) => {
     const page = getPage(location)

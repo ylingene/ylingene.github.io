@@ -5,21 +5,29 @@ import PropTypes from "prop-types"
 import Container from "../container/container"
 import Gallery from "../gallery/gallery"
 import Header from "../header/header"
-import SEO from "../seo"
+import Seo from "../seo"
 
-import style from "./style.scss"
+import { 
+  filter as filterStyle,
+  filterActive,
+  filters,
+} from "./style.scss"
 
-const cx = classNames.bind(style)
+const cx = classNames.bind({
+  filterStyle,
+  filterActive,
+  filters,
+})
 
 const Filters = ({ filterValues, activeFilter, onFilterUpdate }) => {
   return (
-    <div className={style.filters}>
+    <div className={filters}>
       {filterValues.map((filter) => {
         return (
           <button
             key={filter}
             className={cx({
-              filter: true,
+              filterStyle: true,
               filterActive: filter === activeFilter,
             })}
             onClick={() => onFilterUpdate(filter)}
@@ -57,7 +65,7 @@ const Portfolio = ({ description, headerData, filters = [], fluidImages}) => {
 
   return (
     <Container>
-      <SEO
+      <Seo
         title={headerData.sectionTitle}
         description={headerData.description || description}
       />
