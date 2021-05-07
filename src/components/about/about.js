@@ -5,7 +5,7 @@ import PropTypes from "prop-types"
 
 import Container from "../container/container"
 import { BlueDot, /*GreenDot,*/ RedDot } from "../dots/dots"
-import SEO from "../seo"
+import Seo from "../seo"
 import SocialLinks from "../social/social"
 import { 
   COLLECTIONS_PATH,
@@ -116,7 +116,7 @@ const About = () => {
     const { author } = data.site.siteMetadata
     return (
       <Container className={wrapper}>
-        <SEO />
+        <Seo />
         <div className={column}>
           <div className={pictureWrapper}>
             <Picture author={author} image={image} />

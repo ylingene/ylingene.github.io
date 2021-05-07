@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Image from "gatsby-image"
 import PropTypes from "prop-types"
 
-import SEO from "../seo"
+import Seo from "../seo"
 import Container from "../container/container"
 import Header from "../header/header"
 
@@ -61,7 +61,7 @@ BlogPost.propTypes = {
 const Blog = ({ headerData, posts }) => {
     return (
       <Container>
-        <SEO title={headerData.sectionTitle} description={headerData.description} />
+        <Seo title={headerData.sectionTitle} description={headerData.description} />
         <Header {...headerData} />
         {posts.map(BlogPost)}
       </Container>

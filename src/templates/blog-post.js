@@ -4,10 +4,15 @@ import PropTypes from "prop-types"
 
 import Container from "../components/container/container"
 import Gallery from "../components/gallery/gallery"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import { COLLECTIONS_PATH } from "../utils/defs"
 
-import style from "./style.scss"
+import {
+  blogNavigation,
+  content,
+  contentSection,
+  header as headerStyle,
+} from "./style.scss"
 
 const BlogPostTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark
@@ -16,19 +21,19 @@ const BlogPostTemplate = ({ data, pageContext }) => {
 
   return (
     <Container>
-      <SEO
+      <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <header className={style.header}>
+      <header className={headerStyle}>
         <h3>{post.frontmatter.location}</h3>
         <h1>{post.frontmatter.title}</h1>
         <small>{post.frontmatter.date}</small>
       </header>
-      <div className={style.contentSection}>
+      <div className={contentSection}>
         <article>
           <section
-            className={style.content}
+            className={content}
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
         </article>
@@ -36,7 +41,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
       </div>
       <Gallery fluidImages={images} />
       <nav>
-        <ul className={style.blogNavigation}>
+        <ul className={blogNavigation}>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
