@@ -1091,6 +1091,16 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
 
+"@fontsource/inter@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-4.2.2.tgz#efe97167aac992db3fadf60ea0dd72aacd3e1fc4"
+  integrity sha512-lvR1PQe+8FTTd3YRW84KGcgUR8leZ7S3aY+51MQ90MQHI0VQe3cDH6T6jjs1qTm+wPmWfdSVjN8ugvNZpGUnvA==
+
+"@fontsource/roboto@^4.2.3":
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/@fontsource/roboto/-/roboto-4.2.3.tgz#2d2c173c526073a2c8d22f1c4234eef7496183fb"
+  integrity sha512-lEnB089GcK3uU3d0MPjwYTUPZBhpKQ2HxvgC+0ib2ElJNISBoS3fHE2sKuZIcCeghWW0fX58OJrZiPgZ3essBg==
+
 "@graphql-tools/code-file-loader@6.0.7":
   version "6.0.7"
   resolved "https://registry.yarnpkg.com/@graphql-tools/code-file-loader/-/code-file-loader-6.0.7.tgz#2e0644a621f2ab16cd902172eaee580debc879d0"
@@ -4113,9 +4123,9 @@ class-utils@^0.3.5:
     static-extend "^0.1.1"
 
 classnames@^2.2.6:
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
-  integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
+  integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
 
 clean-stack@^2.0.0:
   version "2.2.0"
@@ -7033,16 +7043,6 @@ gatsby-page-utils@^0.2.8:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-manifest@^2.3.3:
-  version "2.4.10"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.4.10.tgz#e7576da8243e73d555905d186d685f5ce99a10cd"
-  integrity sha512-jDh626lHU8MtSk5jW6HrbYaOiisHMMRROjpXXaAQMuSKNKzlkDPluh9CcXVGIfypCXjZMCRgbKtQvbu4TsZKFw==
-  dependencies:
-    "@babel/runtime" "^7.10.2"
-    gatsby-core-utils "^1.3.4"
-    semver "^5.7.1"
-    sharp "^0.25.1"
-
 gatsby-plugin-offline@^3.1.2:
   version "3.2.8"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-3.2.8.tgz#8a18595b988f7fcc16515ef75302f166a61876f3"
@@ -7205,20 +7205,6 @@ gatsby-recipes@^0.1.38:
     urql "^1.9.7"
     ws "^7.3.0"
     xstate "^4.10.0"
-
-gatsby-remark-copy-linked-files@^2.2.1:
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-2.3.4.tgz#559cd7203e8633ef90fd0220a9ade7ae1405d327"
-  integrity sha512-nCRXygWu6EBm7Ej1niqSOHb1mJVNjvTUVB89TdSRE1N7F83iCQafQWq1ajuVxO4VIYKGcyQZVxhSgeb3I2UXIQ==
-  dependencies:
-    "@babel/runtime" "^7.10.2"
-    cheerio "^1.0.0-rc.3"
-    fs-extra "^8.1.0"
-    is-relative-url "^3.0.0"
-    lodash "^4.17.15"
-    path-is-inside "^1.0.2"
-    probe-image-size "^4.1.1"
-    unist-util-visit "^1.4.1"
 
 gatsby-remark-images@^3.2.2:
   version "3.3.9"
@@ -9605,11 +9591,9 @@ jsx-ast-utils@^2.2.1, jsx-ast-utils@^2.2.3:
     object.assign "^4.1.0"
 
 justified-layout@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/justified-layout/-/justified-layout-4.0.0.tgz#fd5e39e0322bae66b2f4602de462696294c09df7"
-  integrity sha512-qPQw33Leg1oYiZ7gQTDXbxGUx8q0ea+zc/rNgH0jeFDVuANTej7Fc+kW06hdoXPhPeI/lGzJVq776Gn183b28A==
-  dependencies:
-    merge "1.2.1"
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/justified-layout/-/justified-layout-4.1.0.tgz#0584091b45e69f19ac97a54539f0a03eebe7bcfe"
+  integrity sha512-M5FimNMXgiOYerVRGsXZ2YK9YNCaTtwtYp7Hb2308U1Q9TXXHx5G0p08mcVR5O53qf8bWY4NJcPBxE6zuayXSg==
 
 keyv@3.0.0:
   version "3.0.0"
@@ -10261,11 +10245,6 @@ merge2@^1.2.3, merge2@^1.3.0:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.4.1.tgz#4368892f885e907455a6fd7dc55c0c9d404990ae"
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
-
-merge@1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.1.tgz#38bebf80c3220a8a487b6fcfb3941bb11720c145"
-  integrity sha512-VjFo4P5Whtj4vsLzsYBu5ayHhoHJ0UqNm7ibvShmbmoz7tGi0vXaoJbGdB+GmDMLUdg8DpQXEIeVDAe8MaABvQ==
 
 methods@~1.1.2:
   version "1.1.2"
@@ -12593,11 +12572,6 @@ react-swipeable@^6.0.0:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/react-swipeable/-/react-swipeable-6.0.1.tgz#14246e798c25a00da3279632a87811411756f652"
   integrity sha512-69nonicgjT4ofeHxZSpjuz37BoIiWMEbUYkX0mdTCY2mX1U53XDzDUIOVKRg6vVBNGL+pxYjbRzmylXWORh1xQ==
-
-react-typography@^0.16.19:
-  version "0.16.19"
-  resolved "https://registry.yarnpkg.com/react-typography/-/react-typography-0.16.19.tgz#5736b47961dcf6b9605b6fa38d41980db2588e28"
-  integrity sha512-kV2qLEsdm0x9P4YXQEDVc88tDb4Vg0h/vdVZGgbqaRn8ERvNzV76JHUeOby3vvcUYU5MPd5Kz5DPH9Bhp4I/iw==
 
 react-universal-interface@^0.6.2:
   version "0.6.2"
@@ -15137,16 +15111,6 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-
-typeface-inter@^3.12.0:
-  version "3.12.0"
-  resolved "https://registry.yarnpkg.com/typeface-inter/-/typeface-inter-3.12.0.tgz#3cd7cdae730daa73cc01e88fdbe27601dc7c4fd7"
-  integrity sha512-3vKBTKCl6S0OJhMKwmyAOodsfTD3Gxsrj5ReavpQmdZ385ecUr3swfNxiBZ4u594mNfojlqL/zUebavV3A1yCA==
-
-typeface-roboto@^0.0.75:
-  version "0.0.75"
-  resolved "https://registry.yarnpkg.com/typeface-roboto/-/typeface-roboto-0.0.75.tgz#98d5ba35ec234bbc7172374c8297277099cc712b"
-  integrity sha512-VrR/IiH00Z1tFP4vDGfwZ1esNqTiDMchBEXYY9kilT6wRGgFoCAlgkEUMHb1E3mB0FsfZhv756IF0+R+SFPfdg==
 
 typescript@^3.9.3:
   version "3.9.5"
