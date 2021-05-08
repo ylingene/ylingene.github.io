@@ -1,0 +1,2 @@
+(self.webpackChunklingene=self.webpackChunklingene||[]).push([[883],{9616:function(e,t,n){"use strict";n.r(t);var l=n(7294),u=n(7487);t.default=function(e){e.data,e.location;return l.createElement("div",null,l.createElement(u.Z,{title:"404: Not Found"}),l.createElement("h1",null,"Not Found"),l.createElement("p",null,"You just hit a route that doesn't exist... the sadness."))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-bd2a10997dfc50f6bc76.js.map
