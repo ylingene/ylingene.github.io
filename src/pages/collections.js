@@ -15,7 +15,7 @@ const Collections = ({ data }) => {
         title: "Collections",
         sectionTitle: "Photography",
         description:
-          "Moments from my past trips. Photographs taken on both digital and film.",
+          "Moments from my life and past trips. Photographs taken on both digital and film.",
       }}
       posts={posts}
     />

@@ -1,9 +1,11 @@
-import Image from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import getJustifiedLayout from "justified-layout"
 import React, { useMemo } from "react"
 import PropTypes from "prop-types"
 import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox"
 import useResizeObserver from "use-resize-observer"
+
+import { getAspectRatio } from "../../utils/utils"
 
 import { black, galleryContainer, white_faded } from "./style.scss"
 
@@ -66,7 +68,7 @@ const Gallery = ({ fluidImages }) => {
     const { ref: containerRef, width } = useResizeObserver()
 
     const galleryLayout = useMemo(() => {
-        const aspectRatios = fluidImages.map(({ image }) => image.childImageSharp.fluid.aspectRatio)
+        const aspectRatios = fluidImages.map(({ image }) => getAspectRatio(getImage(image)))
         const updatedConfig = {
           ...GALLERY_CONFIG,
           containerWidth: width,
@@ -90,7 +92,7 @@ const Gallery = ({ fluidImages }) => {
                       marginBottom: GALLERY_CONFIG.boxSpacing,
                     }}
                   >
-                    <Image fluid={image.childImageSharp.fluid} alt={alt} />
+                    <GatsbyImage image={getImage(image)} alt={alt} />
                   </div>
                 )
               })}

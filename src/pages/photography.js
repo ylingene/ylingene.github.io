@@ -8,7 +8,7 @@ import Portfolio from "../components/portfolio/portfolio"
 const Photography = ({ data }) => {
   return (
     <Portfolio
-      description="Currated photography portfolio from over the years."
+      description="Lingene's photography portfolio."
       headerData={{
         accentColor: ACCENT_BLUE,
         title: "Gallery",

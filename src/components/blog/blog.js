@@ -1,6 +1,6 @@
-import React from "react"
 import { Link } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
+import React from "react"
 import PropTypes from "prop-types"
 
 import Seo from "../seo"
@@ -15,19 +15,16 @@ import {
 } from "./style.scss"
 
 const BlogPost = ({ frontmatter, fields, excerpt }) => {
-  const backgroundColor = frontmatter.backgroundColor ? {backgroundColor: frontmatter.backgroundColor} : {}
   return (
-    <article key={fields.slug} style={backgroundColor}>
+    <article key={fields.slug} style={{backgroundColor: frontmatter.backgroundColor}}>
       <Link to={fields.slug} className={post}>
-        {!!frontmatter.hero && (
-          <div className={heroWrapper}>
-            <Image
-              alt={frontmatter.heroAlt}
-              className={hero}
-              fluid={frontmatter.hero.childImageSharp.fluid}
-            />
-          </div>
-        )}
+        <div className={heroWrapper}>
+          <GatsbyImage
+            alt={frontmatter.heroAlt}
+            className={hero}
+            image={frontmatter.hero.childImageSharp.gatsbyImageData}
+          />
+        </div>
         <header className={header}>
           <small>{frontmatter.location}</small>
           <h2>{frontmatter.title}</h2>
@@ -44,16 +41,16 @@ BlogPost.defaultProps = {
 
 BlogPost.propTypes = {
   frontmatter: PropTypes.shape({
-    date: PropTypes.string,
-    title: PropTypes.string,
+    date: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     description: PropTypes.string,
-    location: PropTypes.string,
-    backgroundColor: PropTypes.string,
-    hero: PropTypes.object,
-    heroAlt: PropTypes.string,
+    location: PropTypes.string.isRequired,
+    backgroundColor: PropTypes.string.isRequired,
+    hero: PropTypes.object.isRequired,
+    heroAlt: PropTypes.string.isRequired,
   }).isRequired,
   fields: PropTypes.shape({
-    slug: PropTypes.string,
+    slug: PropTypes.string.isRequired,
   }).isRequired,
   excerpt: PropTypes.string,
 }

@@ -56,6 +56,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-sharp`,
@@ -63,6 +64,24 @@ module.exports = {
         useMozJpeg: false,
         stripMetadata: true,
         defaultQuality: 100,
+        defaults: {
+          formats: [`auto`, `webp`],
+          placeholder: `none`,
+          quality: 100,
+        }
+      },
+    },
+    {
+      // generates favicon for browser tabs
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Lingene Yang`,
+        short_name: `Lingene`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#053854`,
+        display: `minimal-ui`,
+        icon: `content/assets/favicon.png`,
       },
     },
     `gatsby-plugin-react-helmet`,

@@ -12,8 +12,10 @@
 }
 
 .hero {
+    // centered 16:9 crop
     @extend %thumbnail;
 
+    display: block;
     padding-top: 9 / 16 * 100%; // ~56.25%;
 }
 

@@ -4,9 +4,4 @@
     overflow: hidden;
     position: relative;
     width: 100%;
-
-    // override Gatsby div within the wrapper div
-    &>div {
-        padding-bottom: 0 !important;
-    }
 }

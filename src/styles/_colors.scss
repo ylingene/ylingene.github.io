@@ -6,9 +6,3 @@ $light-red: #FF9BA7;
 
 $black: #03030c;
 $white: white;
-$white-faded: rgba($white, .95);
-
-:export {
-    black: $black;
-    white_faded: $white-faded;
-}

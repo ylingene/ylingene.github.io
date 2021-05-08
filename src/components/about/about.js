@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import PropTypes from "prop-types"
 
 import Container from "../container/container"
@@ -30,7 +30,7 @@ import {
 
 const Picture = ({ author, image }) => (
   <div className={square}>
-    <Image fixed={image} alt={author.name} className={profilePicture} />
+    <GatsbyImage image={image} alt={author.name} className={profilePicture}/>
   </div>
 )
 
@@ -97,9 +97,7 @@ const About = () => {
       query ProfileQuery {
         profilePicture: file(absolutePath: { regex: "/lingene.jpg/" }) {
           childImageSharp {
-            fixed(width: 300) {
-              ...GatsbyImageSharpFixed_withWebp_noBase64
-            }
+            gatsbyImageData(width: 300)
           }
         }
         site {
@@ -112,7 +110,7 @@ const About = () => {
       }
     `)
 
-    const image = data.profilePicture.childImageSharp.fixed
+    const image = data.profilePicture.childImageSharp.gatsbyImageData
     const { author } = data.site.siteMetadata
     return (
       <Container className={wrapper}>
