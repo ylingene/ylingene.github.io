@@ -1,7 +1,9 @@
-$mobile: 1024; // and lower
-$mobile-small: 400; // and lower
+$mobile-large: 1024; // tablet and lower
+$mobile-medium: 768; // small tablet and lower
+$mobile-small: 400; // smartphone and lower
 $desktop: 1025; // and greater
-$screen-mobile: $mobile + 0px;
+$screen-mobile-large: $mobile-large + 0px;
+$screen-mobile-medium: $mobile-medium + 0px;
 $screen-mobile-small: $mobile-small + 0px;
 $screen-desktop: $desktop + 0px;
 

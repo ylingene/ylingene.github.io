@@ -12,6 +12,8 @@ import {
   hero,
   heroWrapper,
   post,
+  postDetail,
+  postTitle,
 } from "./style.scss"
 
 const BlogPost = ({ frontmatter, fields, excerpt }) => {
@@ -26,9 +28,9 @@ const BlogPost = ({ frontmatter, fields, excerpt }) => {
           />
         </div>
         <header className={header}>
-          <small>{frontmatter.location}</small>
-          <h2>{frontmatter.title}</h2>
-          <small>{frontmatter.date}</small>
+          <small className={postDetail}>{frontmatter.location}</small>
+          <h2 className={postTitle}>{frontmatter.title}</h2>
+          <small className={postDetail}>{frontmatter.date}</small>
         </header>
       </Link>
     </article>

@@ -18,7 +18,7 @@ $picture-offset: 30px;
 .aboutWrapper {
     display: flex;
 
-    @media screen and (max-width: $screen-mobile) {
+    @media screen and (max-width: $screen-mobile-large) {
         justify-content: center;
     }
 }
@@ -109,7 +109,7 @@ $picture-offset: 30px;
     margin-top: $space-xx-large;
     margin-bottom: $space-med;
 
-    @media screen and (max-width: $screen-mobile) {
+    @media screen and (max-width: $screen-mobile-large) {
         grid-template-columns: 1fr;
         margin-top: $space-med;
         row-gap: $space-med;
