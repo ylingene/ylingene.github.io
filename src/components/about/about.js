@@ -15,8 +15,8 @@ import {
 
 import { 
   aboutMe,
+  aboutSection,
   aboutWrapper,
-  column,
   dot,
   header,
   headerLine,
@@ -66,8 +66,6 @@ const AboutMe = () => (
   </div>
 )
 
-// (what about them: space, peaceful, story)
-
 const Works = () => (
   <div>
     <header className={header}>
@@ -115,13 +113,11 @@ const About = () => {
     return (
       <Container className={wrapper}>
         <Seo />
-        <div className={column}>
-          <div className={pictureWrapper}>
-            <Picture author={author} image={image} />
-          </div>
+        <div className={pictureWrapper}>
+          <Picture author={author} image={image} />
         </div>
-        <div className={column}>
-          <div className={aboutWrapper}>
+        <div className={aboutWrapper}>
+          <div className={aboutSection}>
             <AboutMe />
             <Works />
           </div>

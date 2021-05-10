@@ -1,3 +1,10 @@
+$mobile: 1024; // and lower
+$mobile-small: 400; // and lower
+$desktop: 1025; // and greater
+$screen-mobile: $mobile + 0px;
+$screen-mobile-small: $mobile-small + 0px;
+$screen-desktop: $desktop + 0px;
+
 $space: 16px;
 $space-small: $space / 2;
 $space-med: $space * 2;

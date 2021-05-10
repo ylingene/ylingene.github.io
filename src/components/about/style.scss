@@ -7,26 +7,19 @@ $picture-offset: 30px;
     margin-bottom: $space-med;
 }
 
-.aboutWrapper {
+.aboutSection {
     max-width: 500px;
+
+    @media screen and (min-width: $screen-desktop) {
+        padding-right: $space-large;
+    }
 }
 
-.column {
-    // split on different rows on small screens
-    // flex-basis: 100%;
-    margin-bottom: $space-med;
+.aboutWrapper {
+    display: flex;
 
-    @media screen and (min-width: 1000px) {
-        // columns on same row
-        flex: 1;
-
-        &:first-child {
-            margin-right: $space-med;
-        }
-
-        &:last-child {
-            margin-left: $space-med;
-        }
+    @media screen and (max-width: $screen-mobile) {
+        justify-content: center;
     }
 }
 
@@ -82,20 +75,47 @@ $picture-offset: 30px;
     height: 300px;
     margin: 0 $picture-offset $picture-offset 0;
     width: 300px;
+
+    @media screen and (max-width: $screen-mobile-small) {
+        margin: 0;
+        height: auto;
+        width: auto;
+    }
 }
 
 .pictureWrapper {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+
+    @media screen and (min-width: $screen-desktop) {
+        justify-content: flex-end;
+    }
 }
 
 .profilePicture {
     left: $picture-offset;
     top: $picture-offset;
+
+    @media screen and (max-width: $screen-mobile-small) {
+        left: 0;
+        top: 0;
+    }
 }
 
 .wrapper {
-    display: flex;
-    flex-flow: row wrap;
+    display: grid;
+    column-gap: $space-xx-large;
+    grid-template-columns: 1fr 1fr;
     margin-top: $space-xx-large;
+    margin-bottom: $space-med;
+
+    @media screen and (max-width: $screen-mobile) {
+        grid-template-columns: 1fr;
+        margin-top: $space-med;
+        row-gap: $space-med;
+    }
+
+    @media screen and (max-width: $screen-mobile-small) {
+        margin-top: 0;
+    }
 }
