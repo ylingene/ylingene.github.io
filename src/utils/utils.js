@@ -11,10 +11,6 @@ import {
 const getCurrentBasePath = (location) =>
          location.pathname.match(/\w+/) && location.pathname.match(/\w+/)[0]
 
-// justified-layout requires aspect ratios of horizontal length divided by height
-// requires GatsbyImageData element
-export const getAspectRatio = (image) => image.width / image.height
-
 export const getPage = (location) => {
     const basePath = getCurrentBasePath(location)
     switch (basePath) {

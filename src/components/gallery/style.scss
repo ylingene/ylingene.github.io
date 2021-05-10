@@ -1,4 +1,5 @@
 @import "../../styles/colors";
+@import "../../styles/variables";
 
 .galleryContainer {
     display: flex;
@@ -8,7 +9,9 @@
 
 // colors for lightbox
 $white-faded: rgba($white, .95);
+
 :export {
     black: $black;
     white_faded: $white-faded;
+    screen_mobile_small: $mobile-small;
 }

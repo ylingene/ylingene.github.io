@@ -5,9 +5,12 @@ import PropTypes from "prop-types"
 import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox"
 import useResizeObserver from "use-resize-observer"
 
-import { getAspectRatio } from "../../utils/utils"
-
-import { black, galleryContainer, white_faded } from "./style.scss"
+import { 
+  black,
+  galleryContainer,
+  screen_mobile_small,
+  white_faded,
+} from "./style.scss"
 
 const GALLERY_CONFIG = {
       boxSpacing: 5,
@@ -43,6 +46,42 @@ const LIGHTBOX_OPTIONS = {
   },
 }
 
+const getMobileImageSizes = (galleryWidth, imageDimensions) => (
+  imageDimensions.map(({ height, width }) => {
+    const aspectRatio = width / height
+    return {
+      height: galleryWidth / aspectRatio,
+      width: galleryWidth,
+    }
+  })
+)
+
+const getImageLayout = (galleryWidth, images) => {
+  const imageDimensions = images.map(({ image }) => {
+    const img = getImage(image)
+    return {
+      height: img.height,
+      width: img.width,
+    }
+  })
+
+  // On small screens, display one image per row.
+  // Justified layout doesn't produce the same result even with
+  // fullWidthBreakoutRowCadence due to target height and tolerance.
+  if (galleryWidth <= screen_mobile_small) {
+    return {
+      boxes: getMobileImageSizes(galleryWidth, imageDimensions),
+      widowCount: 0,
+    }
+  }
+
+  const justifiedLayoutConfig = {
+    ...GALLERY_CONFIG,
+    containerWidth: galleryWidth,
+  }
+  return getJustifiedLayout(imageDimensions, justifiedLayoutConfig)
+}
+
 const Widow = ({ containerWidth, widowBoxes, boxSpacing }) => {
     const height = widowBoxes[0].height
     const width =
@@ -68,12 +107,7 @@ const Gallery = ({ fluidImages }) => {
     const { ref: containerRef, width } = useResizeObserver()
 
     const galleryLayout = useMemo(() => {
-        const aspectRatios = fluidImages.map(({ image }) => getAspectRatio(getImage(image)))
-        const updatedConfig = {
-          ...GALLERY_CONFIG,
-          containerWidth: width,
-        }
-        return width ? getJustifiedLayout(aspectRatios, updatedConfig) : null
+        return width ? getImageLayout(width, fluidImages) : null
     }, [fluidImages, width])
 
     return (
@@ -116,20 +150,19 @@ const Gallery = ({ fluidImages }) => {
 Gallery.propTypes = {
   fluidImages: PropTypes.arrayOf(
     PropTypes.shape({
-      alt: PropTypes.string,
-      type: PropTypes.string,
+      alt: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
       image: PropTypes.shape({
-        id: PropTypes.string,
+        id: PropTypes.string.isRequired,
         childImageSharp: PropTypes.shape({
-          fluid: PropTypes.shape({
-            aspectRatio: PropTypes.number,
-            base64: PropTypes.string,
-            sizes: PropTypes.string,
-            src: PropTypes.string,
-            srcSet: PropTypes.string,
-          }),
-        }),
-      }),
+          gatsbyImageData: PropTypes.shape({
+            height: PropTypes.number,
+            images: PropTypes.object,
+            layout: PropTypes.string,
+            width: PropTypes.string,
+          }).isRequired,
+        }).isRequired,
+      }.isRequired),
     })
   ).isRequired,
 }
