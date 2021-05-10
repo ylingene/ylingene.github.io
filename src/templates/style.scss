@@ -1,5 +1,13 @@
 @import "../styles/variables";
 
+$content-spacing: 24px;
+
+.backLinkNavigation {
+    align-items: flex-end;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .blogNavigation {
     display: flex;
     flex-wrap: wrap;
@@ -10,7 +18,7 @@
 }
 
 .content {
-    max-width: 700px;
+    // max-width: 700px;
 
     &>p:first-child {
         margin-top: 0;
@@ -22,12 +30,17 @@
 }
 
 .contentSection {
-    align-items: flex-end;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: fit-content(700px) 1fr;
     margin-bottom: $space-med;
+
+    @media screen and (max-width: $screen-mobile) {
+        grid-template-columns: 1fr;
+        row-gap: $content-spacing;
+        margin-bottom: $space;
+    }
 }
 
 .header {
-    margin-bottom: 24px;
+    margin-bottom: $content-spacing;
 }

@@ -8,6 +8,7 @@ import Seo from "../components/seo"
 import { COLLECTIONS_PATH } from "../utils/defs"
 
 import {
+  backLinkNavigation,
   blogNavigation,
   content,
   contentSection,
@@ -37,7 +38,9 @@ const BlogPostTemplate = ({ data, pageContext }) => {
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
         </article>
-        <Link to={COLLECTIONS_PATH}>back to collections</Link>
+        <div className={backLinkNavigation}>
+          <Link to={COLLECTIONS_PATH}>back to collections</Link>
+        </div>
       </div>
       <Gallery fluidImages={images} />
       <nav>
