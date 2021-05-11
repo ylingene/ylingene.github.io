@@ -77,8 +77,9 @@ $picture-offset: 30px;
     width: 300px;
 
     @media screen and (max-width: $screen-mobile-small) {
-        margin: 0;
+        background-color: transparent;
         height: auto;
+        margin: 0;
         width: auto;
     }
 }
@@ -95,11 +96,6 @@ $picture-offset: 30px;
 .profilePicture {
     left: $picture-offset;
     top: $picture-offset;
-
-    @media screen and (max-width: $screen-mobile-small) {
-        // inline-block has extra space below the element
-        display: block !important; // override gatsby-image-wrapper-constrained inline-block
-    }
 
     @media screen and (max-width: $screen-mobile-small) {
         left: 0;
