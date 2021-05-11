@@ -9,13 +9,13 @@ import { COLLECTIONS_PATH } from "../utils/defs"
 
 import {
   backLinkNavigation,
-  blogNavigation,
+  collectionNavigation,
   content,
   contentSection,
   header as headerStyle,
 } from "./style.scss"
 
-const BlogPostTemplate = ({ data, pageContext }) => {
+const CollectionTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark
   const images = post.frontmatter.photos ? post.frontmatter.photos.childrenYaml : []
   const { previous, next } = pageContext
@@ -44,7 +44,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
       </div>
       <Gallery fluidImages={images} />
       <nav>
-        <ul className={blogNavigation}>
+        <ul className={collectionNavigation}>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
@@ -65,7 +65,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
   )
 }
 
-BlogPostTemplate.propTypes = {
+CollectionTemplate.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       id: PropTypes.string,
@@ -85,10 +85,10 @@ BlogPostTemplate.propTypes = {
   pageContext: PropTypes.object.isRequired,
 }
 
-export default BlogPostTemplate
+export default CollectionTemplate
 
 export const pageQuery = graphql`
-         query BlogPostBySlug($slug: String!) {
+         query CollectionBySlug($slug: String!) {
            markdownRemark(fields: { slug: { eq: $slug } }) {
              id
              excerpt(pruneLength: 160)

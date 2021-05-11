@@ -6,10 +6,8 @@ export const ERROR = "error"
 
 export const HOME_PATH = "/"
 export const PHOTOGRAPHY_PATH = `/${PHOTOGRAPHY}`
-export const COLLECTIONS_PATH = `/${COLLECTIONS}`
+export const COLLECTIONS_PATH = `${PHOTOGRAPHY_PATH}/${COLLECTIONS}`
 export const ILLUSTRATIONS_PATH = `/${ILLUSTRATIONS}`
-
-export const PHOTOGRAPHY_PAGES = [PHOTOGRAPHY, COLLECTIONS]
 
 export const GITHUB_URL = "https://github.com/ylingene"
 export const INSTAGRAM_URL = "https://www.instagram.com/lingene/"

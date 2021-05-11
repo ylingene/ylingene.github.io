@@ -1,4 +1,3 @@
-import classNames from "classnames/bind"
 import React from "react";
 import { Link } from "gatsby"
 
@@ -9,7 +8,6 @@ import {
   // ILLUSTRATIONS_PATH,
   PHOTOGRAPHY_PATH,
 } from "../../utils/defs"
-import { isCollectionsPage, isPhotographyGalleryPage, isPhotographyPage } from "../../utils/utils"
 
 import {
   active,
@@ -21,38 +19,31 @@ import {
   navigationSubNavCard,
   navigationSubNavLink,
   navigationSubNavLinks,
-  navigationSubNavTitle,
   wrapper,
 } from "./style.scss"
 
-const cx = classNames.bind({
-  active,
-  logo,
-  navigation,
-  navigationLink,
-  navigationLinkWrapper,
-  navigationSubNav,
-  navigationSubNavCard,
-  navigationSubNavLink,
-  navigationSubNavLinks,
-  navigationSubNavTitle,
-  wrapper,
-})
+const NavLink = ({ children, partiallyActive = false, to }) => (
+  <div className={navigationLinkWrapper}>
+    <Link
+      className={navigationLink}
+      activeClassName={active}
+      partiallyActive={partiallyActive}
+      to={to}
+    >
+      {children}
+    </Link>
+  </div>
+)
 
-// used for highlighting a link if the current page is grouped with that link
-// (e.g. gallery and collections are a part of Photography)
-const highlightLink = (location, isPageFunc, extraClasses) => {
-  const isPartiallyCurrent = isPageFunc(location)
-  const classes = cx({
-    active: true,
-    ...extraClasses,
-  })
-  return isPartiallyCurrent
-    ? {
-        className: classes,
-      }
-    : null
-}
+const SubNavLink = ({ children, to }) => (
+  <Link
+    className={navigationSubNavLink}
+    activeClassName={active}
+    to={to}
+  >
+    {children}
+  </Link>
+)
 
 const Nav = () => {
     return (
@@ -61,56 +52,18 @@ const Nav = () => {
           <Logo className={logo} alt="logo" />
         </Link>
         <nav className={navigation}>
-          <div className={navigationLinkWrapper}>
-            <Link
-              className={navigationLink}
-              activeClassName={active}
-              to="/"
-            >
-              About
-            </Link>
-          </div>
+          <NavLink to="/">About</NavLink>
           <span className={navigationSubNav}>
-            <div className={navigationLinkWrapper}>
-              <Link
-                className={navigationSubNavTitle}
-                activeClassName={active}
-                getProps={({ location }) =>
-                  highlightLink(location, isPhotographyPage, {
-                    navigationSubNavTitle: true,
-                  })
-                }
-                to={PHOTOGRAPHY_PATH}
-              >
-                Photography
-              </Link>
-            </div>
+            <NavLink
+              partiallyActive={true}
+              to={PHOTOGRAPHY_PATH}
+            >
+              Photography
+            </NavLink>
             <div className={navigationSubNavLinks}>
               <div className={navigationSubNavCard}>
-                <Link
-                  className={navigationSubNavLink}
-                  activeClassName={active}
-                  getProps={({ location }) =>
-                    highlightLink(location, isPhotographyGalleryPage, {
-                      navigationSubNavLink: true,
-                    })
-                  }
-                  to={PHOTOGRAPHY_PATH}
-                >
-                  Gallery
-                </Link>
-                <Link
-                  className={navigationSubNavLink}
-                  activeClassName={active}
-                  getProps={({ location }) =>
-                    highlightLink(location, isCollectionsPage, {
-                      navigationSubNavLink: true,
-                    })
-                  }
-                  to={COLLECTIONS_PATH}
-                >
-                  Collections
-                </Link>
+                <SubNavLink to={PHOTOGRAPHY_PATH}>Gallery</SubNavLink>
+                <SubNavLink to={COLLECTIONS_PATH}>Collections</SubNavLink>
               </div>
             </div>
           </span>

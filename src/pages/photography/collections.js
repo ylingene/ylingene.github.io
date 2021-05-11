@@ -2,14 +2,14 @@ import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 
-import { ACCENT_RED } from "../utils/defs"
-import Blog from "../components/blog/blog"
+import { ACCENT_RED } from "../../utils/defs"
+import Collection from "../../components/collection/collection"
 
 const Collections = ({ data }) => {
   const posts = data.allMarkdownRemark.nodes
 
   return (
-    <Blog
+    <Collection
       headerData={{
         accentColor: ACCENT_RED,
         title: "Collections",

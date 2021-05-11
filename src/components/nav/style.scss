@@ -18,42 +18,36 @@
     font-weight: 700;
 }
 
-// hypens are converted to camelCase when imported as CSS module
-// https://github.com/gatsbyjs/gatsby/issues/10852
-.navigation-link {
+.navigationLink {
     @extend %_link;
-
-    &:last-child {
-        margin-right: 0;
-    }
 }
 
-.navigation-link-wrapper {
+.navigationLinkWrapper {
     padding: 0 6px;
 }
 
-.navigation-subNav {
+.navigationSubNav {
     padding: 1px 0;
     position: relative;
 
-    &:hover .navigation-subNavTitle {
+    &:hover .navigationLink {
         border-color: rgba($blue, 0);
     }
 
-    &:hover .navigation-subNavLinks {
+    &:hover .navigationSubNavLinks {
         opacity: 1;
         pointer-events: auto;
     }
 }
 
-.navigation-subNavCard {
+.navigationSubNavCard {
     background-color: $white;
     border-radius: 4px;
     box-shadow: 0 2px 20px 0 rgba($black, .1);
     padding: 6px;
 }
 
-.navigation-subNavLink {
+.navigationSubNavLink {
     @extend %_link;
 
     display: inline-block;
@@ -64,17 +58,13 @@
     }
 }
 
-.navigation-subNavLinks {
+.navigationSubNavLinks {
     opacity: 0;
     padding-top: 6px;
     pointer-events: none;
     position: absolute;
     transition: opacity $transition-time linear;
     z-index: 1;
-}
-
-.navigation-subNavTitle {
-    @extend %_link;
 }
 
 .wrapper {
@@ -84,7 +74,6 @@
     justify-content: space-between;
     margin-bottom: $space-x-large;
 }
-
 
 // @bottom for CSS specificity (tiering)
 .active {

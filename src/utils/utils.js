@@ -2,44 +2,26 @@ import {
   COLLECTIONS,
   ERROR,
   HOME,
+  HOME_PATH,
   ILLUSTRATIONS,
   PHOTOGRAPHY,
-  PHOTOGRAPHY_PAGES,
 } from "./defs"
 
-// returns null if root path: '/'
-const getCurrentBasePath = (location) =>
-         location.pathname.match(/\w+/) && location.pathname.match(/\w+/)[0]
-
 export const getPage = (location) => {
-    const basePath = getCurrentBasePath(location)
-    switch (basePath) {
-      case PHOTOGRAPHY:
-        return PHOTOGRAPHY
-      case COLLECTIONS:
-        return COLLECTIONS
-      case ILLUSTRATIONS:
-        return ILLUSTRATIONS
-      case null:
-        return HOME
-      default:
-          return ERROR
+    const path = location.pathname
+    if (path.indexOf(COLLECTIONS) !== -1) {
+      return COLLECTIONS
     }
-}
-
-export const isActiveLocation = (page, currentPage) => page === currentPage
-
-export const isCollectionsPage = (location) => {
-    const page = getPage(location)
-    return page === COLLECTIONS
-}
-
-export const isPhotographyGalleryPage = (location) => {
-  const page = getPage(location)
-  return page === PHOTOGRAPHY
-}
-
-export const isPhotographyPage = (location) => {
-    const page = getPage(location)
-    return PHOTOGRAPHY_PAGES.indexOf(page) >= 0
+    else if (path.indexOf(PHOTOGRAPHY) !== -1) {
+      return PHOTOGRAPHY
+    }
+    else if (path.indexOf(ILLUSTRATIONS) !== -1) {
+      return ILLUSTRATIONS
+    }
+    else if (path === HOME_PATH) {
+      return HOME
+    }
+    else {
+      return ERROR
+    }
 }

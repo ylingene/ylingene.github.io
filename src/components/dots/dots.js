@@ -7,7 +7,7 @@ import {
     ILLUSTRATIONS,
     PHOTOGRAPHY,
 } from "../../utils/defs"
-import { getPage, isActiveLocation } from "../../utils/utils"
+import { getPage } from "../../utils/utils"
 
 import {
   blueDot,
@@ -47,13 +47,13 @@ const Dots = ({ location }) => {
   return (
     <div className={navigationDots}>
       <div className={dotWrapper}>
-        <BlueDot isLarge={isActiveLocation(PHOTOGRAPHY, currentPage)} />
+        <BlueDot isLarge={PHOTOGRAPHY === currentPage} />
       </div>
       <div className={dotWrapper}>
-        <RedDot isLarge={isActiveLocation(COLLECTIONS, currentPage)} />
+        <RedDot isLarge={COLLECTIONS === currentPage} />
       </div>
       <div className={dotWrapper}>
-        <GreenDot isLarge={isActiveLocation(ILLUSTRATIONS, currentPage)} />
+        <GreenDot isLarge={ILLUSTRATIONS === currentPage} />
       </div>
     </div>
   )

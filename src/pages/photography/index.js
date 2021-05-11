@@ -2,8 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 
-import { ACCENT_BLUE } from "../utils/defs"
-import Portfolio from "../components/portfolio/portfolio"
+import { ACCENT_BLUE } from "../../utils/defs"
+import Portfolio from "../../components/portfolio/portfolio"
 
 const Photography = ({ data }) => {
   return (

@@ -151,7 +151,7 @@ Gallery.propTypes = {
   fluidImages: PropTypes.arrayOf(
     PropTypes.shape({
       alt: PropTypes.string.isRequired,
-      type: PropTypes.string.isRequired,
+      type: PropTypes.string,
       image: PropTypes.shape({
         id: PropTypes.string.isRequired,
         childImageSharp: PropTypes.shape({

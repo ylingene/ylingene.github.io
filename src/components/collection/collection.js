@@ -16,7 +16,7 @@ import {
   postTitle,
 } from "./style.scss"
 
-const BlogPost = ({ frontmatter, fields, excerpt }) => {
+const CollectionPost = ({ frontmatter, fields, excerpt }) => {
   return (
     <article key={fields.slug} style={{backgroundColor: frontmatter.backgroundColor}}>
       <Link to={fields.slug} className={post}>
@@ -37,11 +37,11 @@ const BlogPost = ({ frontmatter, fields, excerpt }) => {
   )
 }
 
-BlogPost.defaultProps = {
+CollectionPost.defaultProps = {
   excerpt: ``,
 }
 
-BlogPost.propTypes = {
+CollectionPost.propTypes = {
   frontmatter: PropTypes.shape({
     date: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -57,17 +57,17 @@ BlogPost.propTypes = {
   excerpt: PropTypes.string,
 }
 
-const Blog = ({ headerData, posts }) => {
+const Collection = ({ headerData, posts }) => {
     return (
       <Container>
         <Seo title={headerData.sectionTitle} description={headerData.description} />
         <Header {...headerData} />
-        {posts.map(BlogPost)}
+        {posts.map(CollectionPost)}
       </Container>
     )
 }
 
-Blog.propTypes = {
+Collection.propTypes = {
   headerData: PropTypes.shape({
     sectionTitle: PropTypes.string.isRequired,
     description: PropTypes.string,
@@ -75,4 +75,4 @@ Blog.propTypes = {
   posts: PropTypes.array.isRequired,
 }
 
-export default Blog
+export default Collection
