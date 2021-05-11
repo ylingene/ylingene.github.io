@@ -97,6 +97,11 @@ $picture-offset: 30px;
     top: $picture-offset;
 
     @media screen and (max-width: $screen-mobile-small) {
+        // inline-block has extra space below the element
+        display: block !important; // override gatsby-image-wrapper-constrained inline-block
+    }
+
+    @media screen and (max-width: $screen-mobile-small) {
         left: 0;
         top: 0;
     }

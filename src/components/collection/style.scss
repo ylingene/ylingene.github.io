@@ -24,6 +24,7 @@
     // centered 16:9 crop
     @extend %thumbnail;
 
+    // inline-block has extra space below the element
     display: block !important; // override gatsby-image-wrapper-constrained inline-block
     padding-top: 9 / 16 * 100%; // ~56.25%;
 }
