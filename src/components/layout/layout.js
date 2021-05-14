@@ -12,7 +12,7 @@ import {
 const Layout = ({ location, children }) => {
   return (
     <div className={mainWrapper}>
-      <Nav />
+      <Nav location={location} />
       <main className={mainContent}>{children}</main>
       <Footer location={location} />
     </div>

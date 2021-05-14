@@ -118,5 +118,6 @@ $picture-offset: 30px;
 
     @media screen and (max-width: $screen-mobile-small) {
         margin-top: 0;
+        margin-bottom: $space;
     }
 }

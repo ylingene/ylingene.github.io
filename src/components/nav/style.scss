@@ -3,51 +3,110 @@
 
 %_link {
     border-bottom: 2px solid rgba($blue, 0);
-    padding: 1px 0;
+    font-weight: 700;
+    padding-bottom: 1px;
     transition: color $transition-time linear, border-color $transition-time-fast linear;
 }
 
-.logo {
+.icon {
     display: block;
     width: 30px;
 }
 
+.mobileDots {
+    display: flex;
+    justify-content: center;
+    margin-top: $space;
+}
+
+.mobileMenu {
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    gap: $space;
+    height: calc(100vh - 60px);
+    padding-top: $space-med;
+    width: inherit;
+    z-index: 1;
+}
+
+.mobileMenuButton {
+    border: none;
+}
+
+.mobileNavBar {
+    align-items: center;
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+}
+
+.mobileNavigation {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: $space;
+}
+
+.mobileSocial {
+    display: flex;
+    margin-top: $space;
+}
+
+.mobileSubLink {
+    margin-left: $space;
+}
+
 .navigation {
     display: flex;
+    gap: $space;
+}
+
+.navigationContainer {
     font-family: Inter;
-    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: $space-x-large;
+
+    @media screen and (max-width: $screen-mobile-medium) {
+        margin-bottom: $space-large;
+    }
+
+    @media screen and (max-width: $screen-mobile-small) {
+        margin-bottom: $space-med;
+    }
 }
 
 .navigationLink {
     @extend %_link;
 }
 
-.navigationLinkWrapper {
-    padding: 0 6px;
-}
-
 .navigationSubNav {
-    padding: 1px 0;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     position: relative;
 
     &:hover .navigationLink {
         border-color: rgba($blue, 0);
     }
 
-    &:hover .navigationSubNavLinks {
+    &:hover .navigationSubContainer {
         opacity: 1;
         pointer-events: auto;
     }
 }
 
-.navigationSubNavCard {
-    background-color: $white;
-    border-radius: 4px;
-    box-shadow: 0 2px 20px 0 rgba($black, .1);
-    padding: 6px;
+.navigationSubContainer {
+    opacity: 0;
+    padding-top: 6px;
+    pointer-events: none;
+    position: absolute;
+    top: 24px;
+    transition: opacity $transition-time linear;
+    z-index: 1;
 }
 
-.navigationSubNavLink {
+.navigationSubLink {
     @extend %_link;
 
     display: inline-block;
@@ -58,13 +117,11 @@
     }
 }
 
-.navigationSubNavLinks {
-    opacity: 0;
-    padding-top: 6px;
-    pointer-events: none;
-    position: absolute;
-    transition: opacity $transition-time linear;
-    z-index: 1;
+.navigationSubLinks {
+    background-color: $white;
+    border-radius: 4px;
+    box-shadow: 0 2px 20px 0 rgba($black, .1);
+    padding: 8px $space;
 }
 
 .wrapper {
@@ -72,7 +129,18 @@
     display: flex;
     height: 66px;
     justify-content: space-between;
-    margin-bottom: $space-x-large;
+
+    @media screen and (max-width: $screen-mobile-medium) {
+        display: none;
+    }
+}
+
+.wrapperMobile {
+    display: block;
+
+    @media screen and (min-width: $screen-mobile-medium + 1) {
+        display: none;
+    }
 }
 
 // @bottom for CSS specificity (tiering)
