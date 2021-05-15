@@ -11,5 +11,5 @@ import Layout from "./src/components/layout/layout"
 // Wraps every page in a component
 // all props avaiable to a page will be available to Layout (incl. location prop)
 export const wrapPageElement = ({ element, props }) => {
-  return <Layout {...props}>{element}</Layout>
+    return <Layout {...props}>{element}</Layout>
 }

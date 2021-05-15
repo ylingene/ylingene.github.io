@@ -4,125 +4,119 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import PropTypes from "prop-types"
 
 import Container from "../container/container"
-import { BlueDot, /*GreenDot,*/ RedDot } from "../dots/dots"
+import { BlueDot, RedDot } from "../dots/dots"
 import Seo from "../seo"
 import SocialLinks from "../social/social"
-import { 
-  COLLECTIONS_PATH,
-  // ILLUSTRATIONS_PATH,
-  PHOTOGRAPHY_PATH,
-} from "../../utils/defs"
+import { COLLECTIONS_PATH, PHOTOGRAPHY_PATH } from "../../utils/defs"
 
-import { 
-  aboutMe,
-  aboutSection,
-  aboutWrapper,
-  dot,
-  header,
-  headerLine,
-  link,
-  links,
-  pictureWrapper,
-  profilePicture,
-  square,
-  wrapper,
+import {
+    aboutMe,
+    aboutSection,
+    aboutWrapper,
+    dot,
+    header,
+    headerLine,
+    link,
+    links,
+    pictureWrapper,
+    profilePicture,
+    square,
+    wrapper,
 } from "./style.scss"
 
 const Picture = ({ author, image }) => (
-  <div className={square}>
-    <GatsbyImage image={image} alt={author.name} className={profilePicture}/>
-  </div>
+    <div className={square}>
+        <GatsbyImage
+            image={image}
+            alt={author.name}
+            className={profilePicture}
+        />
+    </div>
 )
 
 Picture.propTypes = {
-  author: PropTypes.shape({
-    name: PropTypes.string,
-  }).isRequired,
-  image: PropTypes.object.isRequired,
+    author: PropTypes.shape({
+        name: PropTypes.string,
+    }).isRequired,
+    image: PropTypes.object.isRequired,
 }
 
 const AboutMe = () => (
-  <div className={aboutMe}>
-    <header className={header}>
-      <h1>Lingene</h1>
-      <div className={headerLine} />
-    </header>
-    <p>I'm an engineer and an artist.</p>
-    <p>
-      I graduated with a B.S.E. in Computer Science and Engineering from the
-      University of Michigan in 2018, and I'm currently a senior software engineer
-      at Affirm in San Francisco, CA.
-    </p>
-    <p>
-      As an artist, I'm drawn to environments and nature. I capture them
-      primarily through photographs, but I also enjoy exploring them through
-      other art mediums.
-    </p>
-    <p>
-      Connect with me at:{" "}
-      <a href="mailto:ylingene@gmail.com">ylingene@gmail.com</a>
-    </p>
-    <SocialLinks />
-  </div>
+    <div className={aboutMe}>
+        <header className={header}>
+            <h1>Lingene</h1>
+            <div className={headerLine} />
+        </header>
+        <p>I'm an engineer and an artist.</p>
+        <p>
+            I graduated with a B.S.E. in Computer Science and Engineering from
+            the University of Michigan in 2018, and I'm currently a senior
+            software engineer at Affirm in San Francisco, CA.
+        </p>
+        <p>
+            As an artist, I'm drawn to environments and nature. I capture them
+            primarily through photographs, but I also enjoy exploring them
+            through other art mediums.
+        </p>
+        <p>
+            Connect with me at:{" "}
+            <a href="mailto:ylingene@gmail.com">ylingene@gmail.com</a>
+        </p>
+        <SocialLinks />
+    </div>
 )
 
 const Works = () => (
-  <div>
-    <header className={header}>
-      <h2>Check out my work</h2>
-    </header>
-    <div className={links}>
-      <Link className={link} to={PHOTOGRAPHY_PATH}>
-        Photo Gallery
-        <BlueDot className={dot} />
-      </Link>
-      <Link className={link} to={COLLECTIONS_PATH}>
-        Photo Collections
-        <RedDot className={dot} />
-      </Link>
-      {/*
-      <Link className={link} to={ILLUSTRATIONS_PATH}>
-        Illustrations
-        <GreenDot className={dot} />
-      </Link>
-      */}
+    <div>
+        <header className={header}>
+            <h2>Check out my work</h2>
+        </header>
+        <div className={links}>
+            <Link className={link} to={PHOTOGRAPHY_PATH}>
+                Photo Gallery
+                <BlueDot className={dot} />
+            </Link>
+            <Link className={link} to={COLLECTIONS_PATH}>
+                Photo Collections
+                <RedDot className={dot} />
+            </Link>
+        </div>
     </div>
-  </div>
 )
 
 const About = () => {
     const data = useStaticQuery(graphql`
-      query ProfileQuery {
-        profilePicture: file(absolutePath: { regex: "/lingene.jpg/" }) {
-          childImageSharp {
-            gatsbyImageData(width: 300)
-          }
-        }
-        site {
-          siteMetadata {
-            author {
-              name
+        query ProfileQuery {
+            profilePicture: file(absolutePath: { regex: "/lingene.jpg/" }) {
+                childImageSharp {
+                    gatsbyImageData(width: 300)
+                }
             }
-          }
+            site {
+                siteMetadata {
+                    author {
+                        name
+                    }
+                }
+            }
         }
-      }
     `)
 
     const image = data.profilePicture.childImageSharp.gatsbyImageData
     const { author } = data.site.siteMetadata
     return (
-      <Container className={wrapper}>
-        <Seo />
-        <div className={pictureWrapper}>
-          <Picture author={author} image={image} />
-        </div>
-        <div className={aboutWrapper}>
-          <div className={aboutSection}>
-            <AboutMe />
-            <Works />
-          </div>
-        </div>
-      </Container>
+        <Container className={wrapper}>
+            <Seo />
+            <div className={pictureWrapper}>
+                <Picture author={author} image={image} />
+            </div>
+            <div className={aboutWrapper}>
+                <div className={aboutSection}>
+                    <AboutMe />
+                    <Works />
+                </div>
+            </div>
+        </Container>
     )
 }
 
