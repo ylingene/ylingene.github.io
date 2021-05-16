@@ -34,47 +34,9 @@ import {
 const cx = classNames.bind({
     active,
     navigationLink,
+    navigationSubLink,
     mobileSubLink,
 })
-
-const NavLink = ({ children, isSubNav = false, ...props }) => {
-    const navStyle = !isSubNav ? navigationLink : navigationSubLink
-    return (
-        <Link className={navStyle} activeClassName={active} {...props}>
-            {children}
-        </Link>
-    )
-}
-
-const MainNav = () => (
-    <div className={wrapper}>
-        <Link to={HOME_PATH}>
-            <Logo className={icon} alt="logo" />
-        </Link>
-        <nav className={navigation}>
-            <NavLink to={HOME_PATH}>About</NavLink>
-            <span className={navigationSubNav}>
-                <NavLink partiallyActive={true} to={PHOTOGRAPHY_PATH}>
-                    Photography
-                </NavLink>
-                <div className={navigationSubContainer}>
-                    <div className={navigationSubLinks}>
-                        <NavLink to={PHOTOGRAPHY_PATH} isSubNav={true}>
-                            Gallery
-                        </NavLink>
-                        <NavLink
-                            to={COLLECTIONS_PATH}
-                            isSubNav={true}
-                            partiallyActive={true}
-                        >
-                            Collections
-                        </NavLink>
-                    </div>
-                </div>
-            </span>
-        </nav>
-    </div>
-)
 
 /**
  * Returns the base or all styles, including active styles, based on an exact or partial match
@@ -92,24 +54,23 @@ const isActive = (baseStyles, allStyles, path) => ({ isCurrent, location }) => {
     return { className: appliedStyles }
 }
 
-const MobileNavLink = ({
+const NavLink = ({
     children,
-    checkIsActive = false,
-    isSubLink = false,
     to,
+    checkIsActive = false,
+    linkStyles = navigationLink,
     ...props
 }) => {
-    const mobileLinkStyles = [navigationLink, { mobileSubLink: isSubLink }]
-    const baseStyles = cx(mobileLinkStyles)
-    const combinedStyles = cx(mobileLinkStyles, active)
+    const baseStyles = cx(linkStyles)
+    const combinedStyles = cx(linkStyles, active)
 
-    /* 
-    getProps will overwrite what's passed into className so the callback must add the base styles
-    required for the link. The purpose of this is set the active style by doing partial matches of 
-    /photography and /photography/ but not /photography/collections, since page refreshses add a 
-    trailing slash (/). `partiallyActive` prop does not work because it would match 
-    /photography/collections
-   */
+    /**
+     * getProps will overwrite what's passed into className so the callback must add the base styles
+     * required for the link. The purpose of this is set the active style by doing partial matches of
+     * /photography and /photography/ but not /photography/collections, since page refreshses add a
+     * trailing slash (/). `partiallyActive` prop does not work because it would match
+     * /photography/collections
+     */
     const linkGetProps = checkIsActive
         ? isActive(baseStyles, combinedStyles, to)
         : undefined
@@ -125,6 +86,49 @@ const MobileNavLink = ({
         </Link>
     )
 }
+
+const MobileNavLink = ({ children, isSubLink = false, ...props }) => {
+    const mobileLinkStyles = [navigationLink, { mobileSubLink: isSubLink }]
+    return (
+        <NavLink linkStyles={mobileLinkStyles} {...props}>
+            {children}
+        </NavLink>
+    )
+}
+
+const MainNav = () => (
+    <div className={wrapper}>
+        <Link to={HOME_PATH}>
+            <Logo className={icon} alt="logo" />
+        </Link>
+        <nav className={navigation}>
+            <NavLink to={HOME_PATH}>About</NavLink>
+            <span className={navigationSubNav}>
+                <NavLink partiallyActive={true} to={PHOTOGRAPHY_PATH}>
+                    Photography
+                </NavLink>
+                <div className={navigationSubContainer}>
+                    <div className={navigationSubLinks}>
+                        <NavLink
+                            to={PHOTOGRAPHY_PATH}
+                            checkIsActive={true}
+                            linkStyles={navigationSubLink}
+                        >
+                            Gallery
+                        </NavLink>
+                        <NavLink
+                            to={COLLECTIONS_PATH}
+                            linkStyles={navigationSubLink}
+                            partiallyActive={true}
+                        >
+                            Collections
+                        </NavLink>
+                    </div>
+                </div>
+            </span>
+        </nav>
+    </div>
+)
 
 const MobileNav = ({ location }) => {
     const [isOpen, setIsOpen] = useState(false)
