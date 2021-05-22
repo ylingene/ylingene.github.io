@@ -1,12 +1,8 @@
 @import "../../styles/colors";
-@import '../../styles/variables';
+@import "../../styles/variables";
+@import "../container/style";
 
-%_link {
-    border-bottom: 2px solid rgba($blue, 0);
-    font-weight: 700;
-    padding-bottom: 1px;
-    transition: color $transition-time linear, border-color $transition-time-fast linear;
-}
+$mobile-nav-height: 60px;
 
 .icon {
     display: block;
@@ -20,14 +16,23 @@
 }
 
 .mobileMenu {
+    // Extended container class styles to maintain same width and margins
+    // since position absolute doesn't inherit width.
+    @extend .container;
     display: flex;
     flex-direction: column;
     background-color: $white;
     gap: $space;
-    height: calc(100vh - 60px);
+    height: calc(100vh - #{$mobile-nav-height});
+    opacity: 0;
     padding-top: $space-med;
-    width: inherit;
+    position: absolute;
+    transition: opacity $transition-time-fast linear;
     z-index: 1;
+}
+
+.mobileMenuOpen {
+    opacity: 1;
 }
 
 .mobileMenuButton {
@@ -37,7 +42,7 @@
 .mobileNavBar {
     align-items: center;
     display: flex;
-    height: 60px;
+    height: $mobile-nav-height;
     justify-content: space-between;
 }
 
@@ -77,7 +82,10 @@
 }
 
 .navigationLink {
-    @extend %_link;
+    border-bottom: 2px solid rgba($blue, 0);
+    font-weight: 700;
+    padding-bottom: 1px;
+    transition: color $transition-time linear, border-color $transition-time-fast linear;
 }
 
 .navigationSubNav {
@@ -107,7 +115,7 @@
 }
 
 .navigationSubLink {
-    @extend %_link;
+    @extend .navigationLink;
 
     display: inline-block;
     margin-bottom: 6px;

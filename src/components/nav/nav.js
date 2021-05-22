@@ -16,6 +16,7 @@ import {
     mobileDots,
     mobileMenu,
     mobileMenuButton,
+    mobileMenuOpen,
     mobileNavBar,
     mobileNavigation,
     mobileSocial,
@@ -35,6 +36,7 @@ const cx = classNames.bind({
     active,
     navigationLink,
     navigationSubLink,
+    mobileMenuOpen,
     mobileSubLink,
 })
 
@@ -159,41 +161,40 @@ const MobileNav = ({ location }) => {
                     )}
                 </button>
             </div>
-            {isOpen && (
-                <div className={mobileMenu}>
-                    <nav className={mobileNavigation}>
-                        <MobileNavLink
-                            onClick={() => setIsOpen(false)}
-                            to={HOME_PATH}
-                        >
-                            About
-                        </MobileNavLink>
-                        <div>Photography</div>
-                        <MobileNavLink
-                            checkIsActive={true}
-                            isSubLink={true}
-                            onClick={() => setIsOpen(false)}
-                            to={PHOTOGRAPHY_PATH}
-                        >
-                            Gallery
-                        </MobileNavLink>
-                        <MobileNavLink
-                            isSubLink={true}
-                            onClick={() => setIsOpen(false)}
-                            partiallyActive={true}
-                            to={COLLECTIONS_PATH}
-                        >
-                            Collections
-                        </MobileNavLink>
-                    </nav>
-                    <div className={mobileSocial}>
-                        <Instagram />
-                    </div>
-                    <div className={mobileDots}>
-                        <NavigationDots location={location} />
-                    </div>
+            {/* Mobile menu shown with mobileMenuOpen class when isOpen is true and hidden when false */}
+            <div className={cx(mobileMenu, { mobileMenuOpen: isOpen })}>
+                <nav className={mobileNavigation}>
+                    <MobileNavLink
+                        onClick={() => setIsOpen(false)}
+                        to={HOME_PATH}
+                    >
+                        About
+                    </MobileNavLink>
+                    <div>Photography</div>
+                    <MobileNavLink
+                        checkIsActive={true}
+                        isSubLink={true}
+                        onClick={() => setIsOpen(false)}
+                        to={PHOTOGRAPHY_PATH}
+                    >
+                        Gallery
+                    </MobileNavLink>
+                    <MobileNavLink
+                        isSubLink={true}
+                        onClick={() => setIsOpen(false)}
+                        partiallyActive={true}
+                        to={COLLECTIONS_PATH}
+                    >
+                        Collections
+                    </MobileNavLink>
+                </nav>
+                <div className={mobileSocial}>
+                    <Instagram />
                 </div>
-            )}
+                <div className={mobileDots}>
+                    <NavigationDots location={location} />
+                </div>
+            </div>
         </div>
     )
 }
