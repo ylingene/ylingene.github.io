@@ -18,3 +18,13 @@ export const galleryImageFragment = graphql`
         }
     }
 `
+
+export const metaImageFragment = graphql`
+    fragment MetaImageFragment on ImageSharp {
+        original {
+            src
+            height
+            width
+        }
+    }
+`

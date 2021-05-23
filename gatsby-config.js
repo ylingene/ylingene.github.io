@@ -5,7 +5,8 @@ module.exports = {
             name: `Lingene Yang`,
         },
         description: `Portfolio website of Lingene Yang. Software engineer and artist based in San Francisco, CA.`,
-        siteUrl: `https://wwww.lingeneyang.com/`,
+        keywords: [`Lingene`, `software`, `engineer`, `photography`],
+        siteUrl: `https://wwww.lingeneyang.com`,
     },
     plugins: [
         {

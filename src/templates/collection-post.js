@@ -20,6 +20,7 @@ const CollectionTemplate = ({ data, pageContext }) => {
     const images = post.frontmatter.photos
         ? post.frontmatter.photos.childrenYaml
         : []
+    const metaImage = post.frontmatter.hero.childImageSharp.original
     const { previous, next } = pageContext
 
     return (
@@ -27,6 +28,7 @@ const CollectionTemplate = ({ data, pageContext }) => {
             <Seo
                 title={post.frontmatter.title}
                 description={post.frontmatter.description || post.excerpt}
+                metaImage={metaImage}
             />
             <header className={headerStyle}>
                 <h3>{post.frontmatter.location}</h3>
@@ -77,6 +79,15 @@ CollectionTemplate.propTypes = {
                 title: PropTypes.string,
                 date: PropTypes.string,
                 description: PropTypes.string,
+                hero: PropTypes.shape({
+                    childImageSharp: PropTypes.shape({
+                        original: PropTypes.shape({
+                            src: PropTypes.string,
+                            height: PropTypes.number,
+                            width: PropTypes.number,
+                        }),
+                    }),
+                }),
                 location: PropTypes.string,
                 photos: PropTypes.shape({
                     childrenYaml: PropTypes.array,
@@ -99,6 +110,11 @@ export const pageQuery = graphql`
                 title
                 date(formatString: "MMMM YYYY")
                 description
+                hero {
+                    childImageSharp {
+                        ...MetaImageFragment
+                    }
+                }
                 location
                 photos {
                     childrenYaml {
