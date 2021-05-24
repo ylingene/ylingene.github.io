@@ -4,6 +4,14 @@
 
 $mobile-nav-height: 60px;
 
+// placeholder selector to be extended
+%_link {
+    border-bottom: 2px solid rgba($blue, 0);
+    font-weight: 700;
+    padding-bottom: 1px;
+    transition: color $transition-time linear, border-color $transition-time-fast linear;
+}
+
 .icon {
     display: block;
     width: 30px;
@@ -82,10 +90,7 @@ $mobile-nav-height: 60px;
 }
 
 .navigationLink {
-    border-bottom: 2px solid rgba($blue, 0);
-    font-weight: 700;
-    padding-bottom: 1px;
-    transition: color $transition-time linear, border-color $transition-time-fast linear;
+    @extend %_link;
 }
 
 .navigationSubNav {
@@ -115,7 +120,7 @@ $mobile-nav-height: 60px;
 }
 
 .navigationSubLink {
-    @extend .navigationLink;
+    @extend %_link;
 
     display: inline-block;
     margin-bottom: 6px;
