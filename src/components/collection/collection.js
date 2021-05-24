@@ -19,7 +19,7 @@ import {
 /**
  * Get's the first post's image data to be used for the metadata image tags
  * when sharing on social media
- * 
+ *
  * @param {List[object]} posts - list of objects that contain info about
  * each posts' image src, height, and width. Used for metadata images
  * @returns object containing src, height, and width attributes
@@ -104,7 +104,7 @@ Collection.propTypes = {
         PropTypes.shape({
             frontmatter: PropTypes.shape({
                 hero: PropTypes.shape({
-                   childImageSharp: PropTypes.shape({
+                    childImageSharp: PropTypes.shape({
                         gatsbyImageData: PropTypes.object.isRequired,
                         original: PropTypes.shape({
                             src: PropTypes.string,
@@ -114,7 +114,7 @@ Collection.propTypes = {
                     }).isRequired,
                 }).isRequired,
             }),
-        }),
+        })
     ).isRequired,
 }
 

@@ -17,7 +17,14 @@ import {
 
 const CollectionTemplate = ({ data, pageContext }) => {
     const post = data.markdownRemark
-    const { date, description, hero, location, photos, title } = post.frontmatter
+    const {
+        date,
+        description,
+        hero,
+        location,
+        photos,
+        title,
+    } = post.frontmatter
     const images = photos ? photos.childrenYaml : []
     const metaImage = hero.childImageSharp.original
     const keywords = [title, location, `photography`, `collection`]
