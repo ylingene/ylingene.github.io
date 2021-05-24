@@ -10,7 +10,7 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 
-const Seo = ({ description, lang, meta, metaImage, title }) => {
+const Seo = ({ description, keywords, lang, meta, metaImage, title }) => {
     const { site } = useStaticQuery(
         graphql`
             query {
@@ -30,6 +30,7 @@ const Seo = ({ description, lang, meta, metaImage, title }) => {
     )
 
     const metaDescription = description || site.siteMetadata.description
+    const metaKeywords = site.siteMetadata.keywords.concat(keywords)
     const metaTitle = title || site.siteMetadata.title
     const image =
         metaImage && metaImage.src
@@ -57,7 +58,7 @@ const Seo = ({ description, lang, meta, metaImage, title }) => {
                 },
                 {
                     name: "keywords",
-                    content: site.siteMetadata.keywords.join(","),
+                    content: metaKeywords.join(","),
                 },
                 {
                     // open graph metadata for social media cards
@@ -118,14 +119,16 @@ const Seo = ({ description, lang, meta, metaImage, title }) => {
 }
 
 Seo.defaultProps = {
+    description: ``,
+    keywords: [],
     lang: `en`,
     meta: [],
-    description: ``,
     title: undefined,
 }
 
 Seo.propTypes = {
     description: PropTypes.string,
+    keywords: PropTypes.arrayOf(PropTypes.string),
     lang: PropTypes.string,
     meta: PropTypes.arrayOf(PropTypes.object),
     metaImage: PropTypes.shape({

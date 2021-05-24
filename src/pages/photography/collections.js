@@ -49,6 +49,7 @@ export const pageQuery = graphql`
                     hero {
                         childImageSharp {
                             ...ImageFragment
+                            ...MetaImageFragment
                         }
                     }
                     heroAlt

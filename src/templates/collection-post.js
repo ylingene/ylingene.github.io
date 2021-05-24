@@ -17,23 +17,24 @@ import {
 
 const CollectionTemplate = ({ data, pageContext }) => {
     const post = data.markdownRemark
-    const images = post.frontmatter.photos
-        ? post.frontmatter.photos.childrenYaml
-        : []
-    const metaImage = post.frontmatter.hero.childImageSharp.original
+    const { date, description, hero, location, photos, title } = post.frontmatter
+    const images = photos ? photos.childrenYaml : []
+    const metaImage = hero.childImageSharp.original
+    const keywords = [title, location, `photography`, `collection`]
     const { previous, next } = pageContext
 
     return (
         <Container>
             <Seo
-                title={post.frontmatter.title}
-                description={post.frontmatter.description || post.excerpt}
+                title={title}
+                description={description || post.excerpt}
+                keywords={keywords}
                 metaImage={metaImage}
             />
             <header className={headerStyle}>
-                <h3>{post.frontmatter.location}</h3>
-                <h1>{post.frontmatter.title}</h1>
-                <small>{post.frontmatter.date}</small>
+                <h3>{location}</h3>
+                <h1>{title}</h1>
+                <small>{date}</small>
             </header>
             <div className={contentSection}>
                 <article>

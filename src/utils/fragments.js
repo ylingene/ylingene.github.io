@@ -6,6 +6,16 @@ export const imageFragment = graphql`
     }
 `
 
+export const metaImageFragment = graphql`
+    fragment MetaImageFragment on ImageSharp {
+        original {
+            src
+            height
+            width
+        }
+    }
+`
+
 export const galleryImageFragment = graphql`
     fragment GalleryImageFragment on Yaml {
         alt
@@ -14,17 +24,8 @@ export const galleryImageFragment = graphql`
             id
             childImageSharp {
                 ...ImageFragment
+                ...MetaImageFragment
             }
-        }
-    }
-`
-
-export const metaImageFragment = graphql`
-    fragment MetaImageFragment on ImageSharp {
-        original {
-            src
-            height
-            width
         }
     }
 `

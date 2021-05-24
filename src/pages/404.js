@@ -1,13 +1,12 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Container from "../components/container/container"
 import Seo from "../components/seo"
 import { HOME_PATH } from "../utils/defs"
 
-const NotFoundPage = ({ data, location }) => {
-    console.log(HOME_PATH)
+const NotFoundPage = () => {
     return (
         <Container>
             <Seo />
@@ -37,13 +36,3 @@ const NotFoundPage = ({ data, location }) => {
 }
 
 export default NotFoundPage
-
-export const pageQuery = graphql`
-    query {
-        site {
-            siteMetadata {
-                title
-            }
-        }
-    }
-`

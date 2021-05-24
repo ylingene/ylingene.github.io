@@ -90,6 +90,7 @@ const About = () => {
             profilePicture: file(absolutePath: { regex: "/lingene.jpg/" }) {
                 childImageSharp {
                     gatsbyImageData(width: 300)
+                    ...MetaImageFragment
                 }
             }
             site {
@@ -103,10 +104,12 @@ const About = () => {
     `)
 
     const image = data.profilePicture.childImageSharp.gatsbyImageData
+    const metaImage = data.profilePicture.childImageSharp.original
     const { author } = data.site.siteMetadata
+    const keywords = [`software`, `engineer`, `Affirm`, `artist`]
     return (
         <Container className={wrapper}>
-            <Seo />
+            <Seo keywords={keywords} metaImage={metaImage} />
             <div className={pictureWrapper}>
                 <Picture author={author} image={image} />
             </div>
