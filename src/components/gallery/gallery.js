@@ -190,7 +190,7 @@ Gallery.propTypes = {
                             height: PropTypes.number,
                             images: PropTypes.object,
                             layout: PropTypes.string,
-                            width: PropTypes.string,
+                            width: PropTypes.number,
                         }).isRequired,
                     }).isRequired,
                 }.isRequired
