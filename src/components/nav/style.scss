@@ -34,6 +34,7 @@ $mobile-nav-height: 60px;
     height: calc(100vh - #{$mobile-nav-height});
     opacity: 0;
     padding-top: $space-med;
+    pointer-events: none;
     position: absolute;
     transition: opacity $transition-time-fast linear;
     z-index: 1;
@@ -41,10 +42,12 @@ $mobile-nav-height: 60px;
 
 .mobileMenuOpen {
     opacity: 1;
+    pointer-events: auto;
 }
 
 .mobileMenuButton {
     border: none;
+    padding: 0;
 }
 
 .mobileNavBar {
